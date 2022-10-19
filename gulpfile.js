@@ -24,6 +24,7 @@ const htmlValidator = require('gulp-w3c-html-validator')
 const htmlhint = require("gulp-htmlhint");
 const del = require('del')
 const uglify = require('gulp-uglify-es').default
+const minify = require('gulp-minify')
 const gulpif = require('gulp-if')
 
 const argv = require('yargs').argv;
@@ -102,6 +103,7 @@ const scripts = () => {
     .pipe(concat('script.js'))
     .pipe(uglify())
     .pipe(gulpif(!isProduction, sourcemaps.write('.')))
+    .pipe(minify())
     .pipe(dest(destination + '/js'))
     .pipe(gulpif(!isProduction, browserSync.stream()))
 }

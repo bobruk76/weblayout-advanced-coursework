@@ -15,7 +15,7 @@ a:visited
 
 body
   min-width 320px
-  font-family "Roboto", Verdana, sans-serif
+  font-family "Open Sans", Verdana, sans-serif
   color #121723
   background-color #fff
 
@@ -64,7 +64,7 @@ body
   border 3px solid color-burning-orange
   outline none
 
-  font-family 'Roboto'
+  font-family 'Open Sans'
   font-weight 700
   font-size 16px
   line-height 19px
@@ -122,7 +122,7 @@ body
   top 7px
   right 7px
 
-  font-family 'Roboto'
+  font-family 'Open Sans', sans-serif
   font-style normal
   font-weight 400
   font-size 14px
@@ -140,28 +140,12 @@ body
     font-size 12px
     line-height 14px
 
-.phone,
-.date
+.phone
   display inline-flex
   flex-direction row-reverse
   align-items center
 
-  font-family 'Roboto'
-  font-style normal
-  font-weight 400
-  font-size 12px
-  line-height 22px
 
-.date
-  &::after
-    content ""
-    width 14px
-    height 14px
-    background-image url("../img/sprite.svg#calendar")
-    background-repeat no-repeat
-    background-position left center
-
-.phone
   color color-burning-orange
   font-family 'TTFirsNeue'
   font-style normal
@@ -192,7 +176,7 @@ body
 .title
   margin 0
   padding 0
-  font-family 'TTFirsNeue'
+  font-family 'Open Sans', sans-serif
   font-style normal
   font-weight 700
   font-size 24px
@@ -258,12 +242,12 @@ body
   &__message-label
     height -webkit-fill-available
 
-gutter = 31px
+gutter = 32px
 .container
   margin-right auto
   margin-left auto
 
-  max-width 'min(1290px, calc(100% - 2 * %s))' % gutter
+  max-width 'min(1280px, calc(100% - 2 * %s))' % gutter
   overflow hidden
   @media (max-width 900px)
     gutter = 27px
