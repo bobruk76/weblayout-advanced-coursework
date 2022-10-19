@@ -10,35 +10,36 @@ html(lang="ru")
 
     //script(defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
     //script(defer src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js")
+      <script defer src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
     script(defer src='js/script-min.js')
   body
     header.header
       .header__container.container
-        .header__top
+        nav.header__top
+          .form-select.header__top-form
+            label.form-select__label(for="header_select")
+              span Ваш регион:
+              select.select#header_select(name="header_select")
+          a.phone.header__top-phone(href="tel:+74958854547")
+            span +7 (495) 885-45-47
 
-          - var header_top_items = ['О студии', 'Наши проекты', 'Услуги', 'Мастер-классы', 'Контакты']
+          - var header_top_items = ['О компании', 'Гарантия и возврат', 'Корпоративным клиентам', 'Дизайн-решение']
           ul.list-reset.header__top-items
             each item in header_top_items
               li.header__top-item
                 a.link.header__top-item-link(href="#")= item
 
-
-        nav.header__nav
-          a.header__top-logo
+        .header__menu
+          a.header__logo
             svg(width="187" height="27")
               use(xlink:href='img/sprite.svg#logo')
-          - var header__items = ['О студии', 'Наши проекты', 'Услуги', 'Мастер-классы', 'Контакты']
-          ul.list-reset.header__items.header__items--hide
-            li.header__item-close
-              button.btn-reset.btn-filtered.header__item-close-btn(aria-label="Кнопка свернуть меню")
-                svg(width="18" height="18")
-                  use(xlink:href='img/sprite.svg#close')
+          - var header__items = ['Магазины', 'Шоу-рум', 'Доставка и оплата', 'Дисконт', 'Контакты']
+          ul.list-reset.header__items
             each item in header__items
               li.header__item
                 a.link.header__item-link(href="#")= item
-            li.header__item-bottom
-              a.phone.header__item-bottom-phone(href="tel:+749542423532")
-                span +7&nbsp;495&nbsp;424-23-532
+
         //.header__form.form
         //  button.btn-reset.header__search-btn
         //    span.visually-hidden Кнопка поиска по сайту
