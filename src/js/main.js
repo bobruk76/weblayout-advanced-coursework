@@ -1,36 +1,37 @@
-const elementSelect = document.querySelector('.select');
-const choices = new Choices(elementSelect, {
-    itemSelectText: '',
-    placeholder: false,
-    choices: [
-
-        {
-            value: 'Москва',
-            label: 'Москва',
-            selected: true,
-            disabled: false,
-        },
-        {
-            value: 'Санкт Петербург',
-            label: 'Санкт Петербург',
-            selected: false,
-            disabled: false,
-        },
-        {
-            value: 'Владимир',
-            label: 'Владимир',
-            selected: false,
-            disabled: false,
-        },
-        {
-            value: 'Тула',
-            label: 'Тула',
-            selected: false,
-            disabled: false,
-        },
-    ],
-    searchEnabled: false,
-    shouldSort: false,
+const Choices = require('choices.js')
+const headerSelect = document.querySelector('#header_select');
+const choices = new Choices(headerSelect, {
+  itemSelectText: '',
+  placeholder: false,
+  allowHTML: true,
+  choices: [
+    {
+      value: 'Москва',
+      label: 'Москва',
+      selected: true,
+      disabled: false,
+    },
+    {
+      value: 'Санкт Петербург',
+      label: 'Санкт Петербург',
+      selected: false,
+      disabled: false,
+    },
+    {
+      value: 'Владимир',
+      label: 'Владимир',
+      selected: false,
+      disabled: false,
+    },
+    {
+      value: 'Тула',
+      label: 'Тула',
+      selected: false,
+      disabled: false,
+    },
+  ],
+  searchEnabled: false,
+  shouldSort: false,
 });
 
 // const searchButton = document.querySelector('.header__search-btn')

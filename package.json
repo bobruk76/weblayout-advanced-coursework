@@ -17,8 +17,11 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.19.1",
+    "@babel/plugin-transform-runtime": "^7.19.6",
     "@babel/preset-env": "^7.19.1",
+    "babelify": "^10.0.0",
     "browser-sync": "^2.27.10",
+    "browserify": "^17.0.0",
     "del": "^6.1.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
@@ -36,15 +39,18 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-stylus": "^2.7.1",
     "gulp-svg-sprite": "^1.5.0",
+    "gulp-uglify": "^3.0.2",
     "gulp-uglify-es": "^3.0.0",
     "gulp-w3c-html-validator": "2.0",
     "gulp-webp": "^4.0.1",
+    "pug": "^3.0.2",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0",
     "yargs": "^17.5.1"
   },
   "dependencies": {
-    "gulp-uglify": "^3.0.2",
+    "choices.js": "^10.1.0",
     "normalize-styl": "^8.0.1",
-    "pug": "^3.0.2",
     "r": "^0.0.5"
   }
 }

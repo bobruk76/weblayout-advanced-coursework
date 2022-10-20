@@ -1,4 +1,4 @@
-const {series, src, dest, watch} = require('gulp')
+const {series, parallel, src, dest, watch} = require('gulp')
 
 const pug = require('gulp-pug')
 const stylus = require('gulp-stylus')
@@ -11,17 +11,19 @@ const imagemin = require('gulp-imagemin')
 const webp = require('gulp-webp')
 
 const sourcemaps = require('gulp-sourcemaps')
+const browserify = require('browserify')
+const source  = require('vinyl-source-stream')
+const buffer = require('vinyl-buffer')
+const babelify = require('babelify')
 const babel = require('gulp-babel')
 const concat = require('gulp-concat')
 
 const browserSync = require('browser-sync').create()
-// const postcss = require('gulp-postcss');
-// const postcssImport = require('postcss-import')
 
 const pugLinter = require('gulp-pug-linter')
 const htmlBemValidator = require('gulp-html-bem-validator')
 const htmlValidator = require('gulp-w3c-html-validator')
-const htmlhint = require("gulp-htmlhint");
+const htmlhint = require("gulp-htmlhint")
 const del = require('del')
 const uglify = require('gulp-uglify-es').default
 const minify = require('gulp-minify')
@@ -54,7 +56,6 @@ const images = () => {
   return src([
     './src/img/*.svg',
     './src/img/**/*.webp',
-
   ])
     .pipe(imagemin())
     .pipe(dest(destination + '/img'))
@@ -84,7 +85,7 @@ const stylusCSS = () => {
     .pipe(stylus({
       'include css': true
     }))
-    // .pipe(postcss([postcssImport()]))
+
     .pipe(autoprefixer())
     .pipe(shorthand())
     .pipe(cleanCss())
@@ -94,16 +95,28 @@ const stylusCSS = () => {
     .pipe(gulpif(!isProduction, browserSync.stream()))
 }
 
+const files = {
+  jsMain: './src/js/main.js',
+  jsOutput: 'script.js'
+}
+
 const scripts = () => {
-  return src('src/js/*.js')
+  return browserify(files.jsMain, {debug:true})
+    .transform(babelify, {
+      presets: ['@babel/env'],
+      plugins: ['@babel/transform-runtime']
+    })
+    .bundle()
+    .pipe(source(files.jsOutput))
+    .pipe(buffer())
     .pipe(gulpif(!isProduction, sourcemaps.init()))
-    .pipe(babel({
-      presets: ['@babel/env']
-    }))
-    .pipe(concat('script.js'))
+    // .pipe(babel({
+    //   presets: ['@babel/env']
+    // }))
+    // .pipe(concat('script.js'))
     .pipe(uglify())
     .pipe(gulpif(!isProduction, sourcemaps.write('.')))
-    .pipe(minify())
+    // .pipe(minify())
     .pipe(dest(destination + '/js'))
     .pipe(gulpif(!isProduction, browserSync.stream()))
 }
@@ -153,5 +166,5 @@ watch("./src/css/**/*.styl", stylusCSS)
 watch("src/js/*.js", scripts)
 watch("./src/*.pug", series(pug2html, validateHtml))
 
-exports.dev = series(clean, svgSprites, imagesWebp, images, fonts, stylusCSS, scripts, pug2html, validateHtml, watcher)
-exports.build = series(clean, svgSprites, imagesWebp, images, fonts, stylusCSS, scripts, pug2html, validateHtml)
+exports.dev = series(clean, parallel(svgSprites, imagesWebp, images, fonts, stylusCSS, scripts), pug2html, validateHtml, watcher)
+exports.build = series(clean, parallel(svgSprites, imagesWebp, images, fonts, stylusCSS, scripts), pug2html, validateHtml)

@@ -117,29 +117,6 @@ body
     @extend .filtered
 
 
-.hash-tag
-  position absolute
-  top 7px
-  right 7px
-
-  font-family 'Open Sans', sans-serif
-  font-style normal
-  font-weight 400
-  font-size 14px
-  line-height 16px
-
-  padding 3px 11px
-  background-color color-mine-shaft
-  border-color color-mine-shaft
-  color color-bg
-  transition color .3s ease-in-out, border-color .3s ease-in-out, background-color .3s ease-in-out
-  @media (max-width 576px)
-    padding 1px 11px
-    top 5px
-    right 5px
-    font-size 12px
-    line-height 14px
-
 .phone
   display inline-flex
   flex-direction row-reverse
@@ -150,7 +127,7 @@ body
   font-style normal
   font-weight 400
   font-size 14px
-  line-height 100%
+  line-height 22px
 
   &::after
     content ""
@@ -159,14 +136,8 @@ body
     height 22px
     background-image url("../img/sprite.svg#call")
     background-repeat no-repeat
-    background-position left center
-    @media (max-width 1200px)
-      margin-left 4px
-      margin-right 0
-    @media (max-width 576px)
-      margin-left 0
-      width 20px
-      height 20px
+    background-position center
+    background-size cover
 
 .title
   margin 0
@@ -236,6 +207,11 @@ body
 
   &__message-label
     height -webkit-fill-available
+
+.menu-right
+  margin-left auto
+  margin-right 0
+  display flex
 
 gutter = 32px
 .container

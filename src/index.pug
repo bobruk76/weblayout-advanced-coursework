@@ -10,9 +10,8 @@ html(lang="ru")
 
     //script(defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
     //script(defer src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js")
-      <script defer src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 
-    script(defer src='js/script-min.js')
+    script(defer src='js/script.js')
   body
     header.header
       .header__container.container
@@ -35,10 +34,10 @@ html(lang="ru")
             svg(width="187" height="27")
               use(xlink:href='img/sprite.svg#logo')
           - var header__items = ['Магазины', 'Шоу-рум', 'Доставка и оплата', 'Дисконт', 'Контакты']
-          ul.list-reset.header__items
+          ul.list-reset.header__menu-items
             each item in header__items
-              li.header__item
-                a.link.header__item-link(href="#")= item
+              li.header__menu-items-item
+                a.link.header__menu-items-item-link(href="#")= item
 
         //.header__form.form
         //  button.btn-reset.header__search-btn
