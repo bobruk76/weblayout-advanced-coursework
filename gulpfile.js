@@ -102,8 +102,9 @@ const files = {
 const scripts = () => {
   return browserify(files.jsMain, {debug:true})
     .transform(babelify, {
-      presets: ['@babel/env'],
-      plugins: ['@babel/transform-runtime']
+      presets: ['@babel/preset-env', '@babel/preset-react'],
+      plugins: ['@babel/plugin-transform-modules-commonjs', '@babel/plugin-transform-runtime', '@babel/proposal-class-properties'],
+      sourceMaps: true,
     })
     .bundle()
     .pipe(source(files.jsOutput))

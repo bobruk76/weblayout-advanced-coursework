@@ -1,3 +1,7 @@
+// import Swiper from 'swiper'
+// import 'swiper/css'
+
+// const swiper = new Swiper(...);
 const Choices = require('choices.js')
 const headerSelect = document.querySelector('#header_select');
 const headerChoices = new Choices(headerSelect, {
@@ -36,41 +40,60 @@ const headerChoices = new Choices(headerSelect, {
 
 const categorySelect = document.querySelector('#category');
 const categoryChoices = new Choices(categorySelect, {
-  itemSelectText: 'Категории',
+  itemSelectText: '',
   placeholder: false,
   allowHTML: true,
   searchEnabled: true,
   shouldSort: false,
   choices: [
     {
+      value: 'Категория',
+      label: 'Категория',
+      id: 0,
+      selected: true,
+      disabled: true,
+    },
+    {
       value: 'Диваны',
       label: 'Диваны',
       id: 1,
+      selected: false,
+      disabled: false,
     },
     {
       value: 'Кресла',
       label: 'Кресла',
       id: 2,
+      selected: false,
+      disabled: false,
     },
     {
       value: 'Пуфы',
       label: 'Пуфы',
       id: 3,
+      selected: false,
+      disabled: false,
     },
     {
       value: 'Кровати',
       label: 'Кровати',
       id: 4,
+      selected: false,
+      disabled: false,
     },
     {
       value: 'Тумбы',
       label: 'Тумбы',
       id: 5,
+      selected: false,
+      disabled: false,
     },
     {
       value: 'Комоды',
       label: 'Комоды',
       id: 6,
+      selected: false,
+      disabled: false,
     },
     {
       value: 'Стулья',
@@ -81,11 +104,15 @@ const categoryChoices = new Choices(categorySelect, {
       value: 'Столы',
       label: 'Столы',
       id: 8,
+      selected: false,
+      disabled: false,
     },
     {
       value: 'Аксессуары',
       label: 'Аксессуары',
       id: 9,
+      selected: false,
+      disabled: false,
     },
   ],
 });
