@@ -1,6 +1,6 @@
 const Choices = require('choices.js')
 const headerSelect = document.querySelector('#header_select');
-const choices = new Choices(headerSelect, {
+const headerChoices = new Choices(headerSelect, {
   itemSelectText: '',
   placeholder: false,
   allowHTML: true,
@@ -33,6 +33,63 @@ const choices = new Choices(headerSelect, {
   searchEnabled: false,
   shouldSort: false,
 });
+
+const categorySelect = document.querySelector('#category');
+const categoryChoices = new Choices(categorySelect, {
+  itemSelectText: 'Категории',
+  placeholder: false,
+  allowHTML: true,
+  searchEnabled: true,
+  shouldSort: false,
+  choices: [
+    {
+      value: 'Диваны',
+      label: 'Диваны',
+      id: 1,
+    },
+    {
+      value: 'Кресла',
+      label: 'Кресла',
+      id: 2,
+    },
+    {
+      value: 'Пуфы',
+      label: 'Пуфы',
+      id: 3,
+    },
+    {
+      value: 'Кровати',
+      label: 'Кровати',
+      id: 4,
+    },
+    {
+      value: 'Тумбы',
+      label: 'Тумбы',
+      id: 5,
+    },
+    {
+      value: 'Комоды',
+      label: 'Комоды',
+      id: 6,
+    },
+    {
+      value: 'Стулья',
+      label: 'Стулья',
+      id: 7,
+    },
+    {
+      value: 'Столы',
+      label: 'Столы',
+      id: 8,
+    },
+    {
+      value: 'Аксессуары',
+      label: 'Аксессуары',
+      id: 9,
+    },
+  ],
+});
+
 
 // const searchButton = document.querySelector('.header__search-btn')
 // const headerInput = document.querySelector('.header__input')

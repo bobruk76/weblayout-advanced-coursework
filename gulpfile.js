@@ -15,7 +15,6 @@ const browserify = require('browserify')
 const source  = require('vinyl-source-stream')
 const buffer = require('vinyl-buffer')
 const babelify = require('babelify')
-const babel = require('gulp-babel')
 const concat = require('gulp-concat')
 
 const browserSync = require('browser-sync').create()
@@ -110,13 +109,9 @@ const scripts = () => {
     .pipe(source(files.jsOutput))
     .pipe(buffer())
     .pipe(gulpif(!isProduction, sourcemaps.init()))
-    // .pipe(babel({
-    //   presets: ['@babel/env']
-    // }))
-    // .pipe(concat('script.js'))
     .pipe(uglify())
     .pipe(gulpif(!isProduction, sourcemaps.write('.')))
-    // .pipe(minify())
+    .pipe(minify())
     .pipe(dest(destination + '/js'))
     .pipe(gulpif(!isProduction, browserSync.stream()))
 }

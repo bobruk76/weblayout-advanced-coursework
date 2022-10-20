@@ -5,6 +5,7 @@
 @import 'base/vars.styl'
 //components
 @import 'components/general.styl'
+@import 'components/search.styl'
 //@import 'components/validate.styl'
 //@import 'components/yamap.styl'
 //@import 'components/burger.styl'
@@ -26,5 +27,14 @@
     display flex
     &-items
       @extend .menu-right
+  &__bottom
+    display flex
+    &-link
+      width 41px
+      height 28px
+      background-image url("../img/sprite.svg#shopping_cart")
+      background-repeat no-repeat
+      background-position right center
+      background-size contain
 
 

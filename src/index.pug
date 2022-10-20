@@ -39,6 +39,23 @@ html(lang="ru")
               li.header__menu-items-item
                 a.link.header__menu-items-item-link(href="#")= item
 
+        .header__bottom
+          form.search.header__bottom-form
+            span.visually-hidden.header__bottom-label-span Форма поиска по сайту
+            span.search__icon
+              svg
+                use(xlink:href='img/sprite.svg#search')
+            input.search__input.header__bottom-input#search(type="text" placeholder="Я хочу купить...")
+            button.btn-reset.search__btn.header__bottom-form-btn
+              svg
+                use(xlink:href='img/sprite.svg#arrow')
+          label.header__bottom-label(for="category")
+            span.visually-hidden.header__bottom-label-span Выбор категории
+            select.select#category(name="category")
+          button.btn-reset.btn.header__bottom-bth
+            svg(width="26" height="28")
+              use(xlink:href='img/sprite.svg#user')
+          a.link.header__bottom-link(href='#') 0
         //.header__form.form
         //  button.btn-reset.header__search-btn
         //    span.visually-hidden Кнопка поиска по сайту
