@@ -1,9 +1,24 @@
-// const Swiper = require('swiper')
-// import Swiper from 'swiper'
-// import 'swiper/css'
+import Choices from 'choices.js'
+import Swiper from 'swiper'
+import 'swiper/css'
 
-// const swiper = new Swiper(...);
-const Choices = require('choices.js')
+const swiperHero = new Swiper('.hero__slider', {
+
+  effect: 'fade',
+  spaceBetween: 100,
+  autoHeight: true,
+  direction: 'horizontal',
+  loop: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  a11y: {
+    paginationBulletMessage: 'Слайд с главной картинкой {{index}}',
+  }
+});
+
+
 const headerSelect = document.querySelector('#header_select');
 const headerChoices = new Choices(headerSelect, {
   itemSelectText: '',

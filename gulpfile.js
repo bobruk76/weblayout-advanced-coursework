@@ -11,11 +11,11 @@ const imagemin = require('gulp-imagemin')
 const webp = require('gulp-webp')
 
 const sourcemaps = require('gulp-sourcemaps')
-const browserify = require('browserify')
-const source  = require('vinyl-source-stream')
-const buffer = require('vinyl-buffer')
-const babelify = require('babelify')
 const concat = require('gulp-concat')
+const rollup = require('gulp-better-rollup');
+const babel = require('rollup-plugin-babel');
+const resolve = require('rollup-plugin-node-resolve');
+const commonjs = require('rollup-plugin-commonjs');
 
 const browserSync = require('browser-sync').create()
 
@@ -94,25 +94,15 @@ const stylusCSS = () => {
     .pipe(gulpif(!isProduction, browserSync.stream()))
 }
 
-const files = {
-  jsMain: './src/js/main.js',
-  jsOutput: 'script.js'
-}
 
 const scripts = () => {
-  return browserify(files.jsMain, {debug:true})
-    .transform(babelify, {
-      presets: ['@babel/preset-env', '@babel/preset-react'],
-      plugins: ['@babel/plugin-transform-modules-commonjs', '@babel/plugin-transform-runtime', '@babel/proposal-class-properties'],
-      sourceMaps: true,
-    })
-    .bundle()
-    .pipe(source(files.jsOutput))
-    .pipe(buffer())
+  return src('./src/js/*.js')
+    .pipe(rollup({ plugins: [babel(), resolve(), commonjs()] }, 'umd'))
+    .pipe(concat('script.js'))
     .pipe(gulpif(!isProduction, sourcemaps.init()))
     .pipe(uglify())
     .pipe(gulpif(!isProduction, sourcemaps.write('.')))
-    .pipe(minify())
+    // .pipe(minify())
     .pipe(dest(destination + '/js'))
     .pipe(gulpif(!isProduction, browserSync.stream()))
 }
