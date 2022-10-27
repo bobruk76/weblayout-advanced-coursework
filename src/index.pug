@@ -2,6 +2,7 @@ doctype html
 html(lang="ru")
   include components/head
   body
+    include components/card
     include components/header
     main
       section.hero#hero
@@ -20,6 +21,17 @@ html(lang="ru")
                 .swiper-slide.hero__slide(class="hero__slide-" + item.id)
                   h2.hero__slide-header= item.header
                   button.btn-reset.btn.hero__slide-btn= item.button
+      section.products#products
+        .container.products__container
+          -
+            var product_list = [
+              {img: "img/card-1.webp",},
+              {img: "img/card-2.webp",},
+            ]
+          ul.list-reset.products__items
+            each item in product_list
+              +card(item.img, "products__item")
+
       //    .hero__block-left
       //
       //      button.btn-reset.btn.hero__block-left-tag.hash-tag #мастеркласс
