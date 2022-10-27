@@ -1,23 +1,22 @@
 import Choices from 'choices.js'
-import Swiper from 'swiper'
-import 'swiper/css'
+import Swiper, {Autoplay} from 'swiper'
+Swiper.use([Autoplay])
 
 const swiperHero = new Swiper('.hero__slider', {
-
   effect: 'fade',
   spaceBetween: 100,
   autoHeight: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
+  },
+  autoplayDisableOnInteraction: false,
   direction: 'horizontal',
   loop: true,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
   a11y: {
     paginationBulletMessage: 'Слайд с главной картинкой {{index}}',
   }
-});
-
+})
 
 const headerSelect = document.querySelector('#header_select');
 const headerChoices = new Choices(headerSelect, {
