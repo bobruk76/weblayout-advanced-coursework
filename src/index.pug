@@ -52,7 +52,7 @@ html(lang="ru")
           label.header__bottom-label(for="category")
             span.visually-hidden.header__bottom-label-span Выбор категории
             select.select#category(name="category")
-          button.btn-reset.btn.header__bottom-bth
+          button.btn-reset.header__bottom-bth
             svg(width="26" height="28")
               use(xlink:href='img/sprite.svg#user')
           a.link.header__bottom-link(href='#') 0
@@ -64,10 +64,24 @@ html(lang="ru")
         //  label.form__label.visually-hidden(for="header__input") Введите строку поика
         //  input.header__input#header__input(type="text" placeholder="Что будем искать?")
     main
-      //section.hero#hero
-      //  .container.hero__container
+      section.hero#hero
+        .container.hero__container
+          h1.visually-hidden.hero__title Лучшие предложения
+          .hero__slider
+            .swiper-wrapper
+              -
+                var list = [
+                  {id: "first", header: "Скидка 15% на первую покупку", button: "Получить!"},
+                  {id: "second", header: "1000+ аксессуаров для дома", button: "Подробнее"},
+                  {id: "third", header: "Коллекция стильного и яркого текстиля", button: "Подробнее"},
+                ]
+
+              each item in list
+                .swiper-slide.hero__slide(class="hero__slide-" + item.id)
+                  h2.hero__slide-header= item.header
+                  button.btn-reset.btn.hero__slide-btn= item.button
       //    .hero__block-left
-      //      h1.visually-hidden.hero__title Лучшие фото
+      //
       //      button.btn-reset.btn.hero__block-left-tag.hash-tag #мастеркласс
       //      h2.hero__block-left-title.title Мастер-класс от&nbsp;Игоря Робова
       //      p.descr.hero__block-left-descr

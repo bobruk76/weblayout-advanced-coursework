@@ -1,3 +1,4 @@
+// const Swiper = require('swiper')
 // import Swiper from 'swiper'
 // import 'swiper/css'
 

@@ -52,7 +52,7 @@ body
   word-break break-word
 
 .btn
-  padding 16px 22px
+  padding 22px 47px
 
   display inline-flex
 
@@ -60,43 +60,46 @@ body
   align-items center
 
   color color-bg
-  background-color color-burning-orange
-  border 3px solid color-burning-orange
+  background-color color-medium-purple
   outline none
 
   font-family 'Open Sans'
   font-weight 700
   font-size 16px
-  line-height 19px
+  line-height 100%
+
+  border 2px solid color-medium-purple
+  border-radius 10px
 
   transition color .3s ease-in-out, border-color .3s ease-in-out, background-color .3s ease-in-out
-  @media (max-width 576px)
-    padding 9px 19px
-    font-size 14px
-    line-height 16px
+
 
   &:hover
-    background-color color-tuscany
-    border-color color-tuscany
+    background-color color-mauve
+    border-color color-mauve
 
   &:focus
-    background-color color-burning-orange
-    border-color color-grenadier
+    color color-bg
+    background-color color-mauve
+    border-color color-purple-heart
 
   &:active
-    background-color color-grenadier
-    border-color color-grenadier
+    color color-bg
+    background-color color-purple-heart
+    border-color color-purple-heart
 
   &-outline
+    padding 19px 35px
+    font-weight 600
+
     background-color transparent
+    color color-medium-purple
+    border-color color-medium-purple
 
     &:hover
-      background-color color-burning-orange
-      border-color color-burning-orange
-
-    &:focus
-      background-color color-tuscany
-      border-color color-burning-orange
+      color color-bg
+      background-color color-medium-purple
+      border-color color-medium-purple
 
   &-filtered
     @extend .filtered
