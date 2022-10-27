@@ -1,0 +1,50 @@
+header.header
+  .header__container.container
+    nav.header__top
+      .form-select.header__top-form
+        label.form-select__label(for="header_select")
+          span Ваш регион:
+          select.select#header_select(name="header_select")
+      a.phone.header__top-phone(href="tel:+74958854547")
+        span +7 (495) 885-45-47
+
+      - var header_top_items = ['О компании', 'Гарантия и возврат', 'Корпоративным клиентам', 'Дизайн-решение']
+      ul.list-reset.header__top-items
+        each item in header_top_items
+          li.header__top-item
+            a.link.header__top-item-link(href="#")= item
+
+    .header__menu
+      a.header__logo
+        svg(width="187" height="27")
+          use(xlink:href='img/sprite.svg#logo')
+      - var header__items = ['Магазины', 'Шоу-рум', 'Доставка и оплата', 'Дисконт', 'Контакты']
+      ul.list-reset.header__menu-items
+        each item in header__items
+          li.header__menu-items-item
+            a.link.header__menu-items-item-link(href="#")= item
+
+    .header__bottom
+      form.search.header__bottom-form
+        span.visually-hidden.header__bottom-label-span Форма поиска по сайту
+        span.search__icon
+          svg
+            use(xlink:href='img/sprite.svg#search')
+        input.search__input.header__bottom-input#search(type="text" placeholder="Я хочу купить...")
+        button.btn-reset.search__btn.header__bottom-form-btn
+          svg
+            use(xlink:href='img/sprite.svg#arrow')
+      label.header__bottom-label(for="category")
+        span.visually-hidden.header__bottom-label-span Выбор категории
+        select.select#category(name="category")
+      button.btn-reset.header__bottom-bth
+        svg(width="26" height="28")
+          use(xlink:href='img/sprite.svg#user')
+      a.link.header__bottom-link(href='#') 0
+    //.header__form.form
+    //  button.btn-reset.header__search-btn
+    //    span.visually-hidden Кнопка поиска по сайту
+    //    svg
+    //      use(xlink:href='img/sprite.svg#search')
+    //  label.form__label.visually-hidden(for="header__input") Введите строку поика
+    //  input.header__input#header__input(type="text" placeholder="Что будем искать?")
