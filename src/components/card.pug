@@ -5,7 +5,7 @@ mixin card(item, class_name, special_offers = false)
         span !{item.discount}
     else
       a.link.card__rating
-        svg(width="26" height="28")
+        svg(width="16" height="15")
           use(xlink:href='img/sprite.svg#star')
         span= item.rating
     picture
@@ -16,4 +16,7 @@ mixin card(item, class_name, special_offers = false)
       if special_offers
         span.card__price-old !{item.old_price}
     button.btn-reset.btn.btn-outline.card__btn Купить
+    if item.scheme
+      picture
+        img.card__scheme(src= item.scheme alt="Схема товара")
 

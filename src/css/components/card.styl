@@ -1,6 +1,38 @@
 .card
+  padding 30px 30px
   position relative
   display inline-flex
   flex-direction column
 
   background-color color-alabaster
+  &__rating
+    display flex
+    align-items center
+
+    color color-crusta
+    font-weight 400
+    font-size 16px
+    line-height 130%
+    & > svg
+      margin-right 7px
+  &__discount
+    display flex
+    justify-content center
+    align-items center
+
+    max-width 92px
+    height 34px
+
+    font-weight 700
+    font-size 14px
+    line-height 19px
+    color color-bg
+
+    background-image url("../img/sprite.svg#discount-bg")
+    background-repeat no-repeat
+    background-position center
+    background-size cover
+  &__scheme
+    position absolute
+    right 30px
+    bottom 30px
