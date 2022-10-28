@@ -1,4 +1,19 @@
-mixin card(img, class_name, price)
+mixin card(item, class_name, special_offers = false)
   li.card(class= class_name)
+    if special_offers
+      .card__discount
+        span !{item.discount}
+    else
+      a.link.card__rating
+        svg(width="26" height="28")
+          use(xlink:href='img/sprite.svg#star')
+        span= item.rating
     picture
-      img.card__img(src= img alt="Фото товара")
+      img.card__img(src= item.img alt="Фото товара")
+    p.descr.card__descr !{item.descr}
+    p.card__price
+      span.card__price-new !{item.price}
+      if special_offers
+        span.card__price-old !{item.old_price}
+    button.btn-reset.btn.btn-outline.card__btn Купить
+

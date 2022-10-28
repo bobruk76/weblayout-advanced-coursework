@@ -3,6 +3,7 @@ html(lang="ru")
   include components/head
   body
     include components/card
+    include components/store
     include components/header
     main
       section.hero#hero
@@ -10,27 +11,24 @@ html(lang="ru")
           h1.visually-hidden.hero__title Лучшие предложения
           .hero__slider
             .swiper-wrapper
-              -
-                var list = [
-                  {id: "first", header: "Скидка 15% на первую покупку", button: "Получить!"},
-                  {id: "second", header: "1000+ аксессуаров для дома", button: "Подробнее"},
-                  {id: "third", header: "Коллекция стильного и яркого текстиля", button: "Подробнее"},
-                ]
-
-              each item in list
+              each item in hero_list
                 .swiper-slide.hero__slide(class="hero__slide-" + item.id)
                   h2.hero__slide-header= item.header
                   button.btn-reset.btn.hero__slide-btn= item.button
-      section.products#products
-        .container.products__container
-          -
-            var product_list = [
-              {img: "img/card-1.webp",},
-              {img: "img/card-2.webp",},
-            ]
-          ul.list-reset.products__items
+
+      section.special-offers#special-offers
+        .container.special-offers__container
+          h2.title.special-offers__title Специальные предложения
+          ul.list-reset.special-offers__items
+            each item in spec_offer_list
+              +card(item, "special-offers__item", true)
+
+      section.high-rating#high-rating
+        .container.high-rating__container
+          h2.title.high-rating__title Высокий рейтинг
+          ul.list-reset.high-rating__items
             each item in product_list
-              +card(item.img, "products__item")
+              +card(item, "high-rating__item")
 
       //    .hero__block-left
       //

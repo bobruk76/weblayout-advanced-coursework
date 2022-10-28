@@ -150,7 +150,7 @@ watch([
 watch("./src/img/svg/*.svg", svgSprites)
 watch("./src/css/**/*.styl", stylusCSS)
 watch("src/js/*.js", scripts)
-watch("./src/*.pug", series(pug2html, validateHtml))
+watch("./src/**/*.pug", series(pug2html, validateHtml))
 
 exports.dev = series(clean, parallel(svgSprites, imagesWebp, images, fonts, stylusCSS, scripts), pug2html, validateHtml, watcher)
 exports.build = series(clean, parallel(svgSprites, imagesWebp, images, fonts, stylusCSS, scripts), pug2html, validateHtml)
