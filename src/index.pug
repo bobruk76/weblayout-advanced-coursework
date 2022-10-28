@@ -19,16 +19,17 @@ html(lang="ru")
       section.special-offers#special-offers
         .container.special-offers__container
           h2.title.special-offers__title Специальные предложения
-          ul.list-reset.special-offers__items
-            each item in spec_offer_list
-              +card(item, "special-offers__item", true)
+          .special-offers__slider
+            .swiper-wrapper
+              each item in spec_offer_list
+                +card("div", item, "special-offers__item swiper-slide", true)
 
       section.high-rating#high-rating
         .container.high-rating__container
           h2.title.high-rating__title Высокий рейтинг
           ul.list-reset.high-rating__items
             each item in product_list
-              +card(item, "high-rating__item")
+              +card("li", item, "high-rating__item")
 
       //    .hero__block-left
       //

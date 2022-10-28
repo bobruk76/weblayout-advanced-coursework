@@ -1,5 +1,5 @@
-mixin card(item, class_name, special_offers = false)
-  li.card(class= class_name)
+mixin card(tag, item, class_name, special_offers = false)
+  #{tag}.card(class= class_name)
     if special_offers
       .card__discount
         span !{item.discount}

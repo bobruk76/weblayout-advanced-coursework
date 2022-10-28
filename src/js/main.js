@@ -1,6 +1,6 @@
 import Choices from 'choices.js'
-import Swiper, {Autoplay} from 'swiper'
-Swiper.use([Autoplay])
+import Swiper, {Autoplay, Pagination} from 'swiper'
+Swiper.use([Autoplay, Pagination])
 
 const swiperHero = new Swiper('.hero__slider', {
   effect: 'fade',
@@ -15,6 +15,28 @@ const swiperHero = new Swiper('.hero__slider', {
   loop: true,
   a11y: {
     paginationBulletMessage: 'Слайд с главной картинкой {{index}}',
+  }
+})
+
+const swiperOffers = new Swiper('.special-offers__slider', {
+  effect: 'fade',
+  slidesPerView: 3,
+  spaceBetween: 30,
+  slidesPerGroup: 3,
+  autoHeight: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  autoplayDisableOnInteraction: false,
+  direction: 'horizontal',
+  loop: true,
+  a11y: {
+    paginationBulletMessage: 'Слайд со специальными предложениями{{index}}',
   }
 })
 
