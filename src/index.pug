@@ -2,7 +2,6 @@ doctype html
 html(lang="ru")
   include components/head
   body
-    include components/card
     include components/store
     include components/header
     main
@@ -21,6 +20,7 @@ html(lang="ru")
           h2.title.special-offers__title Специальные предложения
           .special-offers__slider
             .swiper-wrapper
+              include components/card
               each item in spec_offer_list
                 +card("div", item, "special-offers__item swiper-slide", true)
 
@@ -28,6 +28,7 @@ html(lang="ru")
         .container.high-rating__container
           h2.title.high-rating__title Высокий рейтинг
           ul.list-reset.high-rating__items
+            include components/category-card
             each item in product_list
               +card("li", item, "high-rating__item")
 
@@ -36,6 +37,14 @@ html(lang="ru")
           h2.title.ad__title Оксфорд 1950
           p.descr.ad__descr Новая коллекция изысканных кресел
           button.btn-reset.btn.ad__btn Ознакомиться
+
+      section.category#category
+        .container.category__container
+          h2.title.category__title Топ категории
+          ul.list-reset.category__items
+            each item in category_list
+              +category-card("li", item, "category__item")
+
 
       //    .hero__block-left
       //
