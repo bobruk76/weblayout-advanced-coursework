@@ -40,6 +40,25 @@ const swiperOffers = new Swiper('.special-offers__slider', {
   }
 })
 
+
+const swiperUseful = new Swiper('.useful__slider', {
+  effect: 'fade',
+  slidesPerView: 2,
+  spaceBetween: 32,
+  slidesPerGroup: 2,
+  autoHeight: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false
+  },
+  autoplayDisableOnInteraction: false,
+  direction: 'horizontal',
+  loop: true,
+  a11y: {
+    paginationBulletMessage: 'Слайд с полезными предложениями{{index}}',
+  }
+})
+
 const headerSelect = document.querySelector('#header_select');
 const headerChoices = new Choices(headerSelect, {
   itemSelectText: '',

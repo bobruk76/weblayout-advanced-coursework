@@ -45,6 +45,15 @@ html(lang="ru")
             each item in category_list
               +category-card("li", item, "category__item")
 
+      section.useful#useful
+        .container.useful__container
+          h2.title.useful__title Полезное
+          .useful__slider
+            .swiper-wrapper
+              include components/useful-card
+              each item in useful_list
+                +useful-card(item, "useful__item swiper-slide", true)
+
 
       //    .hero__block-left
       //
