@@ -169,6 +169,7 @@ body
 .form
   &__label
     position relative
+    width fit-content
 
   &__input
     position relative
@@ -189,7 +190,6 @@ body
     color color-mine-shaft
     transition color .3s ease-in-out, border-color .3s ease-in-out, background-color .3s ease-in-out
 
-
     &::placeholder
       color color-dusty-gray
       transition color .3s ease-in-out
@@ -206,8 +206,46 @@ body
   &__btn
     padding 11px 20px
 
-  &__message-label
-    height -webkit-fill-available
+  &__message
+    &-label
+      height -webkit-fill-available
+
+  &__checkbox
+    &-input
+      &-label
+        display flex
+        align-items center
+        
+      &--hide
+        position absolute
+        opacity 0
+        appearance none
+        &:checked + .checkbox-icon:after
+          border none
+          background-image url("../img/sprite.svg#cheked")
+          background-repeat no-repeat
+          background-position center
+          background-size cover
+
+.checkbox
+  &-icon
+    display flex
+    flex-direction row-reverse
+    align-items center
+
+    font-style normal
+    font-weight 400;
+    font-size 14px;
+    line-height 19px
+
+    &:after
+      content ""
+
+      height 14px
+      width 14px
+      border 1px solid color-dusty-gray
+      border-radius 2px
+      background-color color-bg
 
 .menu-right
   margin-left auto
