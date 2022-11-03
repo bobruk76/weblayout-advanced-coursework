@@ -79,6 +79,20 @@ html(lang="ru")
               span.checkbox-icon Принимаю
               a.link пользовательское соглашение
 
+      footer.footer
+        .footer__container.container
+          a.footer__logo
+            svg(width="187" height="27")
+              use(xlink:href='img/sprite.svg#logo')
+          ul.list-reset.footer__social-items
+            each item in social_list
+              li.footer__social-item
+                a.link.link--filtered.footer__social-item-link(href="#")
+                  svg(width="30" height="30")
+                    use(xlink:href='img/sprite.svg#' + item)
+        .footer__down
+          p.footer__down-descr SDP<sup class="reg">&reg;</sup>2011-2021
+
       //    .hero__block-left
       //
       //      button.btn-reset.btn.hero__block-left-tag.hash-tag #мастеркласс
