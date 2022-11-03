@@ -1,5 +1,6 @@
 extends components/templates/layout.pug
 block content
+  include components/store/main-store
   section.hero#hero
     .container.hero__container
       h1.visually-hidden.hero__title Лучшие предложения
@@ -70,6 +71,6 @@ block content
         button.btn-reset.btn.form__btn.form__message-btn(type="submit" aria-label="Кнопка отправить форму") Отправить
 
         label.form__checkbox-input-label.contacts__form-label(for="agree")
-          input.form__checkbox-input.form__checkbox-input--hide#agree(name="agree" type="checkbox")
+          input.form__checkbox-input.form__checkbox-input--hide#agree(name="agree" type="checkbox" required)
           span.checkbox-icon Принимаю
           a.link пользовательское соглашение

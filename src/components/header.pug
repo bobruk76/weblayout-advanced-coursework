@@ -1,3 +1,4 @@
+include ../components/store/header-store
 header.header
   .header__container.container
     nav.header__top
@@ -7,8 +8,6 @@ header.header
           select.select#header_select(name="header_select")
       a.phone.header__top-phone(href="tel:+74958854547")
         span +7 (495) 885-45-47
-
-      - var header_top_items = ['О компании', 'Гарантия и возврат', 'Корпоративным клиентам', 'Дизайн-решение']
       ul.list-reset.header__top-items
         each item in header_top_items
           li.header__top-item
@@ -18,7 +17,7 @@ header.header
       a.header__logo
         svg(width="187" height="27")
           use(xlink:href='img/sprite.svg#logo')
-      - var header__items = ['Магазины', 'Шоу-рум', 'Доставка и оплата', 'Дисконт', 'Контакты']
+
       ul.list-reset.header__menu-items
         each item in header__items
           li.header__menu-items-item
