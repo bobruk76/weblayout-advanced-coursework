@@ -1,229 +1,75 @@
-doctype html
-html(lang="ru")
-  include components/head
-  body
-    include components/store
-    include components/header
-    main
-      section.hero#hero
-        .container.hero__container
-          h1.visually-hidden.hero__title Лучшие предложения
-          .hero__slider
-            .swiper-wrapper
-              each item in hero_list
-                .swiper-slide.hero__slide(class="hero__slide-" + item.id)
-                  h2.hero__slide-header= item.header
-                  button.btn-reset.btn.hero__slide-btn= item.button
+extends templates/layout.pug
+block content
+  section.hero#hero
+    .container.hero__container
+      h1.visually-hidden.hero__title Лучшие предложения
+      .hero__slider
+        .swiper-wrapper
+          each item in hero_list
+            .swiper-slide.hero__slide(class="hero__slide-" + item.id)
+              h2.hero__slide-header= item.header
+              button.btn-reset.btn.hero__slide-btn= item.button
 
-      section.special-offers#special-offers
-        .container.special-offers__container
-          h2.title.special-offers__title Специальные предложения
-          .special-offers__slider
-            .swiper-wrapper
-              include components/card
-              each item in spec_offer_list
-                +card("div", item, "special-offers__item swiper-slide", true)
+  section.special-offers#special-offers
+    .container.special-offers__container
+      h2.title.special-offers__title Специальные предложения
+      .special-offers__slider
+        .swiper-wrapper
+          include components/card
+          each item in spec_offer_list
+            +card("div", item, "special-offers__item swiper-slide", true)
 
-      section.high-rating#high-rating
-        .container.high-rating__container
-          h2.title.high-rating__title Высокий рейтинг
-          ul.list-reset.high-rating__items
-            include components/category-card
-            each item in product_list
-              +card("li", item, "high-rating__item")
+  section.high-rating#high-rating
+    .container.high-rating__container
+      h2.title.high-rating__title Высокий рейтинг
+      ul.list-reset.high-rating__items
+        include components/category-card
+        each item in product_list
+          +card("li", item, "high-rating__item")
 
-      section.ad#ad
-        .container.ad__container
-          h2.title.ad__title Оксфорд 1950
-          p.descr.ad__descr Новая коллекция изысканных кресел
-          button.btn-reset.btn.ad__btn Ознакомиться
+  section.ad#ad
+    .container.ad__container
+      h2.title.ad__title Оксфорд 1950
+      p.descr.ad__descr Новая коллекция изысканных кресел
+      button.btn-reset.btn.ad__btn Ознакомиться
 
-      section.category#category
-        .container.category__container
-          h2.title.category__title Топ категории
-          ul.list-reset.category__items
-            each item in category_list
-              +category-card("li", item, "category__item")
+  section.category#category
+    .container.category__container
+      h2.title.category__title Топ категории
+      ul.list-reset.category__items
+        each item in category_list
+          +category-card("li", item, "category__item")
 
-      section.useful#useful
-        .container.useful__container
-          h2.title.useful__title Полезное
-          .useful__slider
-            .swiper-wrapper
-              include components/useful-card
-              each item in useful_list
-                +useful-card(item, "useful__item swiper-slide", true)
+  section.useful#useful
+    .container.useful__container
+      h2.title.useful__title Полезное
+      .useful__slider
+        .swiper-wrapper
+          include components/useful-card
+          each item in useful_list
+            +useful-card(item, "useful__item swiper-slide", true)
 
-      section.contacts
-        .container.contacts__container
-          strong.contacts__title.title Мы&nbsp;всегда вам рады!
-          p.contacts__descr.descr Безусловно, новая модель организационной деятельности в&nbsp;значительной степени обусловливает важность распределения внутренних резервов и&nbsp;ресурсов.
+  section.contacts
+    .container.contacts__container
+      strong.contacts__title.title Мы&nbsp;всегда вам рады!
+      p.contacts__descr.descr Безусловно, новая модель организационной деятельности в&nbsp;значительной степени обусловливает важность распределения внутренних резервов и&nbsp;ресурсов.
 
-          form.contacts__form.form(action="https://postman-echo.com/post" method="post" autocomplete="off")
-            label.form__input-label.contacts__form-label(for="name")
-              span.visually-hidden Поле Введите фамилие, имя и отчество
-              input.form__input#name(name="name" type="text" placeholder="Как вас зовут?" required)
+      form.contacts__form.form(action="https://postman-echo.com/post" method="post" autocomplete="off")
+        label.form__input-label.contacts__form-label(for="name")
+          span.visually-hidden Поле Введите фамилие, имя и отчество
+          input.form__input#name(name="name" type="text" placeholder="Как вас зовут?" required)
 
-            label.form__input-label.contacts__form-label(for="email")
-              span.visually-hidden Поле Введите номер телефона
-              input.form__input#phone(name="phone" type="phone" placeholder="Ваш телефон" required)
+        label.form__input-label.contacts__form-label(for="email")
+          span.visually-hidden Поле Введите номер телефона
+          input.form__input#phone(name="phone" type="phone" placeholder="Ваш телефон" required)
 
-            label.form__input-label.contacts__form-label(for="email")
-              span.visually-hidden Поле Введите адрес электронной почты
-              input.form__input#email(name="e-mail" type="email" placeholder="Ваш e-mail" required)
+        label.form__input-label.contacts__form-label(for="email")
+          span.visually-hidden Поле Введите адрес электронной почты
+          input.form__input#email(name="e-mail" type="email" placeholder="Ваш e-mail" required)
 
-            button.btn-reset.btn.form__btn.form__message-btn(type="submit" aria-label="Кнопка отправить форму") Отправить
+        button.btn-reset.btn.form__btn.form__message-btn(type="submit" aria-label="Кнопка отправить форму") Отправить
 
-            label.form__checkbox-input-label.contacts__form-label(for="agree")
-              input.form__checkbox-input.form__checkbox-input--hide#agree(name="agree" type="checkbox")
-              span.checkbox-icon Принимаю
-              a.link пользовательское соглашение
-
-      footer.footer
-        .footer__container.container
-          a.footer__logo
-            svg(width="187" height="27")
-              use(xlink:href='img/sprite.svg#logo')
-          ul.list-reset.footer__social-items
-            each item in social_list
-              li.footer__social-item
-                a.link.link--filtered.footer__social-item-link(href="#")
-                  svg(width="30" height="30")
-                    use(xlink:href='img/sprite.svg#' + item)
-        .footer__down
-          p.footer__down-descr SDP<sup class="reg">&reg;</sup>2011-2021
-
-      //    .hero__block-left
-      //
-      //      button.btn-reset.btn.hero__block-left-tag.hash-tag #мастеркласс
-      //      h2.hero__block-left-title.title Мастер-класс от&nbsp;Игоря Робова
-      //      p.descr.hero__block-left-descr
-      //        span Неоновый фотосет 2.0
-      //        time.hero__block-left-date.date-time(datetime="2022-07-07 20:00")
-      //          span 7&nbsp;июля 20:00
-      //      button.btn-reset.btn.hero__block-left-btn(aria-label="Кнопка Узнать больше") Узнать больше
-      //    .hero__block-descr
-      //      p.descr.hero__descr Работы участников предыдущего мастер-класса
-      //    .hero__block-right-top
-      //      picture
-      //        source(srcset="img/hero-2-small.webp" media="(max-width: 900px)")
-      //        source(srcset="img/hero-2-tablet.webp" media="(max-width: 1200px)")
-      //        img.hero__block-img(src="img/hero-2.webp" alt="Фото")
-      //    .hero__block-right-bottom
-      //      picture
-      //        source(srcset="img/hero-3-tablet.webp" media="(max-width: 1200px)")
-      //        img.hero__block-img(src="img/hero-3.webp" alt="Фото")
-      //    .hero__block-right-bottom
-      //      picture
-      //        img.hero__block-img(src="img/hero-4.webp" alt="Фото")
-      //
-      //section.about-us#about-us
-      //  .container.about-us__container
-      //    h2.about-us__title.title О&nbsp;студии
-      //    article.about-us__article
-      //      p.about-us__article-descr.descr В&nbsp;рамках спецификации современных стандартов, интерактивные прототипы, инициированные исключительно синтетически, ограничены исключительно образом мышления. Предварительные выводы неутешительны: высокотехнологичная концепция общественного уклада требует от&nbsp;нас анализа соответствующих условий активизации! Следует отметить, что семантический разбор внешних противодействий фиксирует необходимость распределения внутренних резервов и&nbsp;ресурсов. Безусловно, граница обучения кадров предоставляет широкие возможности для первоочередных требований. Повседневная практика показывает, что глубокий уровень погружения предполагает независимые способы реализации новых принципов формирования материально-технической и&nbsp;кадровой базы. Приятно, граждане, наблюдать, как явные признаки институционализации являются только методом политического участия и&nbsp;нарушающими общечеловеческие нормы этики.
-      //    form.about-us__form-subscribe.form(action="https://postman-echo.com/post" method="post" autocomplete="off")
-      //      picture
-      //        source(srcset="img/about-us-very-small.webp" media="(max-width: 576px)")
-      //        source(srcset="img/about-us-small.webp" media="(max-width: 900px)")
-      //        source(srcset="img/about-us-tablet.webp" media="(max-width: 1300px)")
-      //        img.about-us__form-subscribe-img(src="img/about-us.webp" alt="Фото фотоаппарата")
-      //      label.form__label.about-us__form-subscribe-label(for="email-subscribe")
-      //        span.form__label.about-us__form-subscribe-label-span Подписаться на рассылку
-      //        input.form__input#email-subscribe(type="email" placeholder="E-mail" required)
-      //      button.btn-reset.btn.form__btn.about-us__form-subscribe-btn(type="submit" aria-label="Кнопка отправить форму") Отправить
-      //section.projects
-      //  .container.projects__container
-      //    h2.projects__title.title Наши проекты
-      //    ul.projects__cards.list-reset
-      //      li.projects__card.projects__card-first
-      //        button.btn.btn-reset.projects__card-btn.hash-tag #пейзаж
-      //        p.projects__card-descr.descr Синтетически, смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени...
-      //        time.projects__card-date.date(datetime="2022-06-16 12:00")
-      //          span 16 июня
-      //      li.projects__card.projects__card-second
-      //        button.btn.btn-reset.projects__card-btn.hash-tag #портрет
-      //        p.projects__card-descr.descr В&nbsp;своём стремлении улучшить опыт мы упускаем, что явные...
-      //        time.projects__card-date.date(datetime="2022-05-28 12:00")
-      //          span 28 мая
-      //      li.projects__card.projects__card-third
-      //        button.btn.btn-reset.projects__card-btn.hash-tag #предмет
-      //        p.projects__card-descr.descr Равным образом, высокое качество позиционных высокотехнологичная концепция общественного уклада...
-      //        time.projects__card-date.date(datetime="2022-05-14 12:00")
-      //          span 14 мая
-      //    .projects__card-big.projects__card-big-first
-      //      button.btn.btn-reset.projects__card-big-tag.hash-tag #fuji
-      //      time.projects__card-big-date.date(datetime="2022-06-16 12:00")
-      //        span 9 апреля
-      //
-      //      h2.projects__card-big-title.title Cемантический разбор
-      //      p.projects__card-big-descr.descr В&nbsp;рамках спецификации современных стандартов, интерактивные прототипы
-      //      button.btn-reset.btn.btn-outline.projects__card-big-btn(type="submit" aria-label="Кнопка О проекте") О проекте
-      //    .projects__card-big.projects__card-big-second
-      //      button.btn.btn-reset.projects__card-big-tag.hash-tag #проектзабвение
-      //      time.projects__card-big-date.date(datetime="2022-03-20 12:00")
-      //        span 20 марта
-      //
-      //      h2.projects__card-big-title.title Забвение
-      //      p.projects__card-big-descr.descr Играет важную роль в&nbsp;формировании глубокомысленных рассуждений
-      //      button.btn-reset.btn.btn-outline.projects__card-big-btn(type="submit" aria-label="Кнопка О проекте") О проекте
-      //
-      //    .projects__card.projects__card-fourth
-      //      button.btn.btn-reset.projects__card-btn.hash-tag #ретуш
-      //      p.projects__card-descr.descr Как принято считать, многие известные личности и&nbsp;по&nbsp;сей день остаются уделом либералов...
-      //      time.projects__card-date.date(datetime="2022-03-09 12:00")
-      //        span 9 марта
-      //
-      //    .projects__card.projects__card-fifth
-      //      button.btn.btn-reset.projects__card-btn.hash-tag #портрет
-      //      p.projects__card-descr.descr С&nbsp;учётом сложившейся международной обстановки, новая модель организационной...
-      //      time.projects__card-date.date(datetime="2022-03-01 12:00")
-      //        span 1 марта
-      //section.contacts
-      //  .container.contacts__container
-      //    h2.contacts__title.title Контакты
-      //    .contacts__map.ya-map
-      //      .map#map
-      //        .contacts__map-window
-      //          button.btn-reset.btn-filtered.contacts__map-window-btn(aria-label="Кнопка закрыть окно контактов")
-      //            svg(width="20" height="20")
-      //              use(xlink:href='img/sprite.svg#close')
-      //
-      //          strong.contacts__map-window-title.title Студия «High pass»
-      //          p.contacts__map-window-descr.descr
-      //            span 107045, Москва, Даев переулок, дом&nbsp;41, бизнес-центр &laquo;Даев Плаза&raquo;, этаж&nbsp;8, офис &#8470;&nbsp;82
-      //            a.phone.contacts__map-window-phone(href="tel:+749542423532")
-      //              span +7&nbsp;495&nbsp;424-23-532
-      //
-      //    form.contacts__form.form(action="https://postman-echo.com/post" method="post" autocomplete="off")
-      //      strong.contacts__form-title.title Оставить заявку
-      //      p.contacts__form-descr.descr Оставьте ваши данные, указав в&nbsp;графе &laquo;Комментарий&raquo; желаемые время и&nbsp;дату съёмки или другого мероприятия
-      //      label.form__input-label.contacts__form-label(for="name")
-      //        span.visually-hidden Поле Введите фамилие, имя и отчество
-      //        input.form__input#name(name="name" type="text" placeholder="Имя" required)
-      //
-      //      label.form__input-label.contacts__form-label(for="email")
-      //        span.visually-hidden Поле Введите адрес электронной почты
-      //        input.form__input#email(name="e-mail" type="email" placeholder="E-mail" required)
-      //
-      //      label.form__message-label.contacts__form-label(for="message")
-      //        span.visually-hidden Поле Введите сообщение
-      //        textarea.form__input.form__textarea#message(name="message" placeholder="Комментарий" required)
-      //
-      //      button.btn-reset.btn.form__btn.form__message-btn(type="submit" aria-label="Кнопка отправить форму") Отправить
-
-    //footer.footer
-    //  .footer__container.container
-    //    a.footer__logo
-    //      img.footer__logo-img(src="img/logo.svg" alt="Лого")
-    //      span Фотостудия High pass<sup class="reg">&reg;</sup> 2018&ndash;2020
-    //    p.footer__descr.descr Которая из&nbsp;моих фотографий самая любимая? Та, которую я&nbsp;собираюсь снять завтра. &copy;&nbsp;Имоджен Каннингем
-    //    .footer__social
-    //      p.footer__social-descr.descr Больше интересного:
-    //      - var footer__items = ['ok', 'vk']
-    //      ul.list-reset.footer__social-items
-    //        each item in footer__items
-    //          li.footer__social-item
-    //            a.link.link--filtered.footer__social-item-link(href="#")
-    //              svg(width="30" height="30")
-    //                use(xlink:href='img/sprite.svg#' + item)
+        label.form__checkbox-input-label.contacts__form-label(for="agree")
+          input.form__checkbox-input.form__checkbox-input--hide#agree(name="agree" type="checkbox")
+          span.checkbox-icon Принимаю
+          a.link пользовательское соглашение

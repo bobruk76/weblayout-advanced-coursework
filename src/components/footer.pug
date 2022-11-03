@@ -1,0 +1,18 @@
+footer.footer
+  .footer__container.container
+    a.footer__logo
+      svg(width="187" height="27")
+        use(xlink:href='img/sprite.svg#logo')
+    ul.list-reset.footer__social-items
+      each item in social_list
+        li.footer__social-item
+          a.link.link--filtered.footer__social-item-link(href="#")
+            svg(width="30" height="30")
+              use(xlink:href='img/sprite.svg#' + item)
+    ul.list-reset.footer__items
+      each item in footer_list
+        li.footer__item
+          a.link.footer__item-link(href="#") !{item.descr}
+
+  .footer__down
+    p.footer__down-descr SDP<sup class="reg">&reg;</sup>2011-2021
