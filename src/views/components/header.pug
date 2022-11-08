@@ -1,4 +1,4 @@
-include ../components/store/header-store
+include store/header-store
 header.header
   .header__container.container
     nav.header__top
@@ -21,7 +21,7 @@ header.header
       ul.list-reset.header__menu-items
         each item in header__items
           li.header__menu-items-item
-            a.link.header__menu-items-item-link(href="#")= item
+            a.link.header__menu-items-item-link(href="catalog")= item
 
     .header__bottom
       form.search.header__bottom-form

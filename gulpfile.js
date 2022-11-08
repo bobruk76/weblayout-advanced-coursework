@@ -18,6 +18,7 @@ const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
 
 const browserSync = require('browser-sync').create()
+const nodemon = require('gulp-nodemon')
 
 const pugLinter = require('gulp-pug-linter')
 const htmlBemValidator = require('gulp-html-bem-validator')
@@ -31,7 +32,6 @@ const gulpif = require('gulp-if')
 const argv = require('yargs').argv;
 const isProduction = !(argv.production === undefined)
 const destination = isProduction ? './build' : './dist'
-
 
 const clean = () => {
   return del(['build', 'dist'])
@@ -94,10 +94,9 @@ const stylusCSS = () => {
     .pipe(gulpif(!isProduction, browserSync.stream()))
 }
 
-
 const scripts = () => {
   return src('./src/js/*.js')
-    .pipe(rollup({ plugins: [babel(), resolve(), commonjs()] }, 'umd'))
+    .pipe(rollup({plugins: [babel(), resolve(), commonjs()]}, 'umd'))
     .pipe(concat('script.js'))
     .pipe(gulpif(!isProduction, sourcemaps.init()))
     .pipe(uglify())
@@ -108,7 +107,7 @@ const scripts = () => {
 }
 
 const pug2html = () => {
-  return src('./src/*.pug')
+  return src('./src/views/*.pug')
     .pipe(imagemin())
     .pipe(pugLinter({reporter: 'default'}))
     .pipe(
@@ -128,13 +127,34 @@ const validateHtml = () => {
     .pipe(htmlValidator.reporter());
 }
 
+const serve = () => {
+  return nodemon({
+    script: "app.js",
+    ignore: ["gulpfile.js", "node_modules/**", "public/**"],
+    ext: "js css html",
+    env: { NODE_ENV: "development" },
+  })
+}
+
+// const server = () => {
+//   return nodemon({
+//     script: 'app.js'
+//   })
+// }
+
 const watcher = () => {
   if (!isProduction) {
-    browserSync.init({
-      server: {
-        baseDir: destination
-      }
+    browserSync.init(null, {
+      proxy: "localhost:3000",
+      open: true,
+      files: ["dist/**/*.*"],
+      port: 5000,
     })
+    // browserSync.init({
+    //   server: {
+    //     baseDir: destination
+    //   }
+    // })
   }
 }
 
@@ -152,5 +172,5 @@ watch("./src/css/**/*.styl", stylusCSS)
 watch("src/js/*.js", scripts)
 watch("./src/**/*.pug", series(pug2html, validateHtml))
 
-exports.dev = series(clean, parallel(svgSprites, imagesWebp, images, fonts, stylusCSS, scripts), pug2html, validateHtml, watcher)
+exports.dev = series(clean, parallel(svgSprites, imagesWebp, images, fonts, stylusCSS, scripts), pug2html, validateHtml, parallel(serve, watcher))
 exports.build = series(clean, parallel(svgSprites, imagesWebp, images, fonts, stylusCSS, scripts), pug2html, validateHtml)
