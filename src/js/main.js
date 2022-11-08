@@ -6,10 +6,10 @@ const swiperHero = new Swiper('.hero__slider', {
   effect: 'fade',
   spaceBetween: 100,
   autoHeight: true,
-  autoplay: {
-    delay: 5000,
-    disableOnInteraction: false
-  },
+  // autoplay: {
+  //   delay: 5000,
+  //   disableOnInteraction: false
+  // },
   autoplayDisableOnInteraction: false,
   direction: 'horizontal',
   loop: true,
@@ -24,10 +24,10 @@ const swiperOffers = new Swiper('.special-offers__slider', {
   spaceBetween: 30,
   slidesPerGroup: 3,
   autoHeight: true,
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false
-  },
+  // autoplay: {
+  //   delay: 2500,
+  //   disableOnInteraction: false
+  // },
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
@@ -47,10 +47,10 @@ const swiperUseful = new Swiper('.useful__slider', {
   spaceBetween: 32,
   slidesPerGroup: 2,
   autoHeight: true,
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false
-  },
+  // autoplay: {
+  //   delay: 2500,
+  //   disableOnInteraction: false
+  // },
   autoplayDisableOnInteraction: false,
   direction: 'horizontal',
   loop: true,
@@ -72,20 +72,20 @@ const headerChoices = new Choices(headerSelect, {
       disabled: false,
     },
     {
-      value: 'Санкт Петербург',
-      label: 'Санкт Петербург',
+      value: 'Казань',
+      label: 'Казань',
       selected: false,
       disabled: false,
     },
     {
-      value: 'Владимир',
-      label: 'Владимир',
+      value: 'Уфа',
+      label: 'Уфа',
       selected: false,
       disabled: false,
     },
     {
-      value: 'Тула',
-      label: 'Тула',
+      value: 'Пермь',
+      label: 'Пермь',
       selected: false,
       disabled: false,
     },
@@ -185,41 +185,6 @@ const categoryChoices = new Choices(categorySelect, {
 //
 // })
 //
-// // yandex map
-// let myMap =  {}
-// ymaps.ready(init);
-//
-// function init() {
-//     myMap = new ymaps.Map("map", {
-//     center: (window.screen.width > 576) ? [55.75630609735012, 37.60695484283449] : [55.75566075845455, 37.62137440111788],
-//     controls: ['zoomControl'],
-//     zoom: 13
-//   });
-//
-//   let myPlacemark = new ymaps.Placemark([55.769470, 37.639012], {}, {
-//     iconLayout: 'default#image',
-//     iconImageHref: '../img/sprite.svg#mark',
-//     iconImageSize: [12, 12],
-//     iconImageOffset: [0, 0]
-//   });
-//
-//   myPlacemark.events.add(['click'], function (e) {
-//     contactsMapWindow.classList.add('contacts__map-window--visible')
-//   })
-//
-//   myMap.events.add('actionend', function (e) {
-//     console.log(e.originalEvent.map.getCenter())
-//   });
-//
-//   myMap.geoObjects.add(myPlacemark);
-// }
-//
-// const contactsMapWindow = document.querySelector('.contacts__map-window')
-// const contactsMapWindowBtn = document.querySelector('.contacts__map-window-btn')
-//
-// contactsMapWindowBtn.addEventListener('click', () => {
-//   contactsMapWindow.classList.remove('contacts__map-window--visible')
-// })
 //
 // // about-us__form-subscribe validate
 // const validationSubscribe = new JustValidate(

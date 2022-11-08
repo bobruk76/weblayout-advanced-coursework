@@ -1,0 +1,37 @@
+.choices__list[aria-expanded] .choices__item--selectable
+  padding-right 16px
+
+.choices
+  width 84px
+  font-family 'Open Sans'
+  font-style normal
+  font-weight 400
+  font-size 16px
+  line-height 120%
+
+  &__inner
+    display flex
+    align-items center
+    color color-medium-purple
+    border none
+  &__list
+    width 100%
+    padding 0
+    border none
+    //&--dropdown
+    //  padding: 0
+  &__item
+    &.is-selected
+      display none
+    //&--selectable
+    //  padding: 0
+  &[data-type*=select-one]::after
+    width 13px
+    height 8px
+    background-image url("../img/sprite.svg#choise")
+    background-repeat no-repeat
+    background-position right center
+    background-size contain
+
+
+
