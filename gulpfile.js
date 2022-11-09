@@ -132,15 +132,9 @@ const serve = () => {
     script: "app.js",
     ignore: ["gulpfile.js", "node_modules/**", "public/**"],
     ext: "js css html",
-    env: { NODE_ENV: "development" },
+    env: {NODE_ENV: "development"},
   })
 }
-
-// const server = () => {
-//   return nodemon({
-//     script: 'app.js'
-//   })
-// }
 
 const watcher = () => {
   if (!isProduction) {
@@ -150,11 +144,6 @@ const watcher = () => {
       files: ["dist/**/*.*"],
       port: 5000,
     })
-    // browserSync.init({
-    //   server: {
-    //     baseDir: destination
-    //   }
-    // })
   }
 }
 
@@ -170,7 +159,7 @@ watch([
 watch("./src/img/svg/*.svg", svgSprites)
 watch("./src/css/**/*.styl", stylusCSS)
 watch("src/js/*.js", scripts)
-watch("./src/**/*.pug", series(pug2html, validateHtml))
+watch("./src/views/**/**/*.pug", series(pug2html, validateHtml))
 
 exports.dev = series(clean, parallel(svgSprites, imagesWebp, images, fonts, stylusCSS, scripts), pug2html, validateHtml, parallel(serve, watcher))
 exports.build = series(clean, parallel(svgSprites, imagesWebp, images, fonts, stylusCSS, scripts), pug2html, validateHtml)

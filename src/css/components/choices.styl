@@ -1,6 +1,9 @@
 .choices__list[aria-expanded] .choices__item--selectable
   padding-right 16px
 
+.choices[data-type*=select-one] .choices__inner
+  padding-bottom 0
+
 .choices
   width 84px
   font-family 'Open Sans'
@@ -10,8 +13,11 @@
   line-height 120%
 
   &__inner
+    padding: 0
+
     display flex
     align-items center
+    min-height 16px
     color color-medium-purple
     border none
   &__list

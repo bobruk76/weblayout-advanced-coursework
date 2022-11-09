@@ -1,19 +1,20 @@
 include store/header-store
 header.header
-  .header__container.container
+  .header__container
     nav.header__top
-      .form-select.header__top-form
-        label.form-select__label(for="header_select")
-          span Ваш регион:
-          select.select#header_select(name="header_select")
-      a.phone.header__top-phone(href="tel:+74958854547")
-        span +7 (495) 885-45-47
-      ul.list-reset.header__top-items
-        each item in header_top_items
-          li.header__top-item
-            a.link.header__top-item-link(href="#")= item
+      .container
+        .form-select.header__top-form
+          label.form-select__label(for="header_select")
+            span Ваш регион:
+            select.select#header_select(name="header_select")
+        a.phone.header__top-phone(href="tel:+74958854547")
+          span +7 (495) 885-45-47
+        ul.list-reset.header__top-items
+          each item in header_top_items
+            li.header__top-item
+              a.link.header__top-item-link(href="#")= item
 
-    .header__menu
+    .header__menu.container
       a.header__logo
         svg(width="187" height="27")
           use(xlink:href='img/sprite.svg#logo')
@@ -23,7 +24,7 @@ header.header
           li.header__menu-items-item
             a.link.header__menu-items-item-link(href="catalog")= item
 
-    .header__bottom
+    .header__bottom.container
       form.search.header__bottom-form
         span.visually-hidden.header__bottom-label-span Форма поиска по сайту
         span.search__icon
