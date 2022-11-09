@@ -72,6 +72,17 @@
       background-repeat no-repeat
       background-position right center
       background-size contain
+    &-form
+      width 'min(%s, calc(200% / 3))' % 761px
+    &-label
+      display flex
+      align-items center
+      border 2px solid color-alabaster
+      border-radius 0 10px 10px 0
+      min-width 300px
+      & > .choices
+        width 100%
+
 
 /*hero*/
 .hero
