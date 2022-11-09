@@ -15,14 +15,14 @@ header.header
               a.link.header__top-item-link(href="#")= item
 
     .header__menu.container
-      a.header__logo
+      a.header__logo(href="#")
         svg(width="187" height="27")
           use(xlink:href='img/sprite.svg#logo')
 
       ul.list-reset.header__menu-items
         each item in header__items
-          li.header__menu-items-item
-            a.link.header__menu-items-item-link(href="catalog")= item
+          li.header__menu-item
+            a.link.header__menu-link(href="catalog")= item
 
     .header__bottom.container
       form.search.header__bottom-form

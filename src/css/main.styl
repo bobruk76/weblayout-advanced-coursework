@@ -23,16 +23,18 @@
 
   &__top
     padding-top 18px
-    padding-bottom 18px
+    padding-bottom 10px
     background-color color-alabaster
     & .container
       display flex
       flex-wrap nowrap
       overflow initial
+    &-phone
+      transform translateY(-4px)
 
     &-items
       @extend .menu-right
-      font-family 'Open Sans'
+      font-family 'Open Sans', sans-serif
       font-style normal
       font-weight 400
       font-size 14px
@@ -43,10 +45,22 @@
         margin-right 64px
 
   &__menu
+    padding-top: 32px
+    padding-bottom: 32px
+    padding-right: 3px
     display flex
+    align-items center
 
     &-items
       @extend .menu-right
+      font-family 'Open Sans', sans-serif
+      font-style normal
+      font-weight 400
+      font-size 16px
+      line-height 22px
+    &-item
+      &:not(:last-child)
+        margin-right: 92px
 
   &__bottom
     display flex

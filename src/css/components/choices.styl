@@ -1,12 +1,24 @@
+.choices__list--dropdown .choices__item--selectable.is-highlighted, .choices__list[aria-expanded] .choices__item--selectable.is-highlighted
+  background: initial
+
 .choices__list[aria-expanded] .choices__item--selectable
-  padding-right 16px
+  padding 0
+  margin-bottom: 8px
 
 .choices[data-type*=select-one] .choices__inner
   padding-bottom 0
 
+.choices__list--dropdown, .choices__list[aria-expanded]
+  margin-top: 5px
+  padding 16px 0 8px 16px
+  background color-bg
+  border 2px solid color-alabaster
+  border-radius 0
+
 .choices
-  width 84px
-  font-family 'Open Sans'
+  padding-left 3px
+  width 89px
+  font-family 'Open Sans', sans-serif
   font-style normal
   font-weight 400
   font-size 16px
@@ -20,24 +32,45 @@
     min-height 16px
     color color-medium-purple
     border none
+
+    font-family 'Open Sans', sans-serif
+    font-style normal
+    font-weight 400
+    font-size 16px
+    line-height 120%
+    transition color .3s ease-in
+    &:hover
+      color color-mauve
+
+    &:focus
+      background-color color-blue-chalk
+    &:active
+      color color-purple-heart
+
   &__list
+    &--dropdown
+      border none
     width 100%
     padding 0
     border none
-    //&--dropdown
-    //  padding: 0
+
   &__item
     &.is-selected
       display none
-    //&--selectable
-    //  padding: 0
-  &[data-type*=select-one]::after
-    width 13px
-    height 8px
-    background-image url("../img/sprite.svg#choise")
-    background-repeat no-repeat
-    background-position right center
-    background-size contain
 
+  &[data-type*=select-one]
+    &::after
+      width 13px
+      height 8px
+      color currentColor
+      background-image url("../img/sprite.svg#choise")
+      background-repeat no-repeat
+      background-position right center
+      background-size contain
+      transition transform .3s ease-in-out, filter .3s ease-in-out
 
+    &.is-open
+      &::after
+        margin-top -2.5px
+        transform rotate(180deg)
 
