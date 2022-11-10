@@ -18,6 +18,7 @@
 /*header*/
 .header
   &__container
+    padding-bottom 29px
     width 100%
     max-width initial
 
@@ -29,6 +30,14 @@
       display flex
       flex-wrap nowrap
       overflow initial
+    &-label
+      &:hover .choices__inner
+        color color-mauve
+      &:focus
+        background-color color-blue-chalk
+      &:active .choices__inner
+        color color-purple-heart
+
     &-phone
       transform translateY(-4px)
 
@@ -45,9 +54,9 @@
         margin-right 64px
 
   &__menu
-    padding-top: 32px
-    padding-bottom: 32px
-    padding-right: 3px
+    padding-top 32px
+    padding-bottom 29px
+    padding-right 3px
     display flex
     align-items center
 
@@ -64,14 +73,45 @@
 
   &__bottom
     display flex
+    justify-content flex-start
+    align-items center
+
+    overflow visible
+    position relative
+
+    width 100%
 
     &-link
+      margin-right 0
+      margin-left auto
+      transform: translateY(-2px);
+
+      display flex
+      justify-content flex-start
+      align-items center
+
       width 41px
       height 28px
+
       background-image url("../img/sprite.svg#shopping_cart")
       background-repeat no-repeat
-      background-position right center
-      background-size contain
+      background-position-x right
+      background-size 30px 28px
+
+      & > span
+        padding: 2px 0 0
+        width 15px
+        height 15px
+
+        text-align center
+        font-weight 700
+        font-size 10px
+        line-height 100%
+
+        background-color color-crusta
+        border-radius 50%
+
+        color color-bg
     &-form
       width 'min(%s, calc(200% / 3))' % 761px
     &-label
@@ -80,8 +120,23 @@
       border 2px solid color-alabaster
       border-radius 0 10px 10px 0
       min-width 300px
+      cursor pointer
+
+      transition background-color .3s ease-in-out, border-color .3s ease-in-out
+
       & > .choices
         width 100%
+        &:after
+          right 30px
+      &:hover
+        border-color color-medium-purple
+      &:focus
+        border-color color-medium-purple
+        background-color color-magnolia
+      &:active
+        border-color color-purple-heart
+      & .choices__item
+        padding-left 27px
 
 
 /*hero*/

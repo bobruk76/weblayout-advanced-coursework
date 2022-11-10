@@ -9,11 +9,14 @@
   padding-bottom 0
 
 .choices__list--dropdown, .choices__list[aria-expanded]
+  z-index 999
   margin-top: 5px
   padding 16px 0 8px 16px
+
   background color-bg
   border 2px solid color-alabaster
   border-radius 0
+  max-height 200px
 
 .choices
   padding-left 3px
@@ -31,6 +34,7 @@
     align-items center
     min-height 16px
     color color-medium-purple
+    background-color transparent
     border none
 
     font-family 'Open Sans', sans-serif
@@ -39,18 +43,21 @@
     font-size 16px
     line-height 120%
     transition color .3s ease-in
-    &:hover
-      color color-mauve
-
-    &:focus
-      background-color color-blue-chalk
-    &:active
-      color color-purple-heart
 
   &__list
+    left 0
+    display flex
+    flex-direction column
+    flex-wrap wrap
+    column-gap 30px
+    font-family 'Open Sans', sans-serif
+    font-style normal
+    font-weight 400
+    font-size 16px
+    line-height 130%
     &--dropdown
       border none
-    width 100%
+    width 100% + 2px
     padding 0
     border none
 

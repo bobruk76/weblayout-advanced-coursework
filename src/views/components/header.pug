@@ -4,7 +4,7 @@ header.header
     nav.header__top
       .container
         .form-select.header__top-form
-          label.form-select__label(for="header_select")
+          label.form-select__label.header__top-label(for="header_select")
             span Ваш регион:
             select.select#header_select(name="header_select")
         a.phone.header__top-phone(href="tel:+74958854547")
@@ -40,7 +40,8 @@ header.header
       button.btn-reset.header__bottom-bth
         svg(width="26" height="28")
           use(xlink:href='img/sprite.svg#user')
-      a.link.header__bottom-link(href='#') 0
+      a.header__bottom-link(href='#')
+        span 0
     //.header__form.form
     //  button.btn-reset.header__search-btn
     //    span.visually-hidden Кнопка поиска по сайту

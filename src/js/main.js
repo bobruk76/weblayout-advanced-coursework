@@ -64,6 +64,8 @@ const headerChoices = new Choices(headerSelect, {
   itemSelectText: '',
   placeholder: false,
   allowHTML: true,
+  searchEnabled: false,
+  shouldSort: false,
   choices: [
     {
       value: 'Москва',
@@ -90,8 +92,6 @@ const headerChoices = new Choices(headerSelect, {
       disabled: false,
     },
   ],
-  searchEnabled: false,
-  shouldSort: false,
 });
 
 const categorySelect = document.querySelector('#category');
@@ -99,7 +99,7 @@ const categoryChoices = new Choices(categorySelect, {
   itemSelectText: '',
   placeholder: false,
   allowHTML: true,
-  searchEnabled: true,
+  searchEnabled: false,
   shouldSort: false,
   choices: [
     {
