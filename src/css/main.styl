@@ -80,25 +80,33 @@
     position relative
 
     width 100%
-
-    &-link
-      margin-right 0
+    &-btn
       margin-left auto
+      margin-right 24px
+    &-link
+      padding 3px 4px 3px 8px
+
+      margin-right 0
+      margin-left 0
+      position relative
       transform: translateY(-2px);
 
       display flex
       justify-content flex-start
       align-items center
 
-      width 41px
-      height 28px
+      width 49px
+      height 34px
 
-      background-image url("../img/sprite.svg#shopping_cart")
-      background-repeat no-repeat
-      background-position-x right
-      background-size 30px 28px
+      &-icon
+        top 3px
+        right 0
 
-      & > span
+        position absolute
+        & path
+          fill color-medium-purple
+
+      &-value
         padding: 2px 0 0
         width 15px
         height 15px
@@ -112,6 +120,14 @@
         border-radius 50%
 
         color color-bg
+      &:hover
+        & path
+          fill color-mauve
+      &:focus
+        background-color color-mauve
+        & path
+          fill color-bg
+
     &-form
       width 'min(%s, calc(200% / 3))' % 761px
     &-label
@@ -120,6 +136,7 @@
       border 2px solid color-alabaster
       border-radius 0 10px 10px 0
       min-width 300px
+      min-height 60px
       cursor pointer
 
       transition background-color .3s ease-in-out, border-color .3s ease-in-out
