@@ -1,31 +1,70 @@
-.search
-    padding 14px 32px
+.search-form
+  padding 14px 32px
+  position relative
+
+  display flex
+  align-items center
+
+  &__icon
+    z-index 1
     display flex
     align-items center
-
-    font-weight 400
-    font-size 16px
-    line-height 120%
-    background color-alabaster
+    margin-right 7px
+    & > svg
+      width 20px
+      height 20px
+      & path
+        transition fill .3s ease-in-out
+        fill color-dusty-gray
+  &__input
+    padding-left 59px
+    position absolute
+    top 0
+    left 0
+    bottom 0
+    right 0
+    outline none
+    color inherit
+    font inherit
+    background-color color-alabaster
     border-radius 10px 0 0 10px
-    &__icon
-      display flex
-      align-items center
-      margin-right 7px
-      & > svg
-        width 20px
-        height 20px
-    &__input
-      border none
-      outline none
-      background-color transparent
-      font inherit
-      &::placeholder
-        color color-dusty-gray
-    &__btn
-      margin-right 0
-      margin-left auto
-      & > svg
-        width 32px
-        height 32px
+    border-color transparent
+    transition color .3s ease-in-out, background-color .3s ease-in-out
+    &::placeholder
+      color color-dusty-gray
+    &:hover
+      background-color color-gallery
+    &:focus
+      background-color color-magnolia
+      border-color color-medium-purple
+    &:active + .search-form__icon
+      & path
+        fill color-medium-purple
 
+  &__btn
+    z-index 1
+    margin-right 0
+    margin-left auto
+    & > svg
+      width 32px
+      height 32px
+    & *
+      stroke color-medium-purple
+    &:hover
+      & circle
+        fill color-medium-purple
+        stroke color-medium-purple
+      & path
+        stroke color-bg
+    &:focus
+      & circle
+        stroke color-medium-purple
+        fill color-mauve
+      & path
+        stroke color-bg
+    &:active
+      & circle
+        fill color-purple-heart
+        stroke color-purple-heart
+      & path
+        stroke color-bg

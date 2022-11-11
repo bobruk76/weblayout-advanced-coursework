@@ -23,14 +23,15 @@
     max-width initial
 
   &__top
-    padding-top 18px
-    padding-bottom 10px
+    padding-top 16px
+    padding-bottom 12px
     background-color color-alabaster
     & .container
       display flex
       flex-wrap nowrap
       overflow initial
     &-label
+      transition color .3s ease-in-out, background-color .3s ease-in-out
       &:hover .choices__inner
         color color-mauve
       &:focus
@@ -38,38 +39,59 @@
       &:active .choices__inner
         color color-purple-heart
 
+    &-form
+      margin-right 2px
     &-phone
-      transform translateY(-4px)
+      transform translateY(-2px)
 
     &-items
       @extend .menu-right
-      font-family 'Open Sans', sans-serif
+      font-family 'Open Sans', Verdana, sans-serif
       font-style normal
       font-weight 400
       font-size 14px
       line-height 100%
       color color-dusty-gray
     &-item
+      transition color .3s ease-in-out, background-color .3s ease-in-out
       &:not(:last-child)
-        margin-right 64px
-
+        padding 3px 8px
+        margin-right 48px
+      &:last-child
+        padding 3px 0 3px 8px
+      &:hover
+        color color-medium-purple
+      &:focus
+        background-color color-blue-chalk
+        color color-purple-heart
+      &:active
+        color color-purple-heart
   &__menu
-    padding-top 32px
-    padding-bottom 29px
+    padding-top 26px
+    padding-bottom 23px
     padding-right 3px
     display flex
     align-items center
 
     &-items
       @extend .menu-right
-      font-family 'Open Sans', sans-serif
+      font-family 'Open Sans', Verdana, sans-serif
       font-style normal
       font-weight 400
       font-size 16px
       line-height 22px
     &-item
       &:not(:last-child)
-        margin-right: 92px
+        padding 10px 5px
+        margin-right: 82px
+      &:last-child
+        padding 10px 0 10px 5px
+      &:hover
+        color color-medium-purple
+      &:focus
+        background-color color-blue-chalk
+      &:active
+        color color-purple-heart
 
   &__bottom
     display flex
@@ -94,9 +116,12 @@
         & path
           fill color-purple-heart
     &-btn
+      @extend .header__bottom--action
       margin-left auto
       margin-right 24px
+
     &-link
+      @extend .header__bottom--action
       padding 3px 4px 3px 8px
 
       margin-right 0
@@ -133,9 +158,16 @@
 
         color color-bg
 
-
     &-form
+
+      font-weight 400
+      font-size 16px
+      line-height 120%
+      background transparent
+
       width 'min(%s, calc(200% / 3))' % 761px
+      max-height 60px
+
     &-label
       display flex
       align-items center
