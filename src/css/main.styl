@@ -80,6 +80,19 @@
     position relative
 
     width 100%
+    &--action
+      & path
+        fill color-medium-purple
+      &:hover
+        & path
+          fill color-mauve
+      &:focus
+        background-color color-mauve
+        & path
+          fill color-bg
+      &:active
+        & path
+          fill color-purple-heart
     &-btn
       margin-left auto
       margin-right 24px
@@ -98,13 +111,12 @@
       width 49px
       height 34px
 
+
       &-icon
         top 3px
         right 0
 
         position absolute
-        & path
-          fill color-medium-purple
 
       &-value
         padding: 2px 0 0
@@ -120,13 +132,7 @@
         border-radius 50%
 
         color color-bg
-      &:hover
-        & path
-          fill color-mauve
-      &:focus
-        background-color color-mauve
-        & path
-          fill color-bg
+
 
     &-form
       width 'min(%s, calc(200% / 3))' % 761px
@@ -154,7 +160,6 @@
         border-color color-purple-heart
       & .choices__item
         padding-left 27px
-
 
 /*hero*/
 .hero
