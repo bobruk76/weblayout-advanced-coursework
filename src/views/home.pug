@@ -4,14 +4,16 @@ block scripts
 block content
   include components/store/main-store
   section.hero#hero
-    .container.hero__container
-      h1.visually-hidden.hero__title Лучшие предложения
+    .hero__container
+      h1.visually-hidden Лучшие предложения
       .hero__slider
         .swiper-wrapper
+          .hero__slider-pagination
           each item in hero_list
             .swiper-slide.hero__slide(class="hero__slide-" + item.id)
-              h2.hero__slide-header= item.header
-              button.btn-reset.btn.hero__slide-btn= item.button
+              .container.hero__slide-container
+                h2.title.hero__slide-title= item.header
+                button.btn-reset.btn.hero__slide-btn= item.button
 
   section.special-offers#special-offers
     .container.special-offers__container

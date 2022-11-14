@@ -18,13 +18,13 @@
 /*header*/
 .header
   &__container
-    padding-bottom 29px
+    padding-bottom 32px
     width 100%
     max-width initial
 
   &__top
     padding-top 16px
-    padding-bottom 12px
+    padding-bottom 6px
     background-color color-alabaster
     & .container
       display flex
@@ -195,16 +195,39 @@
 
 /*hero*/
 .hero
+  &__container
+    width 100%
+
   &__slide
+    min-height 400px
+    &-container
+      display flex
+      flex-direction column
+      justify-content space-between
+      align-items flex-start
+      height -webkit-fill-available
+
+    &-title
+      font-weight 700
+      font-size 48px
+      line-height 65px
+      color color-dusty-gray
+      max-width 500px
     &-first
       background-image url("../img/slide-1.webp")
-
+      background-repeat no-repeat
+      background-size contain
+      background-position center
     &-second
       background-image url("../img/slide-2.webp")
-
+      background-repeat no-repeat
+      background-size contain
+      background-position center
     &-third
       background-image url("../img/slide-3.webp")
-
+      background-repeat no-repeat
+      background-size contain
+      background-position center
 /*ad*/
 .ad
   &__container

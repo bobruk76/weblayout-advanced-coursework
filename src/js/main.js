@@ -5,7 +5,11 @@ Swiper.use([Autoplay, Pagination])
 const swiperHero = new Swiper('.hero__slider', {
   effect: 'fade',
   spaceBetween: 100,
-  autoHeight: true,
+  // autoHeight: true,
+  pagination: {
+    el: '.hero__slider-pagination',
+    clickable: true,
+  },
   // autoplay: {
   //   delay: 5000,
   //   disableOnInteraction: false
@@ -28,10 +32,10 @@ const swiperOffers = new Swiper('.special-offers__slider', {
   //   delay: 2500,
   //   disableOnInteraction: false
   // },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
+  // pagination: {
+  //   el: '.swiper-pagination',
+  //   clickable: true,
+  // },
   autoplayDisableOnInteraction: false,
   direction: 'horizontal',
   loop: true,
