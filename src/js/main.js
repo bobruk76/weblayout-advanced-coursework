@@ -8,6 +8,7 @@ const swiperHero = new Swiper('.hero__slider', {
   // autoHeight: true,
   pagination: {
     el: ".hero__slider-pagination",
+    clickable: true,
   },
   // autoplay: {
   //   delay: 5000,
