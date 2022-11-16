@@ -8,12 +8,12 @@ block content
       h1.visually-hidden Лучшие предложения
       .hero__slider
         .swiper-wrapper
-          .hero__slider-pagination
           each item in hero_list
             .swiper-slide.hero__slide(class="hero__slide-" + item.id)
               .container.hero__slide-container
-                h2.title.hero__slide-title= item.header
+                h2.title.hero__slide-title !{item.header}
                 button.btn-reset.btn.hero__slide-btn= item.button
+        .hero__slider-pagination
 
   section.special-offers#special-offers
     .container.special-offers__container

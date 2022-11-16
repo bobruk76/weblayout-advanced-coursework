@@ -7,8 +7,7 @@ const swiperHero = new Swiper('.hero__slider', {
   spaceBetween: 100,
   // autoHeight: true,
   pagination: {
-    el: '.hero__slider-pagination',
-    clickable: true,
+    el: ".hero__slider-pagination",
   },
   // autoplay: {
   //   delay: 5000,
