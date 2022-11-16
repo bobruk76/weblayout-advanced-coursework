@@ -1,11 +1,11 @@
 import Choices from 'choices.js'
-import Swiper, {Autoplay, Pagination} from 'swiper'
-Swiper.use([Autoplay, Pagination])
+import Swiper, {Autoplay, Pagination, Navigation} from 'swiper'
+// Swiper.use([Autoplay, Pagination, Navigation])
 
 const swiperHero = new Swiper('.hero__slider', {
+  modules: [Autoplay, Pagination],
   effect: 'fade',
   spaceBetween: 100,
-  // autoHeight: true,
   pagination: {
     el: ".hero__slider-pagination",
     clickable: true,
@@ -23,6 +23,8 @@ const swiperHero = new Swiper('.hero__slider', {
 })
 
 const swiperOffers = new Swiper('.special-offers__slider', {
+  modules: [Navigation, Autoplay],
+
   effect: 'fade',
   slidesPerView: 3,
   spaceBetween: 30,
@@ -32,13 +34,14 @@ const swiperOffers = new Swiper('.special-offers__slider', {
   //   delay: 2500,
   //   disableOnInteraction: false
   // },
-  // pagination: {
-  //   el: '.swiper-pagination',
-  //   clickable: true,
-  // },
+  navigation: {
+    prevEl: ".special-offers__navigation-prev",
+    nextEl: ".special-offers__navigation-next",
+  },
+
   autoplayDisableOnInteraction: false,
   direction: 'horizontal',
-  loop: true,
+  // loop: true,
   a11y: {
     paginationBulletMessage: 'Слайд со специальными предложениями{{index}}',
   }
