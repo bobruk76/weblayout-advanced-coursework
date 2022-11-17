@@ -3,6 +3,7 @@
   position relative
   display inline-flex
   flex-direction column
+  justify-content flex-end
 
   background-color color-alabaster
   &__rating
@@ -16,12 +17,17 @@
     & > svg
       margin-right 7px
   &__discount
+    position absolute
+    top 32px
+    left 0
+
+    padding-right 10px
     display flex
     justify-content center
     align-items center
 
-    max-width 92px
-    height 34px
+    min-width 92px
+    min-height 34px
 
     font-weight 700
     font-size 14px
@@ -32,6 +38,31 @@
     background-repeat no-repeat
     background-position center
     background-size cover
+  &__picture
+    margin-bottom: 14px
+    align-self center
+  &__descr
+    margin-bottom 4px
+    display flex
+    flex-direction column
+
+
+    font-weight 400
+    font-size 24px
+    line-height: 130%
+  &__price
+    margin-bottom 23px
+    font-weight 400
+    font-size 16px
+    line-height 130%
+    color color-dove-gray
+    &-new
+      margin-right: 30px
+      font-size 18px
+      color color-crusta
+    &-old
+      color color-dusty-gray
+      text-decoration line-through
   &__scheme
     position absolute
     right 30px

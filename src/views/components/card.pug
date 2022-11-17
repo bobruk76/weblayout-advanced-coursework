@@ -8,13 +8,17 @@ mixin card(tag, item, class_name, special_offers = false)
         svg(width="16" height="15")
           use(xlink:href='img/sprite.svg#star')
         span= item.rating
-    picture
+    picture.card__picture
       img.card__img(src= item.img alt="Фото товара")
-    p.descr.card__descr !{item.descr}
+    p.descr.card__descr
+      span !{item.descr}
+      span !{item.model}
     p.card__price
-      span.card__price-new !{item.price}
       if special_offers
+        span.card__price-new !{item.price}
         span.card__price-old !{item.old_price}
+      else
+        span !{item.price}
     button.btn-reset.btn.btn-outline.card__btn Купить
     if item.scheme
       picture

@@ -157,7 +157,7 @@ watch([
   './src/img/**/*.png',
 ], imagesWebp)
 watch("./src/img/svg/*.svg", svgSprites)
-watch("./src/css/**/*.styl", stylusCSS)
+watch("./src/css/**/**/*.styl", stylusCSS)
 watch("src/js/*.js", scripts)
 watch("./src/views/**/**/*.pug", series(pug2html, validateHtml))
 

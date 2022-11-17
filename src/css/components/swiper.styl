@@ -1,0 +1,26 @@
+/*hero*/
+.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction
+  left calc(50% - 44px)
+  bottom 20px
+
+.swiper-pagination-bullet
+
+  width 14px
+  height 14px
+  background-color color-mine-shaft
+  opacity .3
+
+  &.swiper-pagination-bullet-active
+    opacity 1
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet
+  margin 0 7px
+
+/*special offers*/
+.swiper-button
+  cursor pointer
+  & > *
+    stroke color-medium-purple
+  &-disabled
+    & > *
+      stroke color-dusty-gray

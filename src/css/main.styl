@@ -12,6 +12,7 @@
 @import 'components/category-card.styl'
 @import 'components/useful-card.styl'
 @import 'components/choices.styl'
+@import 'components/swiper.styl'
 //@import 'components/validate.styl'
 //@import 'components/burger.styl'
 
@@ -28,6 +29,7 @@
     background-color color-alabaster
 
     & .container
+      padding-top 0
       display flex
       flex-wrap nowrap
       overflow initial
@@ -112,6 +114,7 @@
         color color-purple-heart
 
   &__bottom
+    padding-top 0
     display flex
     justify-content flex-start
     align-items center
@@ -223,23 +226,6 @@
         padding-left 27px
 
 /*hero*/
-.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction
-  left calc(50% - 44px)
-  bottom 20px
-
-.swiper-pagination-bullet
-
-  width 14px
-  height 14px
-  background-color color-mine-shaft
-  opacity .3
-
-  &.swiper-pagination-bullet-active
-    opacity 1
-
-.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet
-  margin 0 7px
-
 .hero
   &__container
     width 100%
@@ -259,6 +245,7 @@
     min-height 400px
 
     &-container
+      padding-top 0
       padding-bottom: 80px
       display flex
       flex-direction column
@@ -294,13 +281,15 @@
 
 /*special-offers*/
 .special-offers
-  &__container
-    padding-top 70px
+  &__title
+    margin-bottom: 26px
+
+  &__slider
     position relative
 
   &__navigation
     position absolute
-    top 0
+    top -56px
     right 0
     display flex
     justify-content space-between
@@ -309,7 +298,6 @@
     height 32px
 
   &__item
-    justify-content flex-end
     box-sizing border-box
     min-height 511px
     max-width 'calc((100% - ((100% / 2) - (%s / 2)) - (%s * 2)) / 2)' % (gap gap)
