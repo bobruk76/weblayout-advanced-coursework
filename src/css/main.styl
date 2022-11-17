@@ -281,9 +281,6 @@
 
 /*special-offers*/
 .special-offers
-  &__title
-    margin-bottom: 26px
-
   &__slider
     position relative
 
@@ -300,6 +297,17 @@
   &__item
     &:not(:nth-child(3n))
       margin-right gap
+
+/*high-rating*/
+.high-rating
+  &__items
+    display grid
+    grid-template-rows 1fr 1fr
+    grid-template-columns 1fr 1fr 1fr 1fr
+    grid-gap gap
+  &__item
+    max-width initial
+    min-height 420px
 
 /*ad*/
 .ad
