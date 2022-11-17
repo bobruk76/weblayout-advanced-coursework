@@ -298,14 +298,8 @@
     height 32px
 
   &__item
-    box-sizing border-box
-    min-height 511px
-    max-width 'calc((100% - ((100% / 2) - (%s / 2)) - (%s * 2)) / 2)' % (gap gap)
     &:not(:nth-child(3n))
       margin-right gap
-
-    &--wide
-      max-width 'calc((100% / 2) - (%s / 2))' % gap
 
 /*ad*/
 .ad

@@ -34,7 +34,7 @@ block content
         .swiper-wrapper
           include components/card
           each item in spec_offer_list
-            +card("div", item, "special-offers__item swiper-slide" + (item.class ? " special-offers__item" + item.class : ""), true)
+            +card("div", item, "special-offers__item swiper-slide" + (item.class ? " card" + item.class : ""), true)
 
 
   section.high-rating#high-rating
