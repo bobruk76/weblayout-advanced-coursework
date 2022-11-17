@@ -26,21 +26,27 @@
     padding-top 16px
     padding-bottom 6px
     background-color color-alabaster
+
     & .container
       display flex
       flex-wrap nowrap
       overflow initial
+
     &-label
       transition color .3s ease-in-out, background-color .3s ease-in-out
+
       &:hover .choices__inner
         color color-mauve
+
       &:focus
         background-color color-blue-chalk
+
       &:active .choices__inner
         color color-purple-heart
 
     &-form
       margin-right 2px
+
     &-phone
       transform translateY(-2px)
 
@@ -52,20 +58,27 @@
       font-size 14px
       line-height 100%
       color color-dusty-gray
+
     &-item
       transition color .3s ease-in-out, background-color .3s ease-in-out
+
       &:not(:last-child)
         padding 3px 8px
         margin-right 48px
+
       &:last-child
         padding 3px 0 3px 8px
+
       &:hover
         color color-medium-purple
+
       &:focus
         background-color color-blue-chalk
         color color-purple-heart
+
       &:active
         color color-purple-heart
+
   &__menu
     padding-top 26px
     padding-bottom 23px
@@ -80,16 +93,21 @@
       font-weight 400
       font-size 16px
       line-height 22px
+
     &-item
       &:not(:last-child)
         padding 10px 5px
         margin-right: 82px
+
       &:last-child
         padding 10px 0 10px 5px
+
       &:hover
         color color-medium-purple
+
       &:focus
         background-color color-blue-chalk
+
       &:active
         color color-purple-heart
 
@@ -102,19 +120,25 @@
     position relative
 
     width 100%
+
     &--action
       & path
         fill color-medium-purple
+
       &:hover
         & path
           fill color-mauve
+
       &:focus
         background-color color-mauve
+
         & path
           fill color-bg
+
       &:active
         & path
           fill color-purple-heart
+
     &-btn
       @extend .header__bottom--action
       margin-left auto
@@ -181,20 +205,25 @@
 
       & > .choices
         width 100%
+
         &:after
           right 30px
+
       &:hover
         border-color color-medium-purple
+
       &:focus
         border-color color-medium-purple
         background-color color-magnolia
+
       &:active
         border-color color-purple-heart
+
       & .choices__item
         padding-left 27px
 
 /*hero*/
-.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction
+.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction
   left calc(50% - 44px)
   bottom 20px
 
@@ -204,16 +233,20 @@
   height 14px
   background-color color-mine-shaft
   opacity .3
+
   &.swiper-pagination-bullet-active
     opacity 1
-.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet
   margin 0 7px
 
 .hero
   &__container
     width 100%
+
   &__slider
     position relative
+
     &-pagination
       position absolute
       z-index 10
@@ -224,6 +257,7 @@
     align-items flex-start
     justify-content flex-end
     min-height 400px
+
     &-container
       padding-bottom: 80px
       display flex
@@ -239,16 +273,19 @@
       line-height 65px
       color color-dusty-gray
       max-width 500px
+
     &-first
       background-image url("../img/slide-1.webp")
       background-repeat no-repeat
       background-size contain
       background-position center
+
     &-second
       background-image url("../img/slide-2.webp")
       background-repeat no-repeat
       background-size contain
       background-position center
+
     &-third
       background-image url("../img/slide-3.webp")
       background-repeat no-repeat
@@ -258,7 +295,9 @@
 /*special-offers*/
 .special-offers
   &__container
+    padding-top 70px
     position relative
+
   &__navigation
     position absolute
     top 0
@@ -268,6 +307,17 @@
     align-items center
     width 77px
     height 32px
+
+  &__item
+    justify-content flex-end
+    box-sizing border-box
+    min-height 511px
+    max-width 'calc((100% - ((100% / 2) - (%s / 2)) - (%s * 2)) / 2)' % (gap gap)
+    &:not(:nth-child(3n))
+      margin-right gap
+
+    &--wide
+      max-width 'calc((100% / 2) - (%s / 2))' % gap
 
 /*ad*/
 .ad
@@ -284,12 +334,14 @@
     font-weight 900
     font-size 60px
     line-height 120%
+
 /*contacts*/
 .contacts
   &__container
     background-image url("../img/contacts.webp")
     background-repeat no-repeat
     background-position center right
+
   &__form
     display flex
     flex-direction column

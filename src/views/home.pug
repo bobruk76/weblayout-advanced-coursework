@@ -20,6 +20,7 @@ block content
       h2.title.special-offers__title Специальные предложения
       .special-offers__slider
         .special-offers__navigation
+
           .special-offers__navigation-prev
             svg(width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
               path(d="M18 11L13 16L18 21" stroke="#999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
@@ -31,9 +32,9 @@ block content
               path(d="M14 11L19 16L14 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
 
         .swiper-wrapper
-                include components/card
-                each item in spec_offer_list
-                  +card("div", item, "special-offers__item swiper-slide", true)
+          include components/card
+          each item in spec_offer_list
+            +card("div", item, "special-offers__item swiper-slide" + (item.class ? " special-offers__item" + item.class : ""), true)
 
 
   section.high-rating#high-rating

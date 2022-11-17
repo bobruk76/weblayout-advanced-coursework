@@ -26,10 +26,9 @@ const swiperOffers = new Swiper('.special-offers__slider', {
   modules: [Navigation, Autoplay],
 
   effect: 'fade',
-  slidesPerView: 3,
-  spaceBetween: 30,
+  slidesPerView: "auto",
   slidesPerGroup: 3,
-  autoHeight: true,
+  // autoHeight: true,
   // autoplay: {
   //   delay: 2500,
   //   disableOnInteraction: false
@@ -46,7 +45,6 @@ const swiperOffers = new Swiper('.special-offers__slider', {
     paginationBulletMessage: 'Слайд со специальными предложениями{{index}}',
   }
 })
-
 
 const swiperUseful = new Swiper('.useful__slider', {
   effect: 'fade',
