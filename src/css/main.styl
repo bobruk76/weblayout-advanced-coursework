@@ -300,32 +300,68 @@
 
 /*high-rating*/
 .high-rating
+  &__container
+    padding-bottom: 70px
+    display flex
+    flex-direction column
+    justify-content flex-start
+    align-items center
+
+  &__title
+    align-self flex-start
+
   &__items
+    margin-bottom: gap
     display grid
     grid-template-rows 1fr 1fr
     grid-template-columns 1fr 1fr 1fr 1fr
     grid-gap gap
+
   &__item
     max-width initial
     min-height 420px
 
+  &__btn
+    padding 20px 35px
+
 /*ad*/
 .ad
+  display flex
+  flex-direction column
+  justify-content center
+  color color-straw
+  width 100%
+  min-height 600px
+  background-image url("../img/ad-bg.webp")
+  background-repeat no-repeat
+  background-size contain
+  background-position center
+
   &__container
-    color color-straw
-    width 100%
-    min-height 600px
-    background-image url("../img/ad-bg.webp")
-    background-repeat no-repeat
-    background-size contain
-    background-position center
+    padding 11px 0 0
+    display flex
+    flex-direction column
+    justify-content flex-start
+    align-items flex-start
 
   &__title
+    margin 0
     font-family "Playfair Display", Verdana, sans-serif
     font-style normal
     font-weight 900
     font-size 60px
     line-height 120%
+
+  &__descr
+    margin-bottom 49px
+    font-weight 400
+    font-size 48px
+    line-height 120%
+    color color-bg
+    max-width 508px
+
+  &__btn
+    padding 20px 30px
 
 /*contacts*/
 .contacts
