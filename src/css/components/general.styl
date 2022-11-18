@@ -30,18 +30,6 @@ body
   clip rect(0 0 0 0)
   overflow: hidden
 
-.filtered
-  filter: invert(90%) sepia(0%) saturate(0%) hue-rotate(147deg) brightness(96%) contrast(86%)
-  transition filter .3s ease-in-out
-
-  &:hover
-    filter: invert(48%) sepia(71%) saturate(1571%) hue-rotate(340deg) brightness(103%) contrast(101%)
-
-  &:focus
-    filter: invert(39%) sepia(86%) saturate(481%) hue-rotate(333deg) brightness(87%) contrast(92%)
-
-  &:active
-    filter: invert(26%) sepia(41%) saturate(6850%) hue-rotate(19deg) brightness(97%) contrast(94%)
 
 .btn-reset
   padding 0
@@ -50,6 +38,28 @@ body
   color inherit
   cursor pointer
   word-break break-word
+
+.btn-arrow
+  & *
+    stroke color-medium-purple
+  &:hover
+    & circle
+      fill color-medium-purple
+      stroke color-medium-purple
+    & path
+      stroke color-bg
+  &:focus
+    & circle
+      stroke color-medium-purple
+      fill color-mauve
+    & path
+      stroke color-bg
+  &:active
+    & circle
+      fill color-purple-heart
+      stroke color-purple-heart
+    & path
+      stroke color-bg
 
 .btn
   padding 20px 48px
@@ -101,9 +111,6 @@ body
       background-color color-medium-purple
       border-color color-medium-purple
 
-  &-filtered
-    @extend .filtered
-
 .list-reset
   margin 0
   padding 0
@@ -116,8 +123,7 @@ body
   cursor pointer
 
   transition color .3s ease-in-out, background-color .3s ease-in-out
-  &--filtered
-    @extend .filtered
+
 
 .phone
   display inline-flex

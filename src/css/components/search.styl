@@ -42,29 +42,11 @@
         fill color-medium-purple
 
   &__btn
+    @extend .btn-arrow
     z-index 1
     margin-right 0
     margin-left auto
     & > svg
       width 32px
       height 32px
-    & *
-      stroke color-medium-purple
-    &:hover
-      & circle
-        fill color-medium-purple
-        stroke color-medium-purple
-      & path
-        stroke color-bg
-    &:focus
-      & circle
-        stroke color-medium-purple
-        fill color-mauve
-      & path
-        stroke color-bg
-    &:active
-      & circle
-        fill color-purple-heart
-        stroke color-purple-heart
-      & path
-        stroke color-bg
+
