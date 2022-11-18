@@ -1,10 +1,10 @@
-mixin category-card(tag, item)
+mixin category-card(tag, item, class_name)
   #{tag}.category-card(class= class_name)
     ul.list-reset.category-card__items
       each itm in item.menu
         li.category-card__item
           a.link.category-card__item-link(href="#")= itm
     strong.title.category-card__title !{item.title}
-    picture
+    picture.category-card__picture
       img.category-card__img(src= item.img alt="Фото категории")
     a.link.category-card__link(href="#") В каталог

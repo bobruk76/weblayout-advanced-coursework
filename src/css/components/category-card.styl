@@ -1,10 +1,12 @@
 .category-card
+  padding 30px
   position relative
   display inline-flex
   flex-direction column
 
   background-color color-alabaster
   &__items
+    margin-bottom: "calc(%s / 2)" % gap
     display flex
     color color-dusty-gray
     font-weight 400
@@ -13,6 +15,15 @@
   &__item
     &:not(:last-child)
       margin-right 30px
+  &__title
+    font-weight 400
+    font-size 24px
+    line-height 33px
+
+  &__picture
+    margin-left -30px
+    margin-bottom: "calc(%s - 3px)" % gap
+
   &__link.link
     display flex
     align-items center
@@ -23,11 +34,11 @@
     line-height 120%
     &:after
       content ""
-      width 22px
+      width 32px
       height 22px
       background-image url("../img/sprite.svg#arrow")
       background-repeat no-repeat
-      background-position center
+      background-position center right
       background-size cover
 
 

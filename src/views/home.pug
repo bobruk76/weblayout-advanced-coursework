@@ -55,8 +55,8 @@ block content
     .container.category__container
       h2.title.category__title Топ категории
       ul.list-reset.category__items
-        each item in category_list
-          +category-card("li", item, "category__item")
+        each item, index in category_list
+          +category-card("li", item, "category__item" + (index < 2 ? " category__item--wide" : ""))
 
   section.useful#useful
     .container.useful__container
