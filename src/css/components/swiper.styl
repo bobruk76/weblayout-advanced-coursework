@@ -17,13 +17,15 @@
   margin 0 7px
 
 /*special offers*/
-.swiper-button
-  cursor pointer
-  & > *
-    stroke color-medium-purple
-  &-disabled
-    cursor initial
+.swiper-navigation
+  &__button
+    cursor pointer
     & > *
-      stroke color-dusty-gray
-  &:not(.swiper-button-disabled)
-    @extend .btn-arrow
+      stroke color-medium-purple
+    &:not(.swiper-button-disabled)
+      @extend .btn-arrow
+    &.swiper-button-disabled
+      cursor initial
+      & > *
+        stroke color-dusty-gray
+
