@@ -1,4 +1,7 @@
 /*hero*/
+.swiper-horizontal
+  position relative
+
 .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction
   left calc(50% - 44px)
   bottom 20px
@@ -18,6 +21,14 @@
 
 /*special offers*/
 .swiper-navigation
+  position absolute
+  top -56px
+  right 0
+  display flex
+  justify-content space-between
+  align-items center
+  width 77px
+  height 32px
   &__button
     cursor pointer
     & > *

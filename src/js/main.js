@@ -47,18 +47,24 @@ const swiperOffers = new Swiper('.special-offers__slider', {
 })
 
 const swiperUseful = new Swiper('.useful__slider', {
+  modules: [Navigation, Autoplay],
+
   effect: 'fade',
   slidesPerView: 2,
   spaceBetween: 32,
   slidesPerGroup: 2,
-  autoHeight: true,
+  // autoHeight: true,
   // autoplay: {
   //   delay: 2500,
   //   disableOnInteraction: false
   // },
+  navigation: {
+    prevEl: ".useful__navigation-prev",
+    nextEl: ".useful__navigation-next",
+  },
   autoplayDisableOnInteraction: false,
   direction: 'horizontal',
-  loop: true,
+  // loop: true,
   a11y: {
     paginationBulletMessage: 'Слайд с полезными предложениями{{index}}',
   }
