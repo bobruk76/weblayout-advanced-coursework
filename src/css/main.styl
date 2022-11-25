@@ -354,7 +354,6 @@
 
 /*useful*/
 
-
 /*category*/
 .category
   &__items
@@ -370,11 +369,22 @@
 /*contacts*/
 .contacts
   &__container
+    padding-bottom 68px
     background-image url("../img/contacts.webp")
     background-repeat no-repeat
-    background-position center right
+    background-position top 94px right
 
   &__form
-    display flex
-    flex-direction column
-    flex-wrap nowrap
+    &-title
+      margin-bottom 8px
+    &-descr
+      margin-bottom 'calc(%s / 2)' % gap
+      font-weight 400
+      font-size 14px
+      line-height 19px
+      color color-dove-gray
+
+/*footer*/
+.footer
+  &__container
+    background-color color-gallery
