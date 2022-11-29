@@ -295,6 +295,63 @@ body
   margin-right 0
   display flex
 
+.tooltip
+  padding-left: 4px
+  position relative
+  z-index 1
+  &__popup
+    padding 5px
+    position absolute
+    top -60px
+    left calc(50% + 3px)
+
+    width 157px
+    height 52px
+
+    font-weight 400
+    font-size 9px
+    line-height 156%
+    text-align center
+    color color-bg
+    background-color color-mine-shaft
+
+    opacity 0
+    visibility hidden
+    transform translateX(-50%) translateY(10px)
+    transition opacity .3s ease-in-out, transform .3s ease-in-out, visibility .3s ease-in-out;
+    &:after
+      content ""
+      position absolute
+      top 100%
+      left 50%
+      margin-left -5px
+
+      border-top: 6px solid color-mine-shaft
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+
+  &__marker
+    cursor pointer
+    & path
+      fill color-crusta
+    & circle
+      stroke color-crusta
+    &:hover
+      & .tooltip__marker-circle
+        fill color-crusta
+      & .tooltip__marker-ring
+        stroke color-crusta
+      & path
+        fill color-bg
+      & + .tooltip__popup
+        opacity 1
+        visibility visible
+        transform translateX(-50%) translateY(0)
+
+
+
+
+
 gutter = 32px
 .container
   margin-right auto
