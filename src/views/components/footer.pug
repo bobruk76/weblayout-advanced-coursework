@@ -11,10 +11,12 @@ footer.footer
             a.link.link--filtered.footer__social-item-link(href="#" aria-label=item)
               svg(width="30" height="30")
                 use(xlink:href='img/sprite.svg#' + item)
-      ul.list-reset.footer__items
+      .footer__cards
         each item in footer_list
-          li.footer__item
-            a.link.footer__item-link(href="#") !{item.descr}
-
+          if item.subhead
+            .footer__card
+              a.link.footer__item-link(href="#") !{item.descr}
+          else
+                a.link.footer__item-link(href="#") !{item.descr}
   .footer__down
     p.footer__down-descr SDP<sup class="reg">&reg;</sup>2011-2021
