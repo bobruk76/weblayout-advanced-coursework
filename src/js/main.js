@@ -78,6 +78,7 @@ const headerChoices = new Choices(headerSelect, {
   allowHTML: true,
   searchEnabled: false,
   shouldSort: false,
+  labelId: '',
   choices: [
     {
       value: 'Москва',
