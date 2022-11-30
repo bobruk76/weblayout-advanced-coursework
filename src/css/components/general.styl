@@ -205,7 +205,7 @@ body
     padding 27px 18px
     height 50px
     width 100%
-    background color-alabaster
+
 
     font-family 'Open Sans'
     font-style normal;
@@ -214,9 +214,11 @@ body
     line-height 40px
 
     border-radius 10px
-    border none
+    border 1px solid color-alabaster
     outline none
     color color-mine-shaft
+    background-color color-alabaster
+
     transition color .3s ease-in-out, border-color .3s ease-in-out, background-color .3s ease-in-out
 
     &::placeholder
@@ -224,10 +226,14 @@ body
       transition color .3s ease-in-out
 
     &:hover
-      color color-burning-orange
-
+      background-color color-gallery
+      border-color color-gallery
     &:focus
-      border 1px solid color-burning-orange
+      background-color color-magnolia
+      border-color color-medium-purple
+    &:active
+      background-color color-alabaster
+      border-color color-sulu
 
     &-label
       position relative
@@ -246,17 +252,12 @@ body
       height -webkit-fill-available
 
   &__checkbox
+    display inline-flex
     &-input
       &-label
         display flex
         align-items center
-        & .link
-          font-weight 400
-          font-size 14px
-          line-height 19px
-          text-decoration-line underline
-          color color-medium-purple
-
+        cursor pointer
       &--hide
         position absolute
         opacity 0
@@ -267,6 +268,12 @@ body
           background-repeat no-repeat
           background-position center
           background-size cover
+    & .link
+      font-weight 400
+      font-size 14px
+      line-height 19px
+      text-decoration-line underline
+      color color-medium-purple
 
 .checkbox
   &-icon
@@ -347,8 +354,6 @@ body
         opacity 1
         visibility visible
         transform translateX(-50%) translateY(0)
-
-
 
 
 

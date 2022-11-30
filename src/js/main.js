@@ -1,6 +1,7 @@
 import Choices from 'choices.js'
+import JustValidate from 'just-validate'
+import InputMask from "inputmask"
 import Swiper, {Autoplay, Pagination, Navigation} from 'swiper'
-// Swiper.use([Autoplay, Pagination, Navigation])
 
 const swiperHero = new Swiper('.hero__slider', {
   modules: [Autoplay, Pagination],
@@ -185,6 +186,59 @@ const categoryChoices = new Choices(categorySelect, {
 });
 
 
+// contacts__form masks and validate
+const phones = document.querySelectorAll('input[type=tel]')
+phones.forEach(phone => {
+  InputMask("+9(999)999-99-99").mask(phone);
+})
+
+
+const validationContacts = new JustValidate(
+  '#contactsForm',
+  {
+    errorLabelStyle: null,
+    focusInvalidField: true,
+    lockForm: true,
+  },
+)
+
+validationContacts
+  .addField('#name', [
+    {
+      rule: 'required',
+      errorMessage: 'Вы не ввели имя',
+    },
+    {
+      rule: 'customRegexp',
+      value: /^[a-zA-Zа-яА-Я]+(([',. -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/,
+      errorMessage: 'Недопустимый формат',
+    }
+  ])
+
+  .addField('#phone', [
+    {
+      rule: 'required',
+      errorMessage: 'Вы не ввели номер телефона',
+    },
+    {
+      rule: 'customRegexp',
+      value: /^[+]*[0-9][(][0-9]{3}[)][0-9]{3}[-][0-9]{2}[-][0-9]{2}/,
+      errorMessage: 'Недопустимый формат',
+    },
+  ])
+
+  .addField('#email', [
+    {
+      rule: 'required',
+      errorMessage: 'Вы не ввели e-mail',
+    },
+    {
+      rule: 'email',
+      errorMessage: 'Недопустимый формат',
+    },
+  ])
+
+
 // const searchButton = document.querySelector('.header__search-btn')
 // const headerInput = document.querySelector('.header__input')
 //
@@ -197,65 +251,7 @@ const categoryChoices = new Choices(categorySelect, {
 // })
 //
 //
-// // about-us__form-subscribe validate
-// const validationSubscribe = new JustValidate(
-//     '.about-us__form-subscribe',
-//     {
-//       errorLabelStyle: null,
-//     },
-//   )
-// ;
-//
-// validationSubscribe
-//   .addField('#email-subscribe', [
-//     {
-//       rule: 'required',
-//       errorMessage: 'Вы не ввели e-mail',
-//     },
-//     {
-//       rule: 'email',
-//       errorMessage: 'Недопустимый формат',
-//     },
-//   ]);
-//
-//
-// const validationContacts = new JustValidate(
-//     '.contacts__form',
-//     {
-//       errorLabelStyle: null,
-//     },
-//   )
-// ;
-//
-// validationContacts
-//   .addField('#message', [
-//     {
-//       rule: 'required',
-//       errorMessage: 'Вы не ввели сообщение',
-//     },
-//   ])
-//   .addField('#name', [
-//     {
-//       rule: 'required',
-//       errorMessage: 'Вы не ввели имя',
-//     },
-//     {
-//       rule: 'customRegexp',
-//       value: /^[a-zA-Z0-9]([._-](?![._-])|[a-zA-Z0-9]){3,18}[a-zA-Z0-9]$/,
-//       errorMessage: 'Недопустимый формат',
-//     },
-//
-//   ])
-//   .addField('#email', [
-//     {
-//       rule: 'required',
-//       errorMessage: 'Вы не ввели e-mail',
-//     },
-//     {
-//       rule: 'email',
-//       errorMessage: 'Недопустимый формат',
-//     },
-//   ]);
+
 //
 // const headerItemsHide = document.querySelectorAll('.header__item-bottom, .header__item-close');
 //

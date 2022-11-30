@@ -21,7 +21,7 @@ header.header
               a.link.header__top-item-link(href="#")= item
 
     .header__menu.container
-      a.header__logo(href="#")
+      a.header__logo(href="#" aria-label="Лого")
         svg(width="187" height="27")
           use(xlink:href='img/sprite.svg#logo')
 
@@ -48,7 +48,7 @@ header.header
 
       label.header__bottom-label(for="category")
         span.visually-hidden.header__bottom-label-span Выбор категории
-        select.select#category(name="category")
+        select.select#category(name="category" aria-label="Выбор категории")
 
       button.btn-reset.header__bottom-btn.btn-reset
         svg(width="26" height="28" viewBox="0 0 26 28" fill="none" xmlns="http://www.w3.org/2000/svg")

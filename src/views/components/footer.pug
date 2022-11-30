@@ -2,13 +2,13 @@ include store/footer-store
 footer.footer
   .footer__container
     .container
-      a.footer__logo
+      a.footer__logo(href="#" aria-label="Лого")
         svg(width="187" height="27")
           use(xlink:href='img/sprite.svg#logo')
       ul.list-reset.footer__social-items
         each item in social_list
           li.footer__social-item
-            a.link.link--filtered.footer__social-item-link(href="#")
+            a.link.link--filtered.footer__social-item-link(href="#" aria-label=item)
               svg(width="30" height="30")
                 use(xlink:href='img/sprite.svg#' + item)
       ul.list-reset.footer__items

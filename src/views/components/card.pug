@@ -4,7 +4,7 @@ mixin card(tag, item, class_name, special_offers = false)
       .card__discount
         span !{item.discount}
     else
-      a.link.card__rating
+      a.link.card__rating(href="#")
         svg(width="16" height="15")
           use(xlink:href='img/sprite.svg#star')
         span= item.rating
