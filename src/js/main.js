@@ -18,9 +18,7 @@ const swiperHero = new Swiper('.hero__slider', {
   autoplayDisableOnInteraction: false,
   direction: 'horizontal',
   loop: true,
-  a11y: {
-    paginationBulletMessage: 'Слайд с главной картинкой {{index}}',
-  }
+  a11y: true,
 })
 
 const swiperOffers = new Swiper('.special-offers__slider', {
@@ -42,9 +40,7 @@ const swiperOffers = new Swiper('.special-offers__slider', {
   autoplayDisableOnInteraction: false,
   direction: 'horizontal',
   // loop: true,
-  a11y: {
-    paginationBulletMessage: 'Слайд со специальными предложениями{{index}}',
-  }
+  a11y: true,
 })
 
 const swiperUseful = new Swiper('.useful__slider', {
@@ -66,9 +62,7 @@ const swiperUseful = new Swiper('.useful__slider', {
   autoplayDisableOnInteraction: false,
   direction: 'horizontal',
   // loop: true,
-  a11y: {
-    paginationBulletMessage: 'Слайд с полезными предложениями{{index}}',
-  }
+  a11y: true,
 })
 
 const headerSelect = document.querySelector('#header_select');
@@ -114,6 +108,7 @@ const categoryChoices = new Choices(categorySelect, {
   allowHTML: true,
   searchEnabled: false,
   shouldSort: false,
+  labelId: '',
   choices: [
     {
       value: 'Категория',
@@ -193,9 +188,8 @@ phones.forEach(phone => {
   InputMask("+9(999)999-99-99").mask(phone);
 })
 
-
 const validationContacts = new JustValidate(
-  '#contactsForm',
+  '.contacts__form',
   {
     errorLabelStyle: null,
     focusInvalidField: true,

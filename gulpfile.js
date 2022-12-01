@@ -14,10 +14,11 @@ const sourcemaps = require('gulp-sourcemaps')
 const concat = require('gulp-concat')
 const rollup = require('gulp-better-rollup');
 const babel = require('rollup-plugin-babel');
-const resolve = require('rollup-plugin-node-resolve');
-const commonjs = require('rollup-plugin-commonjs');
+const resolve = require('rollup-plugin-node-resolve')
+const commonjs = require('rollup-plugin-commonjs')
 
 const browserSync = require('browser-sync').create()
+const compression = require('compression')
 const nodemon = require('gulp-nodemon')
 
 const pugLinter = require('gulp-pug-linter')
@@ -26,7 +27,7 @@ const htmlValidator = require('gulp-w3c-html-validator')
 const htmlhint = require("gulp-htmlhint")
 const del = require('del')
 const uglify = require('gulp-uglify-es').default
-const minify = require('gulp-minify')
+// const minify = require('gulp-minify')
 const gulpif = require('gulp-if')
 
 const argv = require('yargs').argv;
@@ -143,6 +144,7 @@ const watcher = () => {
       open: true,
       files: ["dist/**/*.*"],
       port: 5000,
+      middleware: [compression()],
     })
   }
 }

@@ -10,7 +10,7 @@ block content
             .swiper-slide.hero__slide(class="hero__slide-" + item.id)
               .container.hero__slide-container
                 h2.title.hero__slide-title !{item.header}
-                button.btn-reset.btn.hero__slide-btn= item.button
+                button.btn-reset.btn.hero__slide-btn(aria-label=item.button)= item.button
         .hero__slider-pagination
 
   section.special-offers#special-offers
@@ -60,7 +60,7 @@ block content
     .container.contacts__container
       h2.visually-hidden.contacts__title Контакты
 
-      form.contacts__form.form#contactsForm(action="#")
+      form.contacts__form.form(action="#")
         strong.contacts__form-title.title Мы&nbsp;всегда вам рады!
         p.contacts__form-descr.descr Безусловно, новая модель организационной деятельности в&nbsp;значительной степени обусловливает важность распределения внутренних резервов и&nbsp;ресурсов.
           span.tooltip.contacts__form-descr-tooltip
