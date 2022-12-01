@@ -1,22 +1,21 @@
 include store/footer-store
 footer.footer
-  .footer__container
-    .container
-      a.footer__logo(href="#" aria-label="Лого")
-        svg(width="187" height="27")
-          use(xlink:href='img/sprite.svg#logo')
-      ul.list-reset.footer__social-items
-        each item in social_list
-          li.footer__social-item
-            a.link.link--filtered.footer__social-item-link(href="#" aria-label=item)
-              svg(width="30" height="30")
-                use(xlink:href='img/sprite.svg#' + item)
+  .footer__top
+    .container.footer__container
+      .footer__left
+        a.footer__logo(href="#" aria-label="Лого")
+          svg(width="187" height="27")
+            use(xlink:href='img/sprite.svg#logo')
+        ul.list-reset.footer__social-items
+          each item in social_list
+            li.footer__social-item
+              a.link.link--filtered.footer__social-item-link(href="#" aria-label=item)
+                svg(width="30" height="30")
+                  use(xlink:href='img/sprite.svg#' + item)
       .footer__cards
-        each item in footer_list
-          if item.subhead
-            .footer__card
-              a.link.footer__item-link(href="#") !{item.descr}
-          else
-                a.link.footer__item-link(href="#") !{item.descr}
-  .footer__down
-    p.footer__down-descr SDP<sup class="reg">&reg;</sup>2011-2021
+        each items in footer_list
+          .footer__card
+            each item, index in items
+              a(class="footer__card-link"+(index===0 ? "-title" : "") href="#") !{item}
+  .footer__bottom
+    p.descr.footer__bottom-descr SDP®  2011-2021
