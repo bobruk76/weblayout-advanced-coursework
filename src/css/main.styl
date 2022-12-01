@@ -24,9 +24,18 @@
     max-width initial
 
   &__top
+    position relative
     padding-top 16px
     padding-bottom 6px
-    background-color color-alabaster
+    &:after
+      content ""
+      position absolute
+      z-index -1
+      top 0
+      right 0
+      bottom 0
+      left 0
+      background-color color-alabaster
 
     & .container
       padding-top 0

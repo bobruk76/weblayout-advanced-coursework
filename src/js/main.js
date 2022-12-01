@@ -65,14 +65,14 @@ const swiperUseful = new Swiper('.useful__slider', {
   a11y: true,
 })
 
-const headerSelect = document.querySelector('#header_select');
+const headerSelect = document.querySelector('#headerSelect');
 const headerChoices = new Choices(headerSelect, {
   itemSelectText: '',
   placeholder: false,
   allowHTML: true,
   searchEnabled: false,
   shouldSort: false,
-  labelId: '',
+  labelId: 'headerSelectAria',
   choices: [
     {
       value: 'Москва',
@@ -108,7 +108,7 @@ const categoryChoices = new Choices(categorySelect, {
   allowHTML: true,
   searchEnabled: false,
   shouldSort: false,
-  labelId: '',
+  labelId: 'categoryAria',
   choices: [
     {
       value: 'Категория',
