@@ -4,7 +4,16 @@
   display inline-flex
   flex-direction column
 
-  background-color color-alabaster
+  &:after
+    content ""
+    position absolute
+    z-index -1
+    top 0
+    right 0
+    bottom 0
+    left 0
+    background-color color-alabaster
+
   &__items
     margin-bottom: "calc(%s / 2)" % gap
     display flex

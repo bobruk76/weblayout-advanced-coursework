@@ -394,9 +394,17 @@
 
 /*footer*/
 .footer
-  color color-dusty-gray
   &__top
-    background-color color-gallery
+    position relative
+    &:after
+      content ""
+      position absolute
+      z-index -1
+      top 0
+      right 0
+      bottom 0
+      left 0
+      background-color color-gallery
   &__container
     padding-top 26px
     padding-bottom 24px
@@ -429,13 +437,16 @@
       font-weight 400
       font-size 14px
       line-height 100%
+      color color-dusty-gray
 
       &-title
         color color-mine-shaft
   &__bottom
+    padding: 0
     display flex
     justify-content center
-    &-descr
+    &-info
       font-weight 400
       font-size 14px
       line-height 19px
+      color color-dusty-gray
