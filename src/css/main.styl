@@ -14,10 +14,12 @@
 @import 'components/swiper.styl'
 @import 'components/useful.styl'
 @import 'components/validate.styl'
+@import 'components/catalog.styl'
 //@import 'components/burger.styl'
 
 /*header*/
 .header
+  grid-area header
   &__container
     padding-bottom 32px
     width 100%
@@ -195,7 +197,6 @@
         color color-bg
 
     &-form
-
       font-weight 400
       font-size 16px
       line-height 120%
@@ -233,7 +234,16 @@
 
       & .choices__item
         padding-left 27px
-
+/*breadcrumbs*/
+.breadcrumbs
+  &__container
+    grid-area breadcrumbs
+/*aside*/
+.aside
+  grid-area sidebar
+/*main*/
+.main
+  grid-area main
 /*hero*/
 .hero
   &__container
@@ -394,6 +404,7 @@
 
 /*footer*/
 .footer
+  grid-area footer
   &__top
     position relative
     &:after

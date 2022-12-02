@@ -1,0 +1,8 @@
+mixin breadcrumbs(breadcrumbList)
+  nav.breadcrumbs(aria-label="Breadcrumb")
+    ol.list-reset.breadcrumbs__items(typeof="BreadcrumbList" vocab="https://schema.org/" aria-label="breadcrumbs")
+      each breadcrumb, index in breadcrumbList
+        li.breadcrumbs__item(property="itemListElement" typeof="ListItem")
+          a.link.breadcrumb.breadcrumbs__item-link(property="item" typeof="WebPage" href="/")
+            span(property="name") !{breadcrumb}
+            meta(property="position" content=index)

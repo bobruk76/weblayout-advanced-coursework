@@ -1,0 +1,21 @@
+.breadcrumbs
+  &__items
+    display flex
+    align-items center
+    justify-content flex-start
+
+    font-weight 400
+    font-size 14px
+    line-height 100%
+
+    color color-dusty-gray
+  &__item
+    &:not(:last-child)
+      &:after
+        padding-right 6px
+        padding-left 6px
+        content "/"
+    &:last-child
+      color color-purple-heart
+      pointer-events none
+

@@ -1,3 +1,8 @@
 extends components/templates/layout
 block content
-  h2 Каталог
+  .container.catalog-grid
+    include components/breadcrumbs
+    +breadcrumbs(['Главная', 'Каталог', 'Диваны', 'Прямые диваны'])
+    include components/aside
+    section.catalog
+      h2 Каталог
