@@ -28,7 +28,6 @@ block content
     .container.high-rating__container
       h2.title.high-rating__title Высокий рейтинг
       ul.list-reset.high-rating__items
-        include components/category-card
         each item in product_list
           +card("li", item, "high-rating__item")
       button.btn-reset.btn.high-rating__btn Смотреть больше товаров
@@ -43,6 +42,7 @@ block content
     .container.category__container
       h2.title.category__title Топ категории
       ul.list-reset.category__items
+        include components/category-card
         each item, index in category_list
           +category-card("li", item, "category__item" + (index < 2 ? " category__item--wide" : ""))
 

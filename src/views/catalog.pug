@@ -1,8 +1,13 @@
 extends components/templates/layout
 block content
+  include components/store/catalog-store
   .container.catalog-grid
     include components/breadcrumbs
     +breadcrumbs(['Главная', 'Каталог', 'Диваны', 'Прямые диваны'])
     include components/aside
     section.catalog
       h2 Каталог
+      ul.list-reset.catalog__items
+        include components/card
+        each item in product_list
+          +card("li", item, "catalog__item")
