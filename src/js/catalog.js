@@ -7,10 +7,9 @@ const swiperCatalog = new Swiper('.catalog__slider', {
   slidesPerView: 3,
   grid: {
     rows: 3,
-    columns: 3,
   },
   spaceBetween: 32,
-  slidesPerGroup: 9,
+
   // navigation: {
   //   prevEl: '.useful__navigation-prev',
   //   nextEl: '.useful__navigation-next',
