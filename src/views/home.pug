@@ -28,8 +28,10 @@ block content
     .container.high-rating__container
       h2.title.high-rating__title Высокий рейтинг
       ul.list-reset.high-rating__items
-        each item in product_list
-          +card("li", item, "high-rating__item")
+        include components/store/catalog-store
+        each item, index in product_list
+          if (index < 8)
+            +card("li", item, "high-rating__item")
       button.btn-reset.btn.high-rating__btn Смотреть больше товаров
 
   section.ad#ad
