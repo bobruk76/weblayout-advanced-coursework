@@ -1,4 +1,7 @@
 extends components/templates/layout
+include components/card
+block scripts
+  script(defer src='js/catalog.js')
 block content
   include components/store/catalog-store
   .container.catalog-grid
@@ -7,7 +10,9 @@ block content
     include components/aside
     section.catalog
       h2 Каталог
-      ul.list-reset.catalog__items
-        include components/card
-        each item in product_list
-          +card("li", item, "catalog__item")
+      .catalog__slider
+        //include components/swiper-navigation
+        //+swiper-navigation("special-offers__navigation")
+        .swiper-wrapper
+          each item in product_list
+            +card("div", item, "swiper-slide catalog__item")

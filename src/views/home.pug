@@ -1,4 +1,6 @@
 extends components/templates/layout
+block scripts
+  script(defer src='js/home.js')
 block content
   include components/store/main-store
   section.hero#hero

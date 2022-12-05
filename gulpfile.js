@@ -27,7 +27,7 @@ const htmlValidator = require('gulp-w3c-html-validator')
 const htmlhint = require("gulp-htmlhint")
 const del = require('del')
 const uglify = require('gulp-uglify-es').default
-// const minify = require('gulp-minify')
+const minify = require('gulp-minify')
 const gulpif = require('gulp-if')
 
 const argv = require('yargs').argv;
@@ -95,10 +95,21 @@ const stylusCSS = () => {
     .pipe(gulpif(!isProduction, browserSync.stream()))
 }
 
-const scripts = () => {
-  return src('./src/js/*.js')
+const mainScript = () => {
+  return src('./src/js/main.js')
     .pipe(rollup({plugins: [babel(), resolve(), commonjs()]}, 'umd'))
     .pipe(concat('script.js'))
+    .pipe(gulpif(!isProduction, sourcemaps.init()))
+    .pipe(uglify())
+    .pipe(gulpif(!isProduction, sourcemaps.write('.')))
+    // .pipe(minify())
+    .pipe(dest(destination + '/js'))
+    .pipe(gulpif(!isProduction, browserSync.stream()))
+}
+
+const scripts = () => {
+  return src(['./src/js/*.js', '!./src/js/main.js'])
+    .pipe(rollup({plugins: [babel(), resolve(), commonjs()]}, 'umd'))
     .pipe(gulpif(!isProduction, sourcemaps.init()))
     .pipe(uglify())
     .pipe(gulpif(!isProduction, sourcemaps.write('.')))
@@ -160,8 +171,8 @@ watch([
 ], imagesWebp)
 watch("./src/img/svg/*.svg", svgSprites)
 watch("./src/css/**/**/*.styl", stylusCSS)
-watch("src/js/*.js", scripts)
+watch("src/js/*.js", parallel(scripts, mainScript))
 watch("./src/views/**/**/*.pug", series(pug2html, validateHtml))
 
-exports.dev = series(clean, parallel(svgSprites, imagesWebp, images, fonts, stylusCSS, scripts), pug2html, validateHtml, parallel(serve, watcher))
-exports.build = series(clean, parallel(svgSprites, imagesWebp, images, fonts, stylusCSS, scripts), pug2html, validateHtml)
+exports.dev = series(clean, parallel(svgSprites, imagesWebp, images, fonts, stylusCSS, scripts, mainScript), pug2html, validateHtml, parallel(serve, watcher))
+exports.build = series(clean, parallel(svgSprites, imagesWebp, images, fonts, stylusCSS, scripts, mainScript), pug2html, validateHtml)
