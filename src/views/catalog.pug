@@ -11,10 +11,10 @@ block content
     include components/aside
 
     section.ad-aside
-      .ad__container
-        h2.title.ad__title Оксфорд 1950
-        p.descr.ad__descr Новая коллекция изысканных кресел
-        button.btn-reset.btn.ad__btn Ознакомиться
+      .ad-aside__container
+        h2.title.ad-aside__title Оксфорд 1950
+        p.descr.ad-aside__descr Новая коллекция изысканных кресел
+        button.btn-reset.btn.ad-aside__btn Ознакомиться
 
     section.catalog
       h2 Каталог
@@ -24,4 +24,5 @@ block content
         .swiper-wrapper
           each item in product_list
             +card("div", item, "swiper-slide catalog__item")
+        .catalog__slider-pagination
 
