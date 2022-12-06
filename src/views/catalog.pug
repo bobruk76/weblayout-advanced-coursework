@@ -4,10 +4,18 @@ block scripts
   script(defer src='js/catalog.js')
 block content
   include components/store/catalog-store
-  .container.catalog-grid
+  .container.grid-catalog
     include components/breadcrumbs
     +breadcrumbs(['Главная', 'Каталог', 'Диваны', 'Прямые диваны'])
+
     include components/aside
+
+    section.ad-aside
+      .ad__container
+        h2.title.ad__title Оксфорд 1950
+        p.descr.ad__descr Новая коллекция изысканных кресел
+        button.btn-reset.btn.ad__btn Ознакомиться
+
     section.catalog
       h2 Каталог
       .catalog__slider
@@ -16,3 +24,4 @@ block content
         .swiper-wrapper
           each item in product_list
             +card("div", item, "swiper-slide catalog__item")
+

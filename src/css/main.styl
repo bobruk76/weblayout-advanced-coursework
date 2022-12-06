@@ -14,7 +14,6 @@
 @import 'components/swiper.styl'
 @import 'components/useful.styl'
 @import 'components/validate.styl'
-@import 'components/catalog.styl'
 //@import 'components/burger.styl'
 
 /*header*/
@@ -234,16 +233,15 @@
 
       & .choices__item
         padding-left 27px
-/*breadcrumbs*/
-.breadcrumbs
-  &__container
-    grid-area breadcrumbs
+
 /*aside*/
 .aside
   grid-area sidebar
+
 /*main*/
 .main
   grid-area main
+
 /*hero*/
 .hero
   &__container
@@ -333,6 +331,7 @@
 
 /*ad*/
 .ad
+  grid-area ad
   display flex
   flex-direction column
   justify-content center
@@ -343,6 +342,8 @@
   background-repeat no-repeat
   background-size contain
   background-position center
+  //@media (max-width 320px)
+  //  background-image url("../img/ad-bg-320.webp")
 
   &__container
     padding 11px 0 0
@@ -464,3 +465,4 @@
       font-size 14px
       line-height 19px
 
+@import 'components/catalog.styl'
