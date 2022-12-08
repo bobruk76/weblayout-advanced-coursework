@@ -1,7 +1,7 @@
-import Swiper, {Pagination, Navigation} from 'swiper'
+import Swiper, {Pagination, Navigation, Grid} from 'swiper'
 
 const swiperCatalog = new Swiper('.catalog__slider', {
-  modules: [Pagination, Navigation],
+  modules: [Pagination, Navigation, Grid],
 
   effect: 'fade',
 
