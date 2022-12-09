@@ -1,4 +1,6 @@
 @import 'breadcrumbs.styl'
+card-height = 420px
+
 .grid-catalog
   display grid
   grid-template-columns repeat(4, 1fr)
@@ -40,14 +42,35 @@
   grid-column-start 2
   grid-row-end -1
   grid-column-end -1
-  &__slider.swiper-grid
-    max-height 1324px
+  &__slider
+    height 'calc((3 * %s) + (4 * %s))' % (card-height gap)
+    //max-height 1324px
+    & .swiper-pagination-bullet
+      width gap
+      height gap
 
-  &__item
+      background-color transparent
+      color color-medium-purple
+      font-weight 600
+      font-size 16px
+      line-height 175%
+      text-align center
+
+      border 2px solid color-medium-purple
+      border-radius 10px
+      opacity 1
+
+      &-active
+        color color-bg
+        background-color color-medium-purple
+
+  &__item.card
     max-width initial
+    min-height initial
+    height 'calc(1 * %s)' % card-height
 
 
-      //overflow-x hidden
+    //overflow-x hidden
 
 
     //& > .swiper-wrapper
