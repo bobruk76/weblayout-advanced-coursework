@@ -1,2 +1,12 @@
+
+include store/aside-store
 aside.aside
-  span Левое меню
+  strong Фильтровать по:
+
+  h2.form__title Категории:
+  ul.form__items.list-reset
+    li.form__item
+      label.form__checkbox-input-label.contacts__form-label(for="ch1")
+        input.form__checkbox-input.form__checkbox-input--hide#ch1(name="ch1" type="checkbox" required)
+        span.checkbox-icon Диваны
+
