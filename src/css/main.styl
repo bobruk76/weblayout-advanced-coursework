@@ -429,7 +429,45 @@
     &-items
       display inline-grid
       grid-template-columns repeat(3, auto)
-      grid-gap 20px
+      grid-gap 17px
+    &-item
+      position relative
+      width 33px
+      height 30px
+      &-link.link
+        position absolute
+        z-index 1
+        top 0
+        right 0
+        bottom 0
+        left 3px
+        color color-dusty-gray
+        outline none
+        transition color .3s ease-in-out
+        &:after
+          content ""
+          position absolute
+          z-index -1
+          top -3px
+          right -3px
+          bottom -3px
+          left -3px
+          background-color transparent
+          transition background-color .3s ease-in-out
+
+        & path
+          fill currentColor
+
+        &:hover
+          color color-medium-purple
+
+        &:focus
+          color color-bg
+          &:after
+            background-color color-mauve
+
+        &:active
+          color color-purple-heart
 
   &__cards
     display inline-grid
