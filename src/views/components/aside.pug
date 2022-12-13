@@ -1,12 +1,18 @@
-
 include store/aside-store
+include fieldset-checkbox
 aside.aside
-  strong Фильтровать по:
+  .form.aside__form
+    strong Фильтровать по:
+    +fieldset-checkbox("Категории", category_list, "cat-", "checkbox")
+    +fieldset-checkbox("Цвет", color_list, "color-", "checkbox")
 
-  h2.form__title Категории:
-  ul.form__items.list-reset
-    li.form__item
-      label.form__checkbox-input-label.contacts__form-label(for="ch1")
-        input.form__checkbox-input.form__checkbox-input--hide#ch1(name="ch1" type="checkbox" required)
-        span.checkbox-icon Диваны
+    //fieldset.form__fieldset
+    //  legend.form__fieldset-legend Категории
+    //  ul.form__items.list-reset
+    //    each item, index in category_list
+    //      - var id = "cat-" + index
+    //      li.form__item
+    //        label.form__checkbox-input-label.aside__form-label(for=id)
+    //          input.form__checkbox-input.form__checkbox-input--hide(id=id name=id type="checkbox" required)
+    //          span.checkbox-icon !{item}
 

@@ -13,6 +13,7 @@ card-height = 420px
   grid-row-end 2
   grid-column-end -1
 
+/*aside*/
 .aside
   grid-row-start 2
   grid-column-start 1
@@ -21,6 +22,24 @@ card-height = 420px
 
   margin-top auto
   margin-bottom 0
+  &__form
+    width initial
+    &-label
+      margin-bottom 12px
+    & .form__fieldset-legend
+      font-weight 600
+      font-size 16px
+      line-height 130%
+      color color-dove-gray
+    & .checkbox-icon
+      font-weight 400
+      font-size 16px
+      line-height 130%
+      color color-dove-gray
+      &:after
+        width 20px
+        height 20px
+
 
 .ad-aside
   grid-row-start -2

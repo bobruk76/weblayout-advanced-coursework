@@ -1,0 +1,10 @@
+mixin fieldset-checkbox(name, list, idName, type)
+  fieldset.form__fieldset
+    legend.form__fieldset-legend !{name}
+    ul.form__items.list-reset
+      each item, index in list
+        - var id = idName + index
+        li.form__item
+          label.form__checkbox-input-label.aside__form-label(for=id)
+            input.form__checkbox-input.form__checkbox-input--hide(id=id name=id type=type required)
+            span.checkbox-icon !{item}
