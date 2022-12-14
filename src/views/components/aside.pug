@@ -1,11 +1,12 @@
 include store/aside-store
 include fieldset-checkbox
+include multi-range-slider
 aside.aside
   .form.aside__form
     strong Фильтровать по:
     +fieldset-checkbox("Категории", category_list, "cat-", "checkbox")
     +fieldset-checkbox("Скидка", discount_list, "color-", "checkbox")
     +fieldset-checkbox("Цвет", color_list, "color-", "checkbox")
-
+    +multiRangeSlider('aside__form-multi-range')
 
 

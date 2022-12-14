@@ -1,0 +1,11 @@
+mixin multiRangeSlider(class_name)
+  .multi-range-slider(class= class_name)
+    input(type="range" id="input-left" min="0" max="100" value="25")
+    input(type="range" id="input-right" min="0" max="100" value="75")
+
+    .slider
+      span.track
+      span.range
+      span.thumb.left
+      span.thumb.right
+
