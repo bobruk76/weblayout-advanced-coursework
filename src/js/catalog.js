@@ -36,7 +36,7 @@ const setLeftValue = () => {
   const percent = ((_this.value - min) / (max - min)) * 100;
   thumbLeft.style.left = percent + "%";
   range.style.left = percent + "%";
-};
+}
 
 const setRightValue = () => {
   const _this = inputRight;
@@ -45,7 +45,7 @@ const setRightValue = () => {
   const percent = ((_this.value - min) / (max - min)) * 100;
   thumbRight.style.right = 100 - percent + "%";
   range.style.right = 100 - percent + "%";
-};
+}
 
 inputLeft.addEventListener("input", setLeftValue);
 inputRight.addEventListener("input", setRightValue);

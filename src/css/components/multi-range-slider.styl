@@ -1,6 +1,21 @@
 .multi-range-slider
   position relative
-  max-width 296px
+  width 296px
+  &__input
+    position absolute
+    z-index 2
+    pointer-events none
+    height 3px
+    width 100%
+    opacity 0
+    &::-webkit-slider-thumb
+      pointer-events all
+      width: 13px
+      height: 26px
+
+      cursor pointer
+      -webkit-appearance: none
+
   & > .slider
     position relative
     z-index 1
