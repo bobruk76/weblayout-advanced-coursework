@@ -1,15 +1,19 @@
-mixin multiRangeSlider(class_name, max_value, current_min_value, current_max_value)
-  .multi-range-slider(class= class_name)
-    label.multi-range-slider__label.multi-range-slider__label--left
-      input.multi-range-slider__input-number.multi-range-slider__input-number--left(type="number" min="0" max=max_value value=current_min_value)
-    label.multi-range-slider__label.multi-range-slider__label--right
-      input.multi-range-slider__input-number.multi-range-slider__input-number--right(type="number" min="0" max=max_value value=current_max_value)
-    .multi-range-slider__ranges
-      input.multi-range-slider__input-range.multi-range-slider__input-range--left(type="range" min="0" max=max_value value=current_min_value)
-      input.multi-range-slider__input-range.multi-range-slider__input-range--right(type="range" min="0" max=max_value value=current_max_value)
+mixin multiRangeSlider(name, class_name, max_value, current_min_value, current_max_value)
+  fieldset.form__fieldset
+    legend.form__fieldset-legend !{name}
+      .multi-range-slider(class= class_name)
+        label.multi-range-slider__label.multi-range-slider__label--left
+          span.multi-range-slider__label-descr от
+          input.multi-range-slider__input-number.multi-range-slider__input-number--left(type="number" min="0" max=max_value value=current_min_value)
+        label.multi-range-slider__label.multi-range-slider__label--right
+          span.multi-range-slider__label-descr до
+          input.multi-range-slider__input-number.multi-range-slider__input-number--right(type="number" min="0" max=max_value value=current_max_value)
+        .multi-range-slider__ranges
+          input.multi-range-slider__input-range.multi-range-slider__input-range--left(type="range" min="0" max=max_value value=current_min_value)
+          input.multi-range-slider__input-range.multi-range-slider__input-range--right(type="range" min="0" max=max_value value=current_max_value)
 
-      .multi-range
-        span.track
-        span.range
-        span.thumb.thumb--left
-        span.thumb.thumb--right
+          .multi-range
+            span.track
+            span.range
+            span.thumb.thumb--left
+            span.thumb.thumb--right
