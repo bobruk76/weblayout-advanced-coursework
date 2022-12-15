@@ -1,7 +1,9 @@
 mixin multiRangeSlider(class_name, max_value, current_min_value, current_max_value)
   .multi-range-slider(class= class_name)
-    input.multi-range-slider__input-number.multi-range-slider__input-number--left(type="number" min="0" max=max_value value=current_min_value)
-    input.multi-range-slider__input-number.multi-range-slider__input-number--right(type="number" min="0" max=max_value value=current_max_value)
+    label.multi-range-slider__label.multi-range-slider__label--left
+      input.multi-range-slider__input-number.multi-range-slider__input-number--left(type="number" min="0" max=max_value value=current_min_value)
+    label.multi-range-slider__label.multi-range-slider__label--right
+      input.multi-range-slider__input-number.multi-range-slider__input-number--right(type="number" min="0" max=max_value value=current_max_value)
     .multi-range-slider__ranges
       input.multi-range-slider__input-range.multi-range-slider__input-range--left(type="range" min="0" max=max_value value=current_min_value)
       input.multi-range-slider__input-range.multi-range-slider__input-range--right(type="range" min="0" max=max_value value=current_max_value)

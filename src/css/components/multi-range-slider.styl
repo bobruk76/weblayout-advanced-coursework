@@ -1,7 +1,15 @@
 .multi-range-slider
   display grid
+  grid-template "number-left number-right" "ranges ranges"
+
   width 100%
   max-width 296px
+  &-label
+    &--left
+      grid-area number-left
+    &--right
+      grid-area number-right
+
   &__input
     &-range
       position absolute
@@ -17,7 +25,9 @@
 
         cursor pointer
         -webkit-appearance none
+
   &__ranges
+    grid-area ranges
     position relative
 
     & > .multi-range
