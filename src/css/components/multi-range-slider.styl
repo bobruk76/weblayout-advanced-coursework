@@ -29,7 +29,8 @@
   &__ranges
     grid-area ranges
     position relative
-
+    width 95%
+    justify-self center
     & > .multi-range
       position relative
       z-index 1
@@ -38,8 +39,8 @@
       & > .track
         position absolute
         z-index 1
-        left 0
-        right 0
+        left -6px
+        right -6px
         top 0
         bottom 0
         background-color color-gallery
@@ -62,3 +63,8 @@
         background-repeat no-repeat
         background-position center
         background-size cover
+        &--left
+          transform translateX(-6px)
+
+        &--right
+          transform translateX(6px)

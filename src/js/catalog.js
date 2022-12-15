@@ -1,5 +1,9 @@
 import Swiper, {Pagination, Navigation, Grid} from 'swiper'
 
+String.prototype.capitalize = function() {
+  return this.charAt(0).toUpperCase() + this.slice(1)
+}
+
 const swiperCatalog = new Swiper('.catalog__slider', {
   modules: [Pagination, Navigation, Grid],
 
@@ -28,8 +32,8 @@ const inputRight = document.querySelector(".multi-range-slider__input-number--ri
 const inputRangeLeft = document.querySelector(".multi-range-slider__input-range--left");
 const inputRangeRight = document.querySelector(".multi-range-slider__input-range--right");
 
-const thumbLeft = document.querySelector(".multi-range > .thumb.left");
-const thumbRight = document.querySelector(".multi-range > .thumb.right");
+const thumbLeft = document.querySelector(".multi-range > .thumb--left");
+const thumbRight = document.querySelector(".multi-range > .thumb--right");
 const range = document.querySelector(".multi-range > .range");
 
 const setLeftValue = () => {
