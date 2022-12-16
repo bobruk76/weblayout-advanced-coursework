@@ -36,9 +36,8 @@ const setValue = function (thisSide) {
   const thatSide = (thisSide === 'left') ? 'right' : 'left'
   const mathFunc = (thisSide === 'left') ? 'min' : 'max'
 
-  const _this = document.querySelector(".multi-range-slider__input-range--" + thisSide)
-  const _that = document.querySelector(".multi-range-slider__input-range--" + thatSide)
-
+  const _this = (thisSide === 'left') ? inputRangeLeft : inputRangeRight
+  const _that = (thisSide === 'left') ? inputRangeRight : inputRangeLeft
 
   const thumb = document.querySelector(".multi-range > .thumb--" + thisSide)
   const inputValue = document.querySelector(".multi-range-slider__input-number--" + thisSide)
