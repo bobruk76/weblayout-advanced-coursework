@@ -26,21 +26,24 @@ const swiperCatalog = new Swiper('.catalog__slider', {
   a11y: true,
 })
 
-
 // multi-range
-const inputRangeLeft = document.querySelector(".multi-range-slider__input-range--left");
-const inputRangeRight = document.querySelector(".multi-range-slider__input-range--right");
-const range = document.querySelector(".multi-range > .range");
+const inputLeft = document.querySelector(".multi-range-slider__input-number--left")
+const inputRight = document.querySelector(".multi-range-slider__input-number--right")
+const inputRangeLeft = document.querySelector(".multi-range-slider__input-range--left")
+const inputRangeRight = document.querySelector(".multi-range-slider__input-range--right")
+
+const range = document.querySelector(".multi-range > .range")
 
 const setValue = function (thisSide) {
-  const thatSide = (thisSide === 'left') ? 'right' : 'left'
   const mathFunc = (thisSide === 'left') ? 'min' : 'max'
 
   const _this = (thisSide === 'left') ? inputRangeLeft : inputRangeRight
   const _that = (thisSide === 'left') ? inputRangeRight : inputRangeLeft
 
   const thumb = document.querySelector(".multi-range > .thumb--" + thisSide)
-  const inputValue = document.querySelector(".multi-range-slider__input-number--" + thisSide)
+
+
+  const inputValue = (thisSide === 'left') ? inputLeft : inputRight
   const [min, max] = [parseInt(_this.min), parseInt(_this.max)]
 
   _this.value = Math[mathFunc](parseInt(_this.value), parseInt(_that.value));
@@ -48,9 +51,19 @@ const setValue = function (thisSide) {
   inputValue.value = _this.value;
   const percent = ((_this.value - min) / (max - min)) * 100;
 
-  thumb.style[thisSide] = (thisSide === 'left') ? percent + "%" : 100-percent + "%";
-  range.style[thisSide] = (thisSide === 'left') ? percent + "%" : 100-percent + "%";
+  thumb.style[thisSide] = (thisSide === 'left') ? percent + "%" : 100 - percent + "%";
+  range.style[thisSide] = (thisSide === 'left') ? percent + "%" : 100 - percent + "%";
 }
+
+inputLeft.addEventListener("change", () => {
+  inputRangeLeft.value = inputLeft.value
+  setValue('left')
+});
+
+inputRight.addEventListener("change", () => {
+  inputRangeRight.value = inputRight.value
+  setValue('right')
+});
 
 inputRangeLeft.addEventListener("input", () => {
   setValue('left')
