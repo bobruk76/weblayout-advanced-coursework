@@ -1,5 +1,11 @@
 .breadcrumbs
+  margin-bottom 35px
   grid-area breadcrumbs
+
+  grid-row-start 1
+  grid-column-start 1
+  grid-row-end 2
+  grid-column-end -1
   &__items
     display flex
     align-items center
@@ -13,8 +19,8 @@
   &__item
     &:not(:last-child)
       &:after
-        padding-right 6px
-        padding-left 6px
+        padding-right 4px
+        padding-left 5px
         content "/"
     &:last-child
       color color-purple-heart
