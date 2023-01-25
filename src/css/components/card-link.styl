@@ -1,0 +1,33 @@
+.card-link
+  &.link
+    position relative
+
+    display inline-flex
+    flex-direction row-reverse
+    align-items flex-start
+    justify-content flex-end
+
+    color color-medium-purple
+    font-weight 700
+    font-size 16px
+    line-height 120%
+
+  &__descr
+    margin auto 5px auto auto
+  &__btn
+    @extend .btn-arrow
+    &:after
+      position absolute
+      z-index 99
+      content ""
+      top 0
+      right 0
+      bottom 0
+      left 0
+    &:hover + span
+      text-decoration underline
+    &:focus + span
+      text-decoration underline
+    &:active + span
+      color color-purple-heart
+      text-decoration underline

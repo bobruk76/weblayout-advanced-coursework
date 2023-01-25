@@ -7,9 +7,6 @@ mixin category-card(tag, item, class_name)
     strong.title.category-card__title !{item.title}
     picture.category-card__picture
       img.category-card__img(src= item.img alt="Фото категории")
-    a.link.category-card__link(href="#")
-      span.category-card__link-btn
-        svg(width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
-          circle(r="15" transform="matrix(-1 0 0 1 16 16)" stroke="" stroke-width="2")
-          path(d="M14 11L19 16L14 21" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-      span.category-card__link-descr В каталог
+    include card-link
+    +card-link("category-card__link")
+

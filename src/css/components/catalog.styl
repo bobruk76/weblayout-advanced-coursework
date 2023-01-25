@@ -2,11 +2,20 @@
 @import 'multi-range-slider.styl'
 
 card-height = 420px
+
+.swiper-horizontal
+  position initial
+
+.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction
+  bottom -64px
+
 .header__container
   padding-bottom 22px
 
 .grid-catalog
+  position relative
   padding-top 0
+  padding-bottom 132px
   display grid
   grid-template-columns repeat(4, 1fr)
   grid-template-rows repeat(3, auto)
@@ -16,8 +25,8 @@ card-height = 420px
 .aside
   margin-top 0
   grid-row-start 2
-  grid-column-start 1
   grid-row-end -3
+  grid-column-start 1
   grid-column-end 2
   align-self start
 
@@ -63,8 +72,9 @@ card-height = 420px
   margin-bottom 0
 
   grid-row-start -2
-  grid-column-start 1
   grid-row-end -1
+
+  grid-column-start 1
   grid-column-end 2
 
   display flex
@@ -81,8 +91,30 @@ card-height = 420px
 
   min-height 360px
 
+  &__title
+    margin 0
+
+    font-family "Playfair Display", Verdana, sans-serif
+    font-style normal
+    font-weight 900
+    font-size 24px
+    line-height 32px
+    color color-straw
+
+  &__descr
+    margin 0 0 10px 0
+
+    font-weight 400
+    font-size 16px
+    line-height 22px
+    color color-dusty-gray
+
+    width 75%
+
 /*catalog*/
 .catalog
+  position relative
+  z-index 5
   grid-area catalog
   grid-row-start 2
   grid-column-start 2
@@ -100,7 +132,7 @@ card-height = 420px
     color color-mine-shaft
 
   &__slider
-    height 'calc((3 * %s) + (4 * %s))' % (card-height gap)
+    height 'calc((3 * %s) + (2 * %s))' % (card-height gap)
     //max-height 1324px
 
     & .swiper-pagination-bullet

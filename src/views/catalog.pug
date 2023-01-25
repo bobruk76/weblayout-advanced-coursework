@@ -14,7 +14,8 @@ block content
       .ad-aside__container
         h2.title.ad-aside__title Оксфорд 1950
         p.descr.ad-aside__descr Новая коллекция изысканных кресел
-        button.btn-reset.btn.ad-aside__btn Ознакомиться
+        include components/card-link
+        +card-link("ad-aside__link")
 
     section.catalog
       h2.catalog__title Каталог
