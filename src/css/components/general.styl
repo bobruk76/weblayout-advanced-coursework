@@ -16,7 +16,8 @@ a:visited
 body
   min-width 320px
   font-family "Open Sans", Verdana, sans-serif
-  //background-color color-bg
+
+//background-color color-bg
 
 .visually-hidden
   position absolute
@@ -40,22 +41,28 @@ body
 .btn-arrow
   & *
     stroke color-medium-purple
+
   &:hover
     & circle
       fill color-medium-purple
       stroke color-medium-purple
+
     & path
       stroke color-bg
+
   &:focus
     & circle
       stroke color-medium-purple
       fill color-mauve
+
     & path
       stroke color-bg
+
   &:active
     & circle
       fill color-purple-heart
       stroke color-purple-heart
+
     & path
       stroke color-bg
 
@@ -81,6 +88,7 @@ body
   border-radius 10px
 
   transition color .3s ease-in-out, border-color .3s ease-in-out, background-color .3s ease-in-out
+
   &:after
     content ""
     position absolute
@@ -145,14 +153,17 @@ body
   font-size 14px
   line-height 22px
   transition background-color .3s ease-in-out, color .3s ease-in-out
+
   & path
     fill currentColor
     transition fill .3s ease-in-out
 
   &:hover
     color color-koromiko
+
   &:focus
     background-color color-milk-punch
+
   &:active
     color color-rust
 
@@ -188,6 +199,7 @@ body
   justify-content flex-start
 
   width 'calc(50% - (%s / 2))' % gap
+
   &-select
     &__label
       margin-right 19px
@@ -198,6 +210,7 @@ body
     position relative
     margin-bottom: 30px
     width 100%
+
     & .link
       font-weight 400
       font-size 14px
@@ -210,6 +223,7 @@ body
     margin-bottom 26px
 
     border none
+
     &-legend
       margin-bottom: 10px
 
@@ -241,9 +255,11 @@ body
     &:hover
       background-color color-gallery
       border-color color-gallery
+
     &:focus
       background-color color-magnolia
       border-color color-medium-purple
+
     &:active
       background-color color-alabaster
       border-color color-sulu
@@ -266,21 +282,25 @@ body
 
   &__checkbox
     display inline-flex
+
     &-input
       &-label
         display flex
         align-items center
         cursor pointer
+
       &--hide
         position absolute
         opacity 0
         appearance none
+
         &:checked + .checkbox-icon:after
           border none
           background-image url("../img/sprite.svg#cheked")
           background-repeat no-repeat
           background-position center
           background-size cover
+
     & .link
       font-weight 400
       font-size 14px
@@ -319,6 +339,7 @@ body
   padding-left: 4px
   position relative
   z-index 1
+
   &__popup
     padding 5px
     position absolute
@@ -339,6 +360,7 @@ body
     visibility hidden
     transform translateX(-50%) translateY(10px)
     transition opacity .3s ease-in-out, transform .3s ease-in-out, visibility .3s ease-in-out;
+
     &:after
       content ""
       position absolute
@@ -352,17 +374,23 @@ body
 
   &__marker
     cursor pointer
+
     & path
       fill color-crusta
+
     & circle
       stroke color-crusta
+
     &:hover
       & .tooltip__marker-circle
         fill color-crusta
+
       & .tooltip__marker-ring
         stroke color-crusta
+
       & path
         fill color-bg
+
       & + .tooltip__popup
         opacity 1
         visibility visible

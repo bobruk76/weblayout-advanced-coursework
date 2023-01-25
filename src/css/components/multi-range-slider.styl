@@ -5,13 +5,17 @@
 
   width 100%
   max-width 296px
+
   &__label
     margin-bottom 10px
+
     &-descr
-      margin-right: 7px
+      margin-right 7px
+
     &--left
       justify-self start
       grid-area number-left
+
     &--right
       grid-area number-right
       justify-self end
@@ -28,6 +32,7 @@
       font-size: 16px;
       line-height: 130%;
       color color-dove-gray
+
     &-range
       position absolute
       z-index 2
@@ -35,6 +40,7 @@
       height 15px
       width 100%
       opacity 0
+
       &::-webkit-slider-thumb
         pointer-events all
         width 15px
@@ -44,10 +50,12 @@
         -webkit-appearance none
 
   &__ranges
+    margin-bottom 8px
     grid-area ranges
     position relative
     width 95%
     justify-self center
+
     & > .multi-range
       position relative
       z-index 1
@@ -80,6 +88,7 @@
         background-repeat no-repeat
         background-position center
         background-size cover
+
         &--left
           transform translateX(-7px)
 

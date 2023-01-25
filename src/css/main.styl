@@ -19,6 +19,7 @@
 /*header*/
 .header
   grid-area header
+
   &__container
     padding-bottom 32px
     width 100%
@@ -28,6 +29,7 @@
     position relative
     padding-top 16px
     padding-bottom 6px
+
     &:after
       content ""
       position absolute
@@ -376,6 +378,7 @@
 
   &__item
     grid-column span 2
+
     &--wide
       grid-column span 3
 
@@ -390,6 +393,7 @@
   &__form
     &-title
       margin-bottom 8px
+
     &-descr
       margin-bottom 'calc(%s / 2)' % gap
       font-weight 400
@@ -400,8 +404,10 @@
 /*footer*/
 .footer
   grid-area footer
+
   &__top
     position relative
+
     &:after
       content ""
       position absolute
@@ -411,6 +417,7 @@
       bottom 0
       left 0
       background-color color-gallery
+
   &__container
     padding-top 26px
     padding-bottom 24px
@@ -428,10 +435,12 @@
       display inline-grid
       grid-template-columns repeat(3, auto)
       grid-gap 17px
+
     &-item
       position relative
       width 33px
       height 30px
+
       &-link.link
         position absolute
         z-index 1
@@ -442,6 +451,7 @@
         color color-dusty-gray
         outline none
         transition color .3s ease-in-out
+
         &:after
           content ""
           position absolute
@@ -461,6 +471,7 @@
 
         &:focus
           color color-bg
+
           &:after
             background-color color-mauve
 
@@ -477,6 +488,7 @@
     row-gap 10px
     flex-direction column
     align-items flex-start
+
     &-link
       font-weight 400
       font-size 14px
@@ -485,6 +497,7 @@
 
       &-title
         color color-mine-shaft
+
   &__bottom
     padding: 0
     display flex
