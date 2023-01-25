@@ -11,6 +11,10 @@ app.get('/catalog', function(req, res) {
   res.sendfile('dist/catalog.html')
 })
 
+app.get('/catalog/category/:productId', function(req, res) {
+  res.sendfile('dist/product.html')
+})
+
 app.listen(3000, () => {
   console.log('Listening on port 3000...')
 })
