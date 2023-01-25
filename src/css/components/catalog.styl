@@ -57,18 +57,29 @@ card-height = 420px
 
 /*ad-aside*/
 .ad-aside
+  padding 30px
+
+  margin-top auto
+  margin-bottom 0
+
   grid-row-start -2
   grid-column-start 1
   grid-row-end -1
   grid-column-end 2
 
-  margin-top auto
-  margin-bottom 0
+  display flex
+  flex-direction column
+  justify-content end
 
+  background-color color-mine-shaft
   background-image url("../img/ad-bg-320.webp")
   background-repeat no-repeat
   background-size contain
   background-position top center
+
+  border-radius 10px
+
+  min-height 360px
 
 /*catalog*/
 .catalog
