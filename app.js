@@ -11,8 +11,9 @@ app.get('/catalog', function(req, res) {
   res.sendfile('dist/catalog.html')
 })
 
-app.get('/catalog/category/:productId', function(req, res) {
-  res.sendfile('dist/product.html')
+app.get('/product', function(req, res) {
+  res.sendfile('dist/product.html', { id: req.params.id });
+  // res.sendfile('dist/product.html')
 })
 
 app.listen(3000, () => {

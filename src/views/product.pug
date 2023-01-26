@@ -1,7 +1,11 @@
 extends components/templates/layout
 block scripts
-  script(defer src='js/catalog.js')
+  script(defer src='/js/product.js')
 block content
-  .container
-    h1.title Карточка товара
+  .container.grid-product
+    include components/breadcrumbs
+    +breadcrumbs(['Главная', 'Каталог', 'Диваны', 'Прямые диваны'])
+    h1.title Карточка товара !{id}
+    p.descr !{productId}
+
 

@@ -1,6 +1,6 @@
-mixin card(tag, item, class_name, special_offers = false)
+mixin card(tag, item, class_name, special_offers)
   #{tag}.card(class= class_name)
-    a.link.card__link(href="/catalog/category/" + item.id)
+    a.link.card__link(href="/product?id=" + item.id)
     if special_offers
       .card__discount
         span !{item.discount}
@@ -24,4 +24,3 @@ mixin card(tag, item, class_name, special_offers = false)
     if item.scheme
       picture
         img.card__scheme(src= item.scheme alt="Схема товара")
-
