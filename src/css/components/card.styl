@@ -1,5 +1,4 @@
 .card
-
   padding 30px 30px
   position relative
   display inline-flex
@@ -12,6 +11,7 @@
 
   &--wide
     max-width 'calc((100% / 2) - (%s / 2))' % gap
+
   &:after
     content ""
     position absolute
@@ -21,6 +21,17 @@
     bottom 0
     left 0
     background-color color-alabaster
+
+  &__link
+    position initial
+    &:after
+      content ""
+      position absolute
+      z-index 10
+      top 0
+      right 0
+      bottom 90px
+      left 0
 
   &__rating.link
     margin 0 auto auto 0
@@ -32,8 +43,10 @@
     font-weight 400
     font-size 16px
     line-height 130%
+
     & > svg
       margin-right 7px
+
   &__discount
     position absolute
     top 32px
@@ -70,19 +83,23 @@
     font-weight 400
     font-size 24px
     line-height: 130%
+
   &__price
     margin-bottom 23px
     font-weight 400
     font-size 16px
     line-height 130%
     color color-dove-gray
+
     &-new
       margin-right: 30px
       font-size 18px
       color color-crusta
+
     &-old
       color color-dusty-gray
       text-decoration line-through
+
   &__scheme
     position absolute
     right 30px
