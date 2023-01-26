@@ -2,10 +2,15 @@ extends components/templates/layout
 block scripts
   script(defer src='/js/product.js')
 block content
-  .container.grid-product
+  include components/store/product-store
+  - var item = product_list[0]
+  section.breadcrumbs
     include components/breadcrumbs
-    +breadcrumbs(['Главная', 'Каталог', 'Диваны', 'Прямые диваны'])
-    h1.title Карточка товара !{id}
-    p.descr !{productId}
+    +breadcrumbs(['Главная', 'Каталог', 'Диваны', 'Прямые диваны', ])
+  section.product
+    .container.product__container
+
+      h1.title Карточка товара !{item.id}
+      p.descr !{productId}
 
 
