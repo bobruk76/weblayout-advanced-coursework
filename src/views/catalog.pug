@@ -20,8 +20,6 @@ block content
     section.catalog
       h2.catalog__title Каталог
       .catalog__slider.swiper
-        //include components/swiper-navigation
-        //+swiper-navigation("special-offers__navigation")
         .swiper-wrapper
           each item in product_list
             +card("div", item, "swiper-slide catalog__item")
