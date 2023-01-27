@@ -9,8 +9,36 @@ block content
     +breadcrumbs(['Главная', 'Каталог', 'Диваны', 'Прямые диваны', ])
   section.product
     .container.product__container
+      picture.product__picture
+        img.product__img(src= item.img alt="Фото товара")
 
-      h1.title Карточка товара !{item.id}
-      p.descr !{productId}
+      ul.list-reset.product__items
+        each image in item.small_imgs
+          li.product__item
+            a.link
+              img.product__item-img(src= image alt="Фото товара")
 
+      .product__card.card
+        a.link.card__rating(href="#")
+          svg(width="16" height="15")
+            use(xlink:href='img/sprite.svg#star')
+          span= item.rating
+        h2.title.product__title !{item.name} + !{item.model}
+          span.product__title-descr !{item.name_descr}
+        p.card__price
+          span !{item.price}
+        button.btn-reset.btn.product__card-btn Купить в один клик
+        ul.list-reset.product__schemes
+          each scheme in item.schemes
+            a.link.product__scheme
+              img.product__scheme-img(src= scheme alt="Схема товара")
 
+      article.product__article
+        h3.title.product__article-title !{item.descr_title}
+        p.descr.product__article !{item.descr}
+
+      ul.list-reset.product__attributes
+        each attribute in item.attributes
+          li.product__attribute
+            span !{attribute.name}
+            span !{attribute.value}
