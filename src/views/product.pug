@@ -5,8 +5,9 @@ block content
   include components/store/product-store
   - var item = product_list[0]
   section.breadcrumbs
-    include components/breadcrumbs
-    +breadcrumbs(['Главная', 'Каталог', 'Диваны', 'Прямые диваны', ])
+    .container.breadcrumbs__container
+      include components/breadcrumbs
+      +breadcrumbs(['Главная', 'Каталог', 'Диваны', 'Прямые диваны', ])
   section.product
     .container.product__container
       picture.product__picture
@@ -19,19 +20,22 @@ block content
               img.product__item-img(src= image alt="Фото товара")
 
       .product__card.card
-        a.link.card__rating(href="#")
+        a.link.card__rating.product__card-rating(href="#")
           svg(width="16" height="15")
             use(xlink:href='img/sprite.svg#star')
           span= item.rating
-        h2.title.product__title !{item.name} + !{item.model}
-          span.product__title-descr !{item.name_descr}
-        p.card__price
+        h2.title.product__card-title
+          span !{item.name} + !{item.model}
+          span !{item.name_descr}
+        p.product__card-price
           span !{item.price}
         button.btn-reset.btn.product__card-btn Купить в один клик
-        ul.list-reset.product__schemes
-          each scheme in item.schemes
-            a.link.product__scheme
-              img.product__scheme-img(src= scheme alt="Схема товара")
+        button.btn-reset.product__card-btn-outline + Добавить в корзину
+
+      ul.list-reset.product__schemes
+        each scheme in item.schemes
+          a.link.product__schemes-item
+            img.product__scheme-img(src= scheme alt="Схема товара")
 
       article.product__article
         h3.title.product__article-title !{item.descr_title}
@@ -39,6 +43,6 @@ block content
 
       ul.list-reset.product__attributes
         each attribute in item.attributes
-          li.product__attribute
+          li.product__attributes-item
             span !{attribute.name}
             span !{attribute.value}
