@@ -3,11 +3,12 @@ block scripts
   script(defer src='/js/product.js')
 block content
   include components/store/product-store
-  - var item = product_list[0]
+  - var item = product_items[0]
   section.breadcrumbs
     .container.breadcrumbs__container
       include components/breadcrumbs
       +breadcrumbs(['Главная', 'Каталог', 'Диваны', 'Прямые диваны', ])
+
   section.product
     .container.product__container
       picture.product__picture
@@ -46,3 +47,16 @@ block content
           li.product__attributes-item
             span !{attribute.name}
             span !{attribute.value}
+
+  section.like-products#like-products
+    .container.like-products__container
+      h2.title.like-products__title Похожие товары
+      .like-products__slider
+        include components/store/catalog-store
+        include components/swiper-navigation
+        +swiper-navigation("like-products__navigation")
+        .swiper-wrapper
+          include components/card
+          each item, index in product_list
+            if (index < 8)
+              +card("div", item, "like-products__item")
