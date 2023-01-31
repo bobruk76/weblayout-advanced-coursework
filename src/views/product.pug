@@ -48,8 +48,8 @@ block content
       ul.list-reset.product__attributes
         each attribute in item.attributes
           li.product__attributes-item
-            span !{attribute.name}
-            span !{attribute.value}
+            span.product__attributes-item-name !{attribute.name}
+            span.product__attributes-item-value !{attribute.value}
 
   section.like-products#like-products
     .container.like-products__container
