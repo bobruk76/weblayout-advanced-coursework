@@ -27,7 +27,6 @@ block content
             use(xlink:href='img/sprite.svg#star')
           span= item.rating
         h2.title.product__card-title
-          //span `&ldquo;{item.model}&rdquo;`
           span !{item.name + "&ldquo;" + item.model + "&rdquo;"}
           span !{item.name_descr}
         p.product__card-price
@@ -61,6 +60,4 @@ block content
         .swiper-wrapper
           include components/card
           each item, index in product_list
-            if (item.productOrder)
-              +card("div", item, "like-products__item swiper-slide order" + item.productOrder)
-
+            +card("div", item, "like-products__item swiper-slide order" + (item.productOrder ? item.productOrder : "10"))
