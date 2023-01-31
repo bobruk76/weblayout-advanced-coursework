@@ -4,8 +4,8 @@ const swiperLikeProducts = new Swiper('.like-products__slider', {
   modules: [Navigation],
 
   effect: 'fade',
+  spaceBetween: 32,
   slidesPerView: "auto",
-  slidesPerGroup: 3,
 
   navigation: {
     prevEl: ".like-products__navigation-prev",

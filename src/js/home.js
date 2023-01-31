@@ -21,16 +21,12 @@ const swiperHero = new Swiper('.hero__slider', {
 })
 
 const swiperOffers = new Swiper('.special-offers__slider', {
-  modules: [Navigation, Autoplay],
+  modules: [Navigation],
 
   effect: 'fade',
   slidesPerView: "auto",
   slidesPerGroup: 3,
-  // autoHeight: true,
-  // autoplay: {
-  //   delay: 2500,
-  //   disableOnInteraction: false
-  // },
+
   navigation: {
     prevEl: ".special-offers__navigation-prev",
     nextEl: ".special-offers__navigation-next",
@@ -38,7 +34,6 @@ const swiperOffers = new Swiper('.special-offers__slider', {
 
   autoplayDisableOnInteraction: false,
   direction: 'horizontal',
-  // loop: true,
   a11y: true,
 })
 

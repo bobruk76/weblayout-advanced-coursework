@@ -11,7 +11,7 @@ block content
           each item in hero_list
             .swiper-slide.hero__slide(class="hero__slide-" + item.id)
               .container.hero__slide-container
-                h2.title.hero__slide-title !{item.header}
+                h2.title.hero__slide-title(class=(item.header_style ? "hero__slide-title--" + item.header_style : "")) !{item.header}
                 button.btn-reset.btn.hero__slide-btn(aria-label=item.button)= item.button
         .hero__slider-pagination
 
