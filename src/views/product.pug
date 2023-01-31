@@ -61,6 +61,6 @@ block content
         .swiper-wrapper
           include components/card
           each item, index in product_list
-            if (index < 8)
-              +card("div", item, "like-products__item swiper-slide")
+            if (item.productOrder)
+              +card("div", item, "like-products__item swiper-slide order" + item.productOrder)
 
