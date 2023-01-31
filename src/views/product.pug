@@ -42,7 +42,9 @@ block content
 
       article.product__article
         h3.title.product__article-title !{item.descr_title}
-        p.descr.product__article !{item.descr}
+        p.descr.product__article-descr
+          each descrLine in item.descr
+            span !{descrLine}
 
       ul.list-reset.product__attributes
         each attribute in item.attributes

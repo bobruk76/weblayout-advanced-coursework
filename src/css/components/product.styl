@@ -103,17 +103,22 @@
     grid-row-end 4
     grid-column-start 1
     grid-column-end 2
-
-    font-weight 400
-    font-size 14px
-    line-height 180%
-
     color color-mine-shaft
     &-title
+      margin-bottom 9px
       font-weight 600
       font-size 16px
       line-height 100%
 
+    &-descr
+      display flex
+      flex-direction column
+
+      font-weight 400
+      font-size 14px
+      line-height 180%
+      & span
+        margin-bottom 6px
 
 &__schemes
     grid-row-start 4
