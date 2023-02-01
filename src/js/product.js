@@ -25,3 +25,4 @@ const productCardDialog = document.querySelector('#productCardDialog')
 buyButton.addEventListener('click', () => {
   productCardDialog.showModal()
 })
+

@@ -12,8 +12,7 @@ app.get('/catalog', function(req, res) {
 })
 
 app.get('/product', function(req, res) {
-  res.sendfile('dist/product.html', { id: req.params.id });
-  // res.sendfile('dist/product.html')
+  res.sendfile('dist/product.html');
 })
 
 app.listen(3000, () => {
