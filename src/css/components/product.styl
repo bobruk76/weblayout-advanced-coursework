@@ -103,6 +103,7 @@
     grid-column-start 1
     grid-column-end 2
     color color-mine-shaft
+
     &-title
       margin-bottom 9px
       font-weight 600
@@ -116,23 +117,24 @@
       font-weight 400
       font-size 14px
       line-height 180%
+
       & span
         margin-bottom 6px
 
   &__schemes
-      grid-row-start 4
-      grid-row-end -1
-      grid-column-start 1
-      grid-column-end 2
+    grid-row-start 4
+    grid-row-end -1
+    grid-column-start 1
+    grid-column-end 2
 
-      align-self end
+    align-self end
 
-      display flex
-      align-items center
+    display flex
+    align-items center
 
-      &-item
-        &:not(:last-child)
-          margin-right: 32px
+    &-item
+      &:not(:last-child)
+        margin-right: 32px
 
   &__attributes
     grid-row-start 3
@@ -146,8 +148,25 @@
     line-height 180%
 
     &-item
-      & > span:first-child
+      display flex
+      width 100%
+
+      &-name
+        display flex
+        width 'calc(50% + (%s / 2))' % gap
         color color-dusty-gray
+        white-space nowrap
+
+        &:after
+          content '...........................................................................'
+          display block
+          white-space nowrap
+          overflow hidden
+
+          font-weight 400
+          font-size 5px
+          line-height 0
+          letter-spacing 0.6em
 
 .like-products
   &__container
@@ -161,6 +180,7 @@
     font-size 24px
     line-height 130%
     color color-mine-shaft
+
   &__item
     min-height 420px
     for num in (1..10)

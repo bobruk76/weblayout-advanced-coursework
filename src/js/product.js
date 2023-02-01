@@ -17,3 +17,11 @@ const swiperLikeProducts = new Swiper('.like-products__slider', {
 
   a11y: true,
 })
+
+
+const buyButton = document.querySelector('#productBuyOneClick')
+const productCardDialog = document.querySelector('#productCardDialog')
+
+buyButton.addEventListener('click', () => {
+  productCardDialog.showModal()
+})

@@ -31,8 +31,32 @@ block content
           span !{item.name_descr}
         p.product__card-price
           span !{item.price}
-        button.btn-reset.btn.product__card-btn Купить в один клик
+        button.btn-reset.btn.product__card-btn#productBuyOneClick Купить в один клик
         button.btn-reset.product__card-btn-outline + Добавить в корзину
+
+        dialog.dialog.product__card-dialog#productCardDialog
+          form.form.dialog__form(method="dialog")
+            h.title.dialog__form-title Купить в один клик
+
+          label.form__input-label.contacts__form-label(for="name")
+            span.visually-hidden Поле Введите имя
+            input.form__input#name(name="name" type="text" placeholder="Как вас зовут?")
+
+          label.form__input-label.contacts__form-label(for="email")
+            span.visually-hidden Поле Введите номер телефона
+            input.form__input#phone(name="phone" type="tel" placeholder="Ваш телефон" required)
+
+          label.form__input-label.contacts__form-label(for="email")
+            span.visually-hidden Поле Введите адрес электронной почты
+            input.form__input#email(name="e-mail" type="email" placeholder="Ваш e-mail" required)
+
+          button.btn-reset.btn.form__btn(id="submitBtn" aria-label="Кнопка отправить форму") Отправить
+
+          .form__checkbox.contacts__form-checkbox
+            label.form__checkbox-input-label.contacts__form-label(for="agree")
+              input.form__checkbox-input.form__checkbox-input--hide#agree(name="agree" type="checkbox" required)
+              span.checkbox-icon Принимаю
+            a.link(href="#") пользовательское соглашение
 
       ul.list-reset.product__schemes
         each scheme in item.schemes
