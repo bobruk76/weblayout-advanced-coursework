@@ -22,7 +22,7 @@ const buyButton = document.querySelector('#productBuyOneClick')
 const productCardDialog = document.querySelector('#productCardDialog')
 
 const modalWindows = document.querySelectorAll('.modal-window')
-const closeModalButtons = document.querySelectorAll('.modal-window__btn-close')
+const closeModalButtons = document.querySelectorAll('.modal-window__content-btn-close')
 closeModalButtons.forEach(item => {
   item.addEventListener('click', e => {
     modalWindows.forEach(modal => {

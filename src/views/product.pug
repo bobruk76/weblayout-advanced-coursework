@@ -37,22 +37,22 @@ block content
         include components/modal-window
         +modal-window("product__card-dialog", "productCardDialog")
 
-          form.form.dialog__form(method="dialog")
-            h.title.dialog__form-title Купить в один клик
-            p.descr.dialog__form-descr Чтобы оформить заказ — заполните формы ниже и наш менеджер свяжется с вами в течении часа.
+          form.form.dialog-form(method="dialog")
+            h.title.dialog-form__title Купить в один клик
+            p.descr.dialog-form__descr Чтобы оформить заказ — заполните формы ниже и наш менеджер свяжется с вами в течении часа.
 
-            label.form__input-label.dialog__form-label(for="name")
+            label.form__input-label.dialog-form__label(for="name")
               span.visually-hidden Поле Введите имя
               input.form__input#name(name="name" type="text" placeholder="Как вас зовут?" required)
 
-            label.form__input-label.dialog__form-label(for="phone")
+            label.form__input-label.dialog-form__label(for="phone")
               span.visually-hidden Поле Введите номер телефона
               input.form__input#phone(name="phone" type="tel" placeholder="Ваш телефон" required)
 
             button.btn-reset.btn.form__btn(id="submitBtn" aria-label="Кнопка отправить форму" value="default") Отправить
 
-            .form__checkbox.dialog__form-checkbox
-              label.form__checkbox-input-label.dialog__form-label(for="agree")
+            .form__checkbox.dialog-form__checkbox
+              label.form__checkbox-input-label.dialog-form__label(for="agree")
                 input.form__checkbox-input.form__checkbox-input--hide#agree(name="agree" type="checkbox" required)
                 span.checkbox-icon Принимаю
               a.link(href="#") пользовательское соглашение
