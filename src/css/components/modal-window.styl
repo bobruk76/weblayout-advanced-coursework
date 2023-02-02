@@ -1,27 +1,25 @@
 .modal-window
+  padding 30px
+
   position fixed
   z-index 1
   left 0
+  right 0
   top -500px
 
   border-radius 10px
   border-color color-bg
-  background color-bg
-  padding 30px
-
+  //background color-bg
+  background-color color-mine-shaft
   opacity 0
   transition opacity .3s ease-in-out, top .3s ease-in-out
 
-  &::backdrop
-    background-color color-mine-shaft
-    opacity .3
-
   &--visible
     opacity 1
-    top 0
+    top 180px
 
   &__btn
     &-close
       position absolute
-      top 0
-      right 0
+      top 20px
+      right 20px
