@@ -23,6 +23,6 @@ const buyButton = document.querySelector('#productBuyOneClick')
 const productCardDialog = document.querySelector('#productCardDialog')
 
 buyButton.addEventListener('click', () => {
-  productCardDialog.showModal()
+  productCardDialog.classList.add("modal-window--visible")
 })
 
