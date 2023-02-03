@@ -18,6 +18,15 @@ const swiperLikeProducts = new Swiper('.like-products__slider', {
   a11y: true,
 })
 
+const productModalImages = document.querySelector('#productModalImages')
+const productItemLinks = document.querySelectorAll('.product__item-link')
+
+productItemLinks.forEach(item => {
+  item.addEventListener('click', e => {
+    productModalImages.classList.add("modal-window--visible")
+  })
+})
+
 const buyButton = document.querySelector('#productBuyOneClick')
 const productDialog = document.querySelector('#productDialog')
 const productAccept = document.querySelector('#productAccept')
