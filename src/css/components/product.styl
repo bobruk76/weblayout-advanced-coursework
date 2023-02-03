@@ -10,6 +10,14 @@
     & .breadcrumbs
       margin-bottom 31px
 
+  &__modal
+    &-accept
+      & > .modal-window__content
+        padding 118px 75px
+        display flex
+        flex-direction column
+        align-items center
+
   &__container
     position relative
     padding-top 0
@@ -75,10 +83,6 @@
         font-size 17px
         line-height 130%
         color color-medium-purple
-    //&-dialog
-    //  min-width 624px
-    //  min-height 421px
-
 
   &__picture
     grid-row-start 1
@@ -197,11 +201,24 @@
     background-color color-mine-shaft
     opacity .3
 
-  &__form
+  &-form
     width 100%
     color color-mine-shaft
-    &-descr
-      width 50%
+
+    &__title
+      margin-bottom 8px
+      font-weight 400
+      font-size 32px
+      line-height 100%
+
+    &__descr
+      margin-bottom 30px
+      width 62%
       font-weight 400
       font-size 14px
       line-height 19px
+
+    &__label
+      margin-bottom 30px
+      &--last
+        margin-bottom 0

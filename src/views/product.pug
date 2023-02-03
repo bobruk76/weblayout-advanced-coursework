@@ -12,6 +12,35 @@ block content
 
   section.product
     .container.product__container
+      include components/modal-window
+      +modal-window("product__dialog", "productDialog")
+
+        form.form.dialog-form(method="dialog")
+          h3.title.dialog-form__title Купить в один клик
+          p.descr.dialog-form__descr Чтобы оформить заказ — заполните формы ниже и наш менеджер свяжется с вами в течении часа.
+
+          label.form__input-label.dialog-form__label(for="name")
+            span.visually-hidden Поле Введите имя
+            input.form__input#name(name="name" type="text" placeholder="Как вас зовут?" required)
+
+          label.form__input-label.dialog-form__label(for="phone")
+            span.visually-hidden Поле Введите номер телефона
+            input.form__input#phone(name="phone" type="tel" placeholder="Ваш телефон" required)
+
+          button.btn-reset.btn.form__btn(id="submitBtn" aria-label="Кнопка отправить форму" value="default") Отправить
+
+          .form__checkbox.dialog-form__checkbox
+            label.form__checkbox-input-label.dialog-form__label.dialog-form__label--last(for="agree")
+              input.form__checkbox-input.form__checkbox-input--hide#agree(name="agree" type="checkbox" required)
+              span.checkbox-icon Принимаю
+            a.link(href="#") пользовательское соглашение
+
+      +modal-window("product__modal-accept", "productAccept")
+        picture.modal-window__picture
+          svg(width="172" height="117")
+            use(xlink:href='img/sprite.svg#elephant')
+        p.descr.modal-window__descr Спасибо, мы вам перезвоним!
+
       picture.product__picture
         img.product__img(src= item.img alt="Фото товара")
 
@@ -34,28 +63,7 @@ block content
         button.btn-reset.btn.product__card-btn#productBuyOneClick Купить в один клик
         button.btn-reset.product__card-btn-outline + Добавить в корзину
 
-        include components/modal-window
-        +modal-window("product__card-dialog", "productCardDialog")
 
-          form.form.dialog-form(method="dialog")
-            h.title.dialog-form__title Купить в один клик
-            p.descr.dialog-form__descr Чтобы оформить заказ — заполните формы ниже и наш менеджер свяжется с вами в течении часа.
-
-            label.form__input-label.dialog-form__label(for="name")
-              span.visually-hidden Поле Введите имя
-              input.form__input#name(name="name" type="text" placeholder="Как вас зовут?" required)
-
-            label.form__input-label.dialog-form__label(for="phone")
-              span.visually-hidden Поле Введите номер телефона
-              input.form__input#phone(name="phone" type="tel" placeholder="Ваш телефон" required)
-
-            button.btn-reset.btn.form__btn(id="submitBtn" aria-label="Кнопка отправить форму" value="default") Отправить
-
-            .form__checkbox.dialog-form__checkbox
-              label.form__checkbox-input-label.dialog-form__label(for="agree")
-                input.form__checkbox-input.form__checkbox-input--hide#agree(name="agree" type="checkbox" required)
-                span.checkbox-icon Принимаю
-              a.link(href="#") пользовательское соглашение
 
       ul.list-reset.product__schemes
         each scheme in item.schemes

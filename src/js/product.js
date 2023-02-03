@@ -19,10 +19,12 @@ const swiperLikeProducts = new Swiper('.like-products__slider', {
 })
 
 const buyButton = document.querySelector('#productBuyOneClick')
-const productCardDialog = document.querySelector('#productCardDialog')
+const productDialog = document.querySelector('#productDialog')
+const productAccept = document.querySelector('#productAccept')
 
 const modalWindows = document.querySelectorAll('.modal-window')
 const closeModalButtons = document.querySelectorAll('.modal-window__content-btn-close')
+
 closeModalButtons.forEach(item => {
   item.addEventListener('click', e => {
     modalWindows.forEach(modal => {
@@ -32,6 +34,10 @@ closeModalButtons.forEach(item => {
 })
 
 buyButton.addEventListener('click', () => {
-  productCardDialog.classList.add("modal-window--visible")
+  productDialog.classList.add("modal-window--visible")
 })
 
+productDialog.onsubmit = () => {
+  productDialog.classList.remove("modal-window--visible")
+  productAccept.classList.add("modal-window--visible")
+}

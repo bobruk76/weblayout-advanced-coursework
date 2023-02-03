@@ -16,7 +16,19 @@
   width 100%
   height 100%
 
+  pointer-events none
+
   background-color rgba(51, 51, 51, .3)
+
+  &__picture
+    margin-bottom gap
+    margin-right 'calc(%s * 1.5)' % gap
+
+
+  &__descr.descr
+    font-weight 400
+    font-size 32px
+    line-height 100%
 
   &__content
     margin auto
@@ -26,6 +38,9 @@
     top -500px
 
     width fit-content
+    max-width 624px
+
+    pointer-events auto
 
     border-radius 10px
     border-color color-bg
@@ -39,6 +54,9 @@
         position absolute
         top 20px
         right 20px
+        color color-dusty-gray
+        & path
+          fill currentColor
 
   &--visible
     display block
@@ -46,3 +64,4 @@
     & > .modal-window__content
       animation animatetop .3s
       animation-fill-mode forwards
+
