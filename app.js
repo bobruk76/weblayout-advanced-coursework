@@ -15,6 +15,10 @@ app.get('/product', function(req, res) {
   res.sendfile('dist/product.html');
 })
 
+app.get('/cooperation', function(req, res) {
+  res.sendfile('dist/cooperation.html');
+})
+
 app.listen(3000, () => {
   console.log('Listening on port 3000...')
 })

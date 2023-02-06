@@ -1,0 +1,16 @@
+extends components/templates/layout
+block scripts
+  script(defer src='/js/product.js')
+block content
+  include components/store/catalog-store
+  include components/store/product-store
+  - var item = product_items[0]
+  section.breadcrumbs.product-breadcrumbs
+    .container.breadcrumbs__container
+      include components/breadcrumbs
+      +breadcrumbs(['Главная', 'Сотрудничество'])
+
+  section.cooperation#cooperation
+    .container.cooperation__container
+      h1.title.cooperation__title Сотрудничество
+
