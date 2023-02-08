@@ -1,31 +1,43 @@
+content-width = 841px
 .shipper
   &__container
     padding-top 0
+    padding-bottom 36px
 
     font-weight 400
     font-size 16px
     line-height 180%
     color color-dove-gray
-    & > *
-      margin-bottom gap
-      max-width 841px
+
+  &__descr
+    margin-bottom gap
+    max-width content-width
+    font-size 16px
+    line-height 180%
 
   &__title
-    margin-bottom 35px
+    max-width content-width
+    margin-bottom 'calc(%s + 3px)' % gap
     color color-mine-shaft
+
     &--second
       margin-bottom 12px
       font-size 24px
       line-height 33px
 
   &__items
+    margin-bottom gap
+    max-width content-width
+
     &--first
       max-width 624px
       line-height 150%
+
       & > .shipper__item
         margin-bottom 12px
         padding-left 37px
         position relative
+
         &:before
           content ""
           position absolute
@@ -39,42 +51,75 @@
           background-repeat no-repeat
           background-position left top
           background-size 35px
+
         &--second::before
           background-image url("../img/sprite.svg#briefcase")
           background-repeat no-repeat
           background-position left top
           background-size 35px
+
         &--third::before
           background-image url("../img/sprite.svg#git-pull-request")
           background-repeat no-repeat
           background-position left top
           background-size 35px
+
   &__list
     padding 0
+    margin-bottom gap
+    max-width content-width
+
     &-item
       margin-bottom 'calc(%s / 2)' % gap
       position relative
       counter-increment step-counter
       list-style-type none
+
       &:before
         font-weight 600
         font-size 16px
         line-height 100%
         color color-crusta
+
     &--first
       & > .shipper__list-item
         display flex
         flex-direction column
+
         &:before
           margin-bottom 'calc(%s / 2)' % gap
           content 'Возможность ' counter(step-counter) ':'
+
     &--second
       margin-top 0
+
       & > .shipper__list-item
         padding-left 26px
         margin-bottom 'calc(%s / 2 - 3px)' % gap
+
         &:before
           content counter(step-counter) '.'
           position absolute
           top 5px
           left 0
+
+  &__bottom
+    margin-bottom gap
+    display flex
+    align-items center
+
+    max-width content-width
+    font-weight 400
+    font-size 24px
+    line-height 150%
+    color color-mine-shaft
+
+    &::before
+      content ''
+      margin-right gap
+      width 77px
+      height 116px
+      background-image url("../img/pensill.webp")
+      background-repeat no-repeat
+      background-size contain
+      background-position center
