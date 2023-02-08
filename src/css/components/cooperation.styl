@@ -1,19 +1,80 @@
 .shipper
   &__container
+    padding-top 0
+
     font-weight 400
     font-size 16px
-    line-height 150%
+    line-height 180%
     color color-dove-gray
-  &__item
-    position relative
-    padding-left 37px
-    &--first::before
-      content ''
-      position absolute
-      top 0
-      left 0
-      background-image url("../img/sprite.svg#network")
-      background-repeat no-repeat
-      background-position left top
-      width 37px
-      height 25px
+    & > *
+      margin-bottom gap
+      max-width 841px
+
+  &__title
+    margin-bottom 35px
+    color color-mine-shaft
+    &--second
+      margin-bottom 12px
+      font-size 24px
+      line-height 33px
+
+  &__items
+    &--first
+      max-width 624px
+      line-height 150%
+      & > .shipper__item
+        margin-bottom 12px
+        padding-left 37px
+        position relative
+        &:before
+          content ""
+          position absolute
+          top 0
+          left -5px
+          width 37px
+          height 37px
+
+        &--first::before
+          background-image url("../img/sprite.svg#network")
+          background-repeat no-repeat
+          background-position left top
+          background-size 35px
+        &--second::before
+          background-image url("../img/sprite.svg#briefcase")
+          background-repeat no-repeat
+          background-position left top
+          background-size 35px
+        &--third::before
+          background-image url("../img/sprite.svg#git-pull-request")
+          background-repeat no-repeat
+          background-position left top
+          background-size 35px
+  &__list
+    padding 0
+    &-item
+      margin-bottom 'calc(%s / 2)' % gap
+      position relative
+      counter-increment step-counter
+      list-style-type none
+      &:before
+        font-weight 600
+        font-size 16px
+        line-height 100%
+        color color-crusta
+    &--first
+      & > .shipper__list-item
+        display flex
+        flex-direction column
+        &:before
+          margin-bottom 'calc(%s / 2)' % gap
+          content 'Возможность ' counter(step-counter) ':'
+    &--second
+      margin-top 0
+      & > .shipper__list-item
+        padding-left 26px
+        margin-bottom 'calc(%s / 2 - 3px)' % gap
+        &:before
+          content counter(step-counter) '.'
+          position absolute
+          top 5px
+          left 0
