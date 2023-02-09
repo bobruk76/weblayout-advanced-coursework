@@ -29,7 +29,7 @@ header.header
       ul.list-reset.header__menu-items
         each item in header__items
           li.header__menu-item
-            a.link.header__menu-link(href="catalog")= item
+            a.link.header__menu-link(href=href=(item.url ? item.url : "#")) !{(item.name ? item.name : item)}
 
     .header__bottom.container
       form.search-form.header__bottom-form

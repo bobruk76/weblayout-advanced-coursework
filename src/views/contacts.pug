@@ -1,0 +1,12 @@
+extends components/templates/layout
+block scripts
+  script(defer src='/js/contacts.js')
+block content
+  section.breadcrumbs.product-breadcrumbs
+    .container.breadcrumbs__container
+      include components/breadcrumbs
+      +breadcrumbs(['Главная', 'Контакты'])
+
+  section.contacts-page
+    .container.contacts-page_container#contacts
+      h1.title.contacts-page__title#cooperation Контакты

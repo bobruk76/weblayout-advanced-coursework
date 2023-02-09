@@ -19,6 +19,10 @@ app.get('/cooperation', function(req, res) {
   res.sendfile('dist/cooperation.html');
 })
 
+app.get('/contacts', function(req, res) {
+  res.sendfile('dist/contacts.html');
+})
+
 app.listen(3000, () => {
   console.log('Listening on port 3000...')
 })
