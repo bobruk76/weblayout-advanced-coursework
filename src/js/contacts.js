@@ -3,12 +3,12 @@ ymaps.ready(init);
 
 function init() {
   const myMap = new ymaps.Map("map", {
-    center: [55.75585991312942, 37.62340977789156],
+    center: [55.75327840155143, 37.62946561125589],
     controls: ['zoomControl'],
     zoom: 15
   });
 
-  var myPlacemark = new ymaps.Placemark([55.769470, 37.639012], {}, {
+  var myPlacemark = new ymaps.Placemark([55.750819, 37.642411], {}, {
     iconLayout: 'default#image',
     iconImageHref: '../img/sprite.svg#mark',
     iconImageSize: [32, 22],
