@@ -6,6 +6,7 @@
     display grid
     grid-template-columns repeat(8, auto)
     grid-template-rows 50px 27px 60px
+
     row-gap gap
     align-items center
 
@@ -144,13 +145,10 @@
 
     &-btn
       @extend .header__bottom--action
-
       grid-row-start 3
       grid-row-end 3
 
       grid-column-start -3
-      grid-column-end -2
-
       justify-self end
 
     &-link
@@ -199,6 +197,7 @@
         color color-bg
 
     &-form
+      margin 0
       grid-row-start 3
       grid-row-end 3
 
@@ -217,8 +216,8 @@
       grid-row-start 3
       grid-row-end 3
 
-      grid-column-start 5
-      grid-column-end 7
+      grid-column-start -5
+      grid-column-end -3
 
       display flex
       align-items center
