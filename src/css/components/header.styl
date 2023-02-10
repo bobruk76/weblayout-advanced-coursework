@@ -1,40 +1,36 @@
 .header
-  grid-area header
+  &.container
+    padding 0
 
   &__container
-    position relative
+    display grid
+    grid-template-columns repeat(7, auto)
+    grid-template-rows 50px 27px 60px
+    row-gap gap
+    align-items center
+
     padding-bottom gap
     width 100%
     max-width initial
 
+  &__logo
+    grid-area header-logo
+    grid-row-start 2
+    grid-row-end 2
+
+    grid-column-start 1
+    grid-column-end 2
+
   &__top
-    position relative
-    padding-top 16px
-    padding-bottom 6px
+    &-form
+      grid-area header-form
+      grid-row-start 1
+      grid-row-end 1
 
-    &:after
-      content ""
-      position absolute
-      z-index -1
-      top 0
-      right 0
-      bottom 0
-      left 0
-      background-color color-alabaster
+      grid-column-start 1
+      grid-column-end 2
 
-    & .container
-      padding-top 0
-      display flex
-      flex-wrap nowrap
-      overflow initial
-      @media (max-width 1200px)
-        display grid
-        grid-template-columns repeat(auto, 4)
-        grid-template-rows repeat(auto, 2)
-
-        grid-template-areas "header-form header-phone header-phone header-phone"\
-        "header-menu header-menu header-lk header-card"
-
+      margin-right 2px
 
     &-label
       transition color .3s ease-in-out, background-color .3s ease-in-out
@@ -48,17 +44,25 @@
       &:active .choices__inner
         color color-purple-heart
 
-    &-form
-      grid-area header-form
-      margin-right 2px
 
     &-phone
       grid-area header-phone
-      transform translateY(-2px)
+      grid-row-start 1
+      grid-row-end 1
+
+      grid-column-start 2
+      grid-column-end 3
 
     &-items
-      grid-area header-menu
       @extend .menu-right
+      grid-area header-items
+
+      grid-row-start 1
+      grid-row-end 1
+
+      grid-column-start 3
+      grid-column-end -1
+
       font-family 'Open Sans', Verdana, sans-serif
       font-style normal
       font-weight 400
@@ -95,6 +99,14 @@
 
     &-items
       @extend .menu-right
+      grid-area header-menu
+      grid-row-start 2
+      grid-row-end 2
+
+      grid-column-start 3
+      grid-column-end -1
+
+
       font-family 'Open Sans', Verdana, sans-serif
       font-style normal
       font-weight 400
@@ -119,16 +131,16 @@
         color color-purple-heart
 
   &__bottom
-    padding-top 0
-    display flex
-    justify-content flex-start
-    align-items center
-
-    overflow visible
-    position relative
-
-    width 100%
-
+  //  padding-top 0
+  //  display flex
+  //  justify-content flex-start
+  //  align-items center
+  //
+  //  overflow visible
+  //  position relative
+  //
+  //  width 100%
+  //
     &--action
       & path
         fill color-medium-purple
@@ -148,19 +160,32 @@
           fill color-purple-heart
 
     &-btn
-      grid-area header-lk
       @extend .header__bottom--action
       margin-left auto
       margin-right 24px
 
+      grid-area header-lk
+      grid-row-start 3
+      grid-row-end 3
+
+      grid-column-start -3
+      grid-column-end -2
+
     &-link
-      grid-area header-card
       @extend .header__bottom--action
       padding 3px 4px 3px 8px
 
       margin-right 0
       margin-left 0
       position relative
+
+      grid-area header-card
+      grid-row-start 3
+      grid-row-end 3
+
+      grid-column-start -2
+      grid-column-end -1
+
       transform: translateY(-2px);
 
       display flex
@@ -192,6 +217,13 @@
         color color-bg
 
     &-form
+      grid-area header-search
+      grid-row-start 3
+      grid-row-end 3
+
+      grid-column-start 1
+      grid-column-end -3
+
       font-weight 400
       font-size 16px
       line-height 120%
