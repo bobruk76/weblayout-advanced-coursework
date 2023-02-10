@@ -25,6 +25,8 @@ const swiperCatalog = new Swiper('.catalog__slider', {
 
   a11y: true,
 })
+//header
+const headerContainer = document.querySelector(".header__container")
 
 // multi-range
 const inputLeft = document.querySelector(".multi-range-slider__input-number--left")
@@ -76,6 +78,7 @@ inputRangeRight.addEventListener("input", () => {
 window.addEventListener("load", () => {
   setValue('left')
   setValue('right')
+  headerContainer.classList.add('header__container--small')
 })
 
 window.addEventListener("resize", () => {
