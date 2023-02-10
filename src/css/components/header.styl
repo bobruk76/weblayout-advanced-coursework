@@ -4,7 +4,7 @@
 
   &__container
     display grid
-    grid-template-columns repeat(7, auto)
+    grid-template-columns repeat(8, auto)
     grid-template-rows 50px 27px 60px
     row-gap gap
     align-items center
@@ -14,25 +14,22 @@
     max-width initial
 
   &__logo
-    grid-area header-logo
     grid-row-start 2
     grid-row-end 2
 
     grid-column-start 1
-    grid-column-end 2
+    grid-column-end 3
 
   &__top
     &-form
-      grid-area header-form
       grid-row-start 1
       grid-row-end 1
 
       grid-column-start 1
       grid-column-end 2
 
-      margin-right 2px
-
     &-label
+      margin 0
       transition color .3s ease-in-out, background-color .3s ease-in-out
 
       &:hover .choices__inner
@@ -44,23 +41,20 @@
       &:active .choices__inner
         color color-purple-heart
 
-
     &-phone
-      grid-area header-phone
       grid-row-start 1
       grid-row-end 1
 
       grid-column-start 2
-      grid-column-end 3
+      grid-column-end 4
 
     &-items
       @extend .menu-right
-      grid-area header-items
 
       grid-row-start 1
       grid-row-end 1
 
-      grid-column-start 3
+      grid-column-start 4
       grid-column-end -1
 
       font-family 'Open Sans', Verdana, sans-serif
@@ -99,7 +93,6 @@
 
     &-items
       @extend .menu-right
-      grid-area header-menu
       grid-row-start 2
       grid-row-end 2
 
@@ -131,16 +124,6 @@
         color color-purple-heart
 
   &__bottom
-  //  padding-top 0
-  //  display flex
-  //  justify-content flex-start
-  //  align-items center
-  //
-  //  overflow visible
-  //  position relative
-  //
-  //  width 100%
-  //
     &--action
       & path
         fill color-medium-purple
@@ -161,15 +144,14 @@
 
     &-btn
       @extend .header__bottom--action
-      margin-left auto
-      margin-right 24px
 
-      grid-area header-lk
       grid-row-start 3
       grid-row-end 3
 
       grid-column-start -3
       grid-column-end -2
+
+      justify-self end
 
     &-link
       @extend .header__bottom--action
@@ -179,12 +161,12 @@
       margin-left 0
       position relative
 
-      grid-area header-card
       grid-row-start 3
       grid-row-end 3
 
       grid-column-start -2
       grid-column-end -1
+      justify-self end
 
       transform: translateY(-2px);
 
@@ -217,22 +199,27 @@
         color color-bg
 
     &-form
-      grid-area header-search
       grid-row-start 3
       grid-row-end 3
 
       grid-column-start 1
-      grid-column-end -3
+      grid-column-end 5
 
       font-weight 400
       font-size 16px
       line-height 120%
       background transparent
 
-      width 'min(%s, calc(200% / 3))' % 761px
+      width 'min(%s, %s)' % (761px 66vw)
       max-height 60px
 
     &-label
+      grid-row-start 3
+      grid-row-end 3
+
+      grid-column-start 5
+      grid-column-end 7
+
       display flex
       align-items center
       border 2px solid color-alabaster
