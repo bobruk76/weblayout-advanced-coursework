@@ -1,8 +1,23 @@
 .header
+  position relative
+  overflow-y visible
+  &:after
+    content ""
+    position absolute
+    z-index -1
+
+    top 0
+    left 0
+    right 0
+    height 50px
+    background-color color-alabaster
+
   & > .container
     padding 0
+    overflow-y visible
 
   &__container
+    overflow-y visible
     display grid
     grid-template-columns repeat(5, min-content) auto auto min-content
     grid-template-rows 50px 27px 60px
