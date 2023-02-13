@@ -50,3 +50,8 @@ productDialog.onsubmit = () => {
   productDialog.classList.remove("modal-window--visible")
   productAccept.classList.add("modal-window--visible")
 }
+//header
+const headerContainer = document.querySelector(".header__container")
+window.addEventListener("load", () => {
+  headerContainer.classList.add('header__container--small')
+})
