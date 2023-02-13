@@ -4,7 +4,7 @@
 
   &__container
     display grid
-    grid-template-columns repeat(8, auto)
+    grid-template-columns repeat(5, min-content) auto auto min-content
     grid-template-rows 50px 27px 60px
 
     row-gap gap
@@ -21,6 +21,14 @@
     grid-column-start 1
     grid-column-end 3
 
+  &__phone
+    padding-left 21px
+    grid-row-start 1
+    grid-row-end 1
+
+    grid-column-start 2
+    grid-column-end 4
+    
   &__top
     &-form
       grid-row-start 1
@@ -28,6 +36,8 @@
 
       grid-column-start 1
       grid-column-end 2
+
+      white-space nowrap
 
     &-label
       margin 0
@@ -42,12 +52,7 @@
       &:active .choices__inner
         color color-purple-heart
 
-    &-phone
-      grid-row-start 1
-      grid-row-end 1
 
-      grid-column-start 2
-      grid-column-end 4
 
     &-items
       @extend .menu-right
@@ -143,14 +148,6 @@
         & path
           fill color-purple-heart
 
-    &-btn
-      @extend .header__bottom--action
-      grid-row-start 3
-      grid-row-end 3
-
-      grid-column-start -3
-      justify-self end
-
     &-link
       @extend .header__bottom--action
       padding 3px 4px 3px 8px
@@ -214,8 +211,8 @@
       grid-row-start 3
       grid-row-end 3
 
-      grid-column-start -5
-      grid-column-end -3
+      grid-column-start 6
+      grid-column-end 7
 
       display flex
       align-items center
@@ -245,3 +242,11 @@
 
       & .choices__item
         padding-left 27px
+
+  &__lk
+    @extend .header__bottom--action
+    grid-row-start 3
+    grid-row-end 3
+
+    grid-column-start -3
+    justify-self end

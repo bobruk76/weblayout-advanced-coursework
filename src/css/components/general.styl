@@ -141,8 +141,8 @@ body
 
 .phone
   display inline-flex
-  flex-direction reverse
-  align-items flex-start
+
+  align-items center
   justify-content flex-start
 
   color color-crusta
@@ -151,7 +151,12 @@ body
   font-weight 400
   font-size 14px
   line-height 22px
+  white-space nowrap
+
   transition background-color .3s ease-in-out, color .3s ease-in-out
+
+  &__icon
+    display flex
 
   & path
     fill currentColor
