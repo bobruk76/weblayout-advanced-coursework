@@ -28,6 +28,9 @@
     padding-bottom gap
     width 100%
     max-width initial
+    @media (max-width 1200px)
+      grid-template-columns repeat(6, auto)
+      grid-template-rows 23px 50px 27px 60px
 
   &__logo
     grid-row-start 2
@@ -35,6 +38,9 @@
 
     grid-column-start 1
     grid-column-end 3
+    @media (max-width 1200px)
+      grid-row-start 3
+      grid-row-end 3
 
   &__phone
     padding-left 21px
@@ -43,6 +49,9 @@
 
     grid-column-start 2
     grid-column-end 4
+    @media (max-width 1200px)
+      grid-column-start -1
+      grid-column-end -2
 
   &__top
     &-form
@@ -50,7 +59,6 @@
       grid-row-end 1
 
       grid-column-start 1
-      grid-column-end 2
 
       white-space nowrap
 
@@ -82,7 +90,12 @@
       font-size 14px
       line-height 100%
       color color-dusty-gray
+      @media (max-width 1200px)
+        grid-row-start 2
+        grid-row-end 2
 
+        grid-column-start 1
+        grid-column-end -3
     &-item
       transition color .3s ease-in-out, background-color .3s ease-in-out
 
@@ -124,6 +137,9 @@
       font-weight 400
       font-size 16px
       line-height 22px
+      @media (max-width 1200px)
+        grid-row-start 3
+        grid-row-end 3
 
     &-item
       &:not(:last-child)
@@ -202,6 +218,9 @@
         border-radius 50%
 
         color color-bg
+      @media (max-width 1200px)
+        grid-row-start 2
+        grid-row-end 2
 
     &-form
       margin 0
@@ -218,6 +237,12 @@
 
       width 'min(%s, %s)' % (761px 67vw)
       max-height 60px
+      @media (max-width 1200px)
+        grid-row-start 4
+        grid-row-end 4
+
+        grid-column-start 1
+        grid-column-end 3
 
   &__category
     margin-right auto
@@ -242,6 +267,12 @@
 
       &:after
         right 30px
+    @media (max-width 1200px)
+      grid-row-start 4
+      grid-row-end 4
+
+      grid-column-start 3
+      grid-column-end -1
 
     &:hover
       border-color color-medium-purple
@@ -266,3 +297,6 @@
 
     grid-column-start -3
     justify-self end
+    @media (max-width 1200px)
+      grid-row-start 2
+      grid-row-end 2
