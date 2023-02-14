@@ -32,10 +32,13 @@
     width 100%
     max-width initial
     @media (max-width 1200px)
-      justify-content start
+      padding-top 18px
+
       grid-template-columns repeat(2, min-content) repeat(2, auto) repeat(2, min-content)
-      grid-template-rows 23px 50px 27px 60px
+      grid-template-rows 23px 62px 27px 60px
+      row-gap 18px
       align-items center
+      justify-content start
 
   &__logo
     grid-row-start 2
@@ -44,7 +47,7 @@
     grid-column-start 1
     grid-column-end 3
     @media (max-width 1200px)
-      margin-right "calc(2 * %s)" % gap
+      margin-right "calc(2 * (%s - 3px))" % gap
       grid-row-start 3
       grid-row-end 3
       grid-column-start 1
@@ -71,7 +74,6 @@
 
       grid-column-start 1
 
-
       & > .form-select__label
         margin 0
         transition color .3s ease-in-out, background-color .3s ease-in-out
@@ -94,34 +96,32 @@
     grid-column-start 4
     grid-column-end -1
 
+    justify-content space-between
+
     font-family 'Open Sans', Verdana, sans-serif
     font-style normal
     font-weight 400
     font-size 14px
     line-height 100%
     color color-dusty-gray
+    width 77%
     @media (max-width 1200px)
-      margin-left 0
-      margin-right 0
+      margin 0 0 16px 0
+
       grid-row-start 2
       grid-row-end 2
 
       grid-column-start 1
-      grid-column-end -4
+      grid-column-end -3
 
-      justify-content space-between
+      width 83%
 
     &-item
+      padding 3px 8px
       transition color .3s ease-in-out, background-color .3s ease-in-out
 
-      &:not(:last-child)
-        padding 3px 8px
-        margin-right 48px
-        @media (max-width 1200px)
-          margin 0
-
       &:last-child
-        padding 3px 0 3px 8px
+        padding-right 0
 
       &:hover
         color color-medium-purple
@@ -132,6 +132,8 @@
 
       &:active
         color color-purple-heart
+      @media (max-width 1200px)
+        padding 0
 
   &__menu
     @extend .menu-right
@@ -147,11 +149,13 @@
 
     display flex
     align-items center
+    justify-content space-between
     font-family 'Open Sans', Verdana, sans-serif
     font-style normal
     font-weight 400
     font-size 16px
     line-height 22px
+    width 94.5%
     @media (max-width 1200px)
       margin-left 0
       margin-right 0
@@ -160,18 +164,12 @@
       grid-row-end 3
       grid-column-start 2
       grid-column-end -1
-
-      justify-content space-between
-
+      width 100%
 
     &-item
-      &:not(:last-child)
-        padding 10px 5px
-        margin-right 82px
-        @media (max-width 1200px)
-          margin 0
+      padding 10px 5px
       &:last-child
-        padding 10px 0 10px 5px
+        padding-right 0
 
       &:hover
         color color-medium-purple
@@ -214,7 +212,7 @@
       line-height 120%
       background transparent
 
-      width 'min(%s, %s)' % (761px 67vw)
+      width 'min(%s, %s)' % (761px 60vw)
       max-height 60px
       @media (max-width 1200px)
         grid-row-start 4
@@ -222,6 +220,7 @@
 
         grid-column-start 1
         grid-column-end 3
+        width 'calc(100vw - %s - (2 * %s))' % (300px gap36)
 
   &__category
     margin-right auto
@@ -277,6 +276,7 @@
     grid-column-start -3
     justify-self end
     @media (max-width 1200px)
+      margin-bottom 16px
       grid-row-start 2
       grid-row-end 2
       grid-column-start -3
@@ -323,6 +323,7 @@
 
       color color-bg
     @media (max-width 1200px)
+      margin-bottom 16px
       grid-row-start 2
       grid-row-end 2
       grid-column-start -2

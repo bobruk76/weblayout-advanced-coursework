@@ -403,19 +403,14 @@ body
         transform translateX(-50%) translateY(0)
 
 .container
-  gutter = 32px
   margin-right auto
   margin-left auto
   padding-top 70px
 
   width 100%
-  max-width 'min(1280px, calc(100% - 2 * %s))' % gutter
+  max-width 'min(1280px, calc(100% - 2 * %s))' % gap
   overflow-y visible
   overflow-x hidden
   color color-mine-shaft
-  @media (max-width 900px)
-    gutter = 27px
-    max-width 'calc(100% - 2 * %s)' % gutter
-  @media (max-width 576px)
-    gutter = 21px
-    max-width 'calc(100% - 2 * %s)' % gutter
+  @media (max-width 1200px)
+    max-width 'min(1280px, calc(100% - 2 * %s))' % gap36
