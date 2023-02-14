@@ -25,7 +25,7 @@ header.header
         svg(width="187" height="27")
           use(xlink:href='img/sprite.svg#logo')
 
-      ul.list-reset.header__menu-items
+      ul.list-reset.header__menu
         each item in header__items
           li.header__menu-item
             a.link.header__menu-link(href=href = (item.url ? item.url : "#")) !{(item.name ? item.name : item)}

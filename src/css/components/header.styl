@@ -1,6 +1,7 @@
 .header
   position relative
   overflow-y visible
+
   &:after
     content ""
     position absolute
@@ -29,7 +30,8 @@
     width 100%
     max-width initial
     @media (max-width 1200px)
-      grid-template-columns repeat(5, auto)
+      justify-content start
+      grid-template-columns repeat(6, min-content)
       grid-template-rows 23px 50px 27px 60px
 
   &__logo
@@ -43,6 +45,7 @@
       grid-row-end 3
       grid-column-start 1
       grid-column-end 2
+
   &__phone
     padding-left 21px
     grid-row-start 1
@@ -51,8 +54,8 @@
     grid-column-start 2
     grid-column-end 4
     @media (max-width 1200px)
-      grid-column-start -1
-      grid-column-end -4
+      grid-column-start 3
+      grid-column-end -1
 
   &__top
     &-form
@@ -92,11 +95,13 @@
       line-height 100%
       color color-dusty-gray
       @media (max-width 1200px)
+
         grid-row-start 2
         grid-row-end 2
 
         grid-column-start 1
-        grid-column-end 3
+        grid-column-end -4
+
     &-item
       transition color .3s ease-in-out, background-color .3s ease-in-out
 
@@ -118,30 +123,29 @@
         color color-purple-heart
 
   &__menu
+    @extend .menu-right
+    grid-row-start 2
+    grid-row-end 2
+
+    grid-column-start 3
+    grid-column-end -1
+
     padding-top 26px
     padding-bottom 23px
     padding-right 3px
+
     display flex
     align-items center
-
-    &-items
-      @extend .menu-right
-      grid-row-start 2
-      grid-row-end 2
-
-      grid-column-start 3
+    font-family 'Open Sans', Verdana, sans-serif
+    font-style normal
+    font-weight 400
+    font-size 16px
+    line-height 22px
+    @media (max-width 1200px)
+      grid-row-start 3
+      grid-row-end 3
+      grid-column-start 2
       grid-column-end -1
-
-      font-family 'Open Sans', Verdana, sans-serif
-      font-style normal
-      font-weight 400
-      font-size 16px
-      line-height 22px
-      @media (max-width 1200px)
-        grid-row-start 3
-        grid-row-end 3
-        grid-column-start 2
-        grid-column-end 6
 
     &-item
       &:not(:last-child)
@@ -257,7 +261,7 @@
     @media (max-width 1200px)
       grid-row-start 2
       grid-row-end 2
-      grid-column-start 3
+      grid-column-start -3
 
   &__card
     @extend .header__bottom--action
@@ -303,5 +307,5 @@
     @media (max-width 1200px)
       grid-row-start 2
       grid-row-end 2
-      grid-column-start 4
-      grid-column-end 5
+      grid-column-start -2
+      grid-column-end -1
