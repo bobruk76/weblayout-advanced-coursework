@@ -29,7 +29,7 @@
     width 100%
     max-width initial
     @media (max-width 1200px)
-      grid-template-columns repeat(6, auto)
+      grid-template-columns repeat(5, auto)
       grid-template-rows 23px 50px 27px 60px
 
   &__logo
@@ -41,7 +41,8 @@
     @media (max-width 1200px)
       grid-row-start 3
       grid-row-end 3
-
+      grid-column-start 1
+      grid-column-end 2
   &__phone
     padding-left 21px
     grid-row-start 1
@@ -51,7 +52,7 @@
     grid-column-end 4
     @media (max-width 1200px)
       grid-column-start -1
-      grid-column-end -2
+      grid-column-end -4
 
   &__top
     &-form
@@ -95,7 +96,7 @@
         grid-row-end 2
 
         grid-column-start 1
-        grid-column-end -3
+        grid-column-end 3
     &-item
       transition color .3s ease-in-out, background-color .3s ease-in-out
 
@@ -131,7 +132,6 @@
       grid-column-start 3
       grid-column-end -1
 
-
       font-family 'Open Sans', Verdana, sans-serif
       font-style normal
       font-weight 400
@@ -140,6 +140,8 @@
       @media (max-width 1200px)
         grid-row-start 3
         grid-row-end 3
+        grid-column-start 2
+        grid-column-end 6
 
     &-item
       &:not(:last-child)
@@ -176,51 +178,6 @@
       &:active
         & path
           fill color-purple-heart
-
-    &-link
-      @extend .header__bottom--action
-      padding 3px 4px 3px 8px
-
-      margin-right 0
-      margin-left 0
-      position relative
-
-      grid-row-start 3
-      grid-row-end 3
-
-      grid-column-start -2
-      grid-column-end -1
-      justify-self end
-
-      display flex
-      justify-content flex-start
-      align-items center
-
-      width 49px
-      height 34px
-
-      &-icon
-        position absolute
-        top 3px
-        right 0
-
-      &-value
-        padding: 2px 0 0
-        width 15px
-        height 15px
-
-        text-align center
-        font-weight 700
-        font-size 10px
-        line-height 100%
-
-        background-color color-crusta
-        border-radius 50%
-
-        color color-bg
-      @media (max-width 1200px)
-        grid-row-start 2
-        grid-row-end 2
 
     &-form
       margin 0
@@ -300,3 +257,51 @@
     @media (max-width 1200px)
       grid-row-start 2
       grid-row-end 2
+      grid-column-start 3
+
+  &__card
+    @extend .header__bottom--action
+    padding 3px 4px 3px 8px
+
+    margin-right 0
+    margin-left 0
+    position relative
+
+    grid-row-start 3
+    grid-row-end 3
+
+    grid-column-start -2
+    grid-column-end -1
+    justify-self end
+
+    display flex
+    justify-content flex-start
+    align-items center
+
+    width 49px
+    height 34px
+
+    &-icon
+      position absolute
+      top 3px
+      right 0
+
+    &-value
+      padding: 2px 0 0
+      width 15px
+      height 15px
+
+      text-align center
+      font-weight 700
+      font-size 10px
+      line-height 100%
+
+      background-color color-crusta
+      border-radius 50%
+
+      color color-bg
+    @media (max-width 1200px)
+      grid-row-start 2
+      grid-row-end 2
+      grid-column-start 4
+      grid-column-end 5
