@@ -2,6 +2,8 @@
   position relative
   overflow-y visible
 
+  white-space nowrap
+
   &:after
     content ""
     position absolute
@@ -31,8 +33,9 @@
     max-width initial
     @media (max-width 1200px)
       justify-content start
-      grid-template-columns repeat(6, min-content)
+      grid-template-columns repeat(2, min-content) repeat(2, auto) repeat(2, min-content)
       grid-template-rows 23px 50px 27px 60px
+      align-items center
 
   &__logo
     grid-row-start 2
@@ -41,6 +44,7 @@
     grid-column-start 1
     grid-column-end 3
     @media (max-width 1200px)
+      margin-right "calc(2 * %s)" % gap
       grid-row-start 3
       grid-row-end 3
       grid-column-start 1
@@ -54,6 +58,9 @@
     grid-column-start 2
     grid-column-end 4
     @media (max-width 1200px)
+      margin-right 0
+      margin-left auto
+
       grid-column-start 3
       grid-column-end -1
 
@@ -64,7 +71,6 @@
 
       grid-column-start 1
 
-      white-space nowrap
 
       & > .form-select__label
         margin 0
@@ -79,28 +85,31 @@
         &:active .choices__inner
           color color-purple-heart
 
-    &-items
-      @extend .menu-right
+  &__items
+    @extend .menu-right
 
-      grid-row-start 1
-      grid-row-end 1
+    grid-row-start 1
+    grid-row-end 1
 
-      grid-column-start 4
-      grid-column-end -1
+    grid-column-start 4
+    grid-column-end -1
 
-      font-family 'Open Sans', Verdana, sans-serif
-      font-style normal
-      font-weight 400
-      font-size 14px
-      line-height 100%
-      color color-dusty-gray
-      @media (max-width 1200px)
+    font-family 'Open Sans', Verdana, sans-serif
+    font-style normal
+    font-weight 400
+    font-size 14px
+    line-height 100%
+    color color-dusty-gray
+    @media (max-width 1200px)
+      margin-left 0
+      margin-right 0
+      grid-row-start 2
+      grid-row-end 2
 
-        grid-row-start 2
-        grid-row-end 2
+      grid-column-start 1
+      grid-column-end -4
 
-        grid-column-start 1
-        grid-column-end -4
+      justify-content space-between
 
     &-item
       transition color .3s ease-in-out, background-color .3s ease-in-out
@@ -108,6 +117,8 @@
       &:not(:last-child)
         padding 3px 8px
         margin-right 48px
+        @media (max-width 1200px)
+          margin 0
 
       &:last-child
         padding 3px 0 3px 8px
@@ -142,16 +153,23 @@
     font-size 16px
     line-height 22px
     @media (max-width 1200px)
+      margin-left 0
+      margin-right 0
+
       grid-row-start 3
       grid-row-end 3
       grid-column-start 2
       grid-column-end -1
 
+      justify-content space-between
+
+
     &-item
       &:not(:last-child)
         padding 10px 5px
-        margin-right: 82px
-
+        margin-right 82px
+        @media (max-width 1200px)
+          margin 0
       &:last-child
         padding 10px 0 10px 5px
 
