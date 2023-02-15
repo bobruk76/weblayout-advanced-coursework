@@ -1,4 +1,5 @@
 .card
+  cadr-width = 296px
   padding 30px 30px
   position relative
   display inline-flex
@@ -7,10 +8,15 @@
 
   box-sizing border-box
   min-height 511px
-  max-width 'calc((100% - ((100% / 2) - (%s / 2)) - (%s * 2)) / 2)' % (gap gap)
+  width cadr-width
+  min-width cadr-width
 
   &--wide
-    max-width 'calc((100% / 2) - (%s / 2))' % gap
+    width 'calc(100% - (2 * %s) - (2 * %s))' % (cadr-width gap)
+    & .card__picture
+      @media(max-width 1440px)
+        margin: 0 -8px 10px -8px
+        align-items center
 
   &:after
     content ""
@@ -49,7 +55,7 @@
 
   &__discount
     position absolute
-    top 32px
+    top 30px
     left 0
 
     padding-right 10px
@@ -71,8 +77,16 @@
     background-size cover
 
   &__picture
-    margin: 0 -30px 14px -30px
+    margin-bottom 18px
     align-self center
+
+    display flex
+    justify-content center
+    align-items end
+    height 218px
+    &-img
+      width 100%
+      height fit-content
 
   &__descr
     margin-bottom 4px
@@ -104,3 +118,5 @@
     position absolute
     right 30px
     bottom 30px
+    @media(max-width 1200px)
+      display none

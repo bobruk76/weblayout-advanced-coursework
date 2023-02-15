@@ -10,7 +10,7 @@ mixin card(tag, item, class_name, special_offers)
           use(xlink:href='img/sprite.svg#star')
         span= item.rating
     picture.card__picture
-      img.card__img(src= item.img alt="Фото товара")
+      img.card__picture-img(src= item.img alt="Фото товара")
     p.descr.card__descr
       span !{item.descr}
       span !{item.model}
