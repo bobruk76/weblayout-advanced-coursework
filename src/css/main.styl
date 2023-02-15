@@ -37,11 +37,26 @@
     position relative
 
   &__slide
+    position relative
+
     display flex
     flex-direction column
     align-items flex-start
     justify-content flex-end
-    min-height 400px
+    height 400px
+    overflow hidden
+
+    &:after
+      content ''
+      position absolute
+      z-index -1
+      top 0
+      bottom 0
+      left calc((100vw - 1920px) / 2)
+      right calc((100vw - 1920px) / 2)
+      @media (max-width 1024px)
+        left calc((100vw - 1024px) / 2)
+        right calc((100vw - 1024px) / 2)
 
     &-container
       padding-top 0
@@ -64,22 +79,40 @@
         max-width 590px
 
     &-first
-      background-image url("../img/slide-1.webp")
-      background-repeat no-repeat
-      background-size contain
-      background-position center
+      &:after
+        background-image url("../img/slide-1-1920.webp")
+        background-repeat no-repeat
+        background-size 100%
+        background-position center
+        @media (max-width 1024px)
+          background-image url("../img/slide-1-1024.webp")
+          background-repeat no-repeat
+          background-size 100%
+          background-position center
 
     &-second
-      background-image url("../img/slide-2.webp")
-      background-repeat no-repeat
-      background-size contain
-      background-position center
+      &:after
+        background-image url("../img/slide-2-1920.webp")
+        background-repeat no-repeat
+        background-size contain
+        background-position center
+        @media (max-width 1024px)
+          background-image url("../img/slide-2-1024.webp")
+          background-repeat no-repeat
+          background-size 100%
+          background-position center
 
     &-third
-      background-image url("../img/slide-3.webp")
-      background-repeat no-repeat
-      background-size contain
-      background-position center
+      &:after
+        background-image url("../img/slide-3-1920.webp")
+        background-repeat no-repeat
+        background-size contain
+        background-position center
+        @media (max-width 1024px)
+          background-image url("../img/slide-3-1024.webp")
+          background-repeat no-repeat
+          background-size 100%
+          background-position center
 
 /*special-offers*/
 .special-offers
