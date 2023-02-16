@@ -6,7 +6,8 @@ mixin category-card(tag, item, class_name)
           a.link.category-card__item-link(href="#")= itm
     strong.title.category-card__title !{item.title}
     picture.category-card__picture
-      img.category-card__img(src= item.img alt="Фото категории")
+      source(srcset=item.img + "-1024.webp" media="(max-width: 1200px)")
+      img.category-card__img(src= item.img + ".webp" alt="Фото категории")
     include card-link
     +card-link("category-card__link")
 
