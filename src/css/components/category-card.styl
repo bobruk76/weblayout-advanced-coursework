@@ -35,8 +35,10 @@
     margin-bottom "calc(%s - 3px)" % gap
 
     height -webkit-fill-available
-  //&__img
-  //  height -webkit-fill-available
+    @media(max-width 1200px)
+      min-height 311px
+  &__img
+    height -webkit-fill-available
 
   &__link
     margin-bottom 0
