@@ -152,9 +152,15 @@
   &__item
     max-width initial
     height card-height
+    min-height initial
+
+    & .card__picture
+      margin-left -15px
+      margin-right -15px
+
     @media (max-width 1440px)
       &:not(:nth-child(-n + 6)) {
-        @extend .visually-hidden
+        display none
       }
 
   &__btn
