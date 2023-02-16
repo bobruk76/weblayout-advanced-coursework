@@ -48,7 +48,7 @@ block content
       ul.list-reset.category__items
         include components/category-card
         each item, index in category_list
-          +category-card("li", item, "category__item" + (index < 2 ? " category__item--wide" : ""))
+          +category-card("li", item, "category__item")
 
   section.useful#useful
     .container.useful__container
