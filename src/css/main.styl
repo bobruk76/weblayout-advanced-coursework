@@ -5,6 +5,8 @@
 //helpers
 @import 'base/fonts.styl'
 @import 'base/vars.styl'
+//mixins
+@import 'mixnis/mixins.styl'
 //components
 @import 'components/general.styl'
 @import 'components/search.styl'
@@ -47,16 +49,17 @@
     overflow hidden
 
     &:after
-      content ''
-      position absolute
-      z-index -1
-      top 0
-      bottom 0
-      left calc((100vw - 1920px) / 2)
-      right calc((100vw - 1920px) / 2)
-      @media (max-width 1024px)
-        left calc((100vw - 1024px) / 2)
-        right calc((100vw - 1024px) / 2)
+      @extend .img-height100
+      //content ''
+      //position absolute
+      //z-index -1
+      //top 0
+      //bottom 0
+      //left calc((100vw - 1920px) / 2)
+      //right calc((100vw - 1920px) / 2)
+      //@media (max-width 1024px)
+      //  left calc((100vw - 1024px) / 2)
+      //  right calc((100vw - 1024px) / 2)
 
     &-container
       padding-top 0
@@ -168,6 +171,7 @@
 
 /*ad*/
 .ad
+  position relative
   grid-area ad
   display flex
   flex-direction column
@@ -175,10 +179,12 @@
 
   width 100%
   min-height 600px
-  background-image url("../img/ad-bg.webp")
-  background-repeat no-repeat
-  background-size contain
-  background-position center
+  &:after
+    @extend .img-height100
+    background-image url("../img/ad-bg.webp")
+    background-repeat no-repeat
+    background-size 100%
+    background-position center
   //@media (max-width 320px)
   //  background-image url("../img/ad-bg-320.webp")
 
