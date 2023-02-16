@@ -123,7 +123,7 @@
 /*high-rating*/
 .high-rating
   &__container
-    padding-bottom: 70px
+    padding-bottom 70px
     display flex
     flex-direction column
     justify-content flex-start
@@ -133,15 +133,29 @@
     align-self flex-start
 
   &__items
-    margin-bottom: gap
+    margin-bottom gap
+    margin-left 0
+    margin-right 0
+
     display grid
-    grid-template-rows 1fr 1fr
-    grid-template-columns 1fr 1fr 1fr 1fr
-    grid-gap gap
+    grid-template-rows repeat(2, 1fr)
+    grid-template-columns repeat(4, 1fr)
+
+    grid-row-gap gap
+    grid-column-gap 'calc((100% - (4 * %s)) / 3)' % cadr-width
+
+    width 100%
+    @media (max-width 1440px)
+      grid-template-columns repeat(3, 1fr)
+      grid-column-gap 'calc((100% - (3 * %s)) / 2)' % cadr-width
 
   &__item
     max-width initial
-    min-height 420px
+    height card-height
+    @media (max-width 1440px)
+      &:not(:nth-child(-n + 6)) {
+        @extend .visually-hidden
+      }
 
   &__btn
     padding 20px 35px
