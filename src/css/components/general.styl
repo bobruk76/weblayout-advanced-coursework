@@ -84,7 +84,6 @@ body
   font-weight 700
   font-size 16px
   line-height 100%
-
   border 2px solid color-medium-purple
   border-radius 10px
 
@@ -99,20 +98,25 @@ body
     bottom 0
     left 0
     background-color color-medium-purple
+    border-radius 8px
+    transition border-color .3s ease-in-out, background-color .3s ease-in-out
 
   &:hover
-    background-color color-mauve
     border-color color-mauve
+    &:after
+      background-color color-mauve
 
   &:focus
     color color-bg
-    background-color color-mauve
     border-color color-purple-heart
+    &:after
+      background-color color-mauve
 
   &:active
     color color-bg
-    background-color color-purple-heart
     border-color color-purple-heart
+    &:after
+      background-color color-purple-heart
 
   &-outline
     z-index initial
@@ -121,12 +125,12 @@ body
 
     background-color transparent
     color color-medium-purple
-    border-color color-medium-purple
-
+    &:after
+      background-color transparent
     &:hover
       color color-bg
-      background-color color-medium-purple
       border-color color-medium-purple
+
 
 .list-reset
   margin 0
