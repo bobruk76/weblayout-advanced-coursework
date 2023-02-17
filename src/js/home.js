@@ -1,6 +1,18 @@
 import JustValidate from 'just-validate'
 import InputMask from "inputmask"
 import Swiper, {Autoplay, Pagination, Navigation} from 'swiper'
+//
+// let sliderCount = 2;
+//
+// ["resize", "load"].forEach(ev => {
+//   window.addEventListener(ev, () => {
+//     if (window.screen.width < 1201) {
+//       sliderCount = 3
+//     } else {
+//       sliderCount = 2
+//     }
+//   })
+// })
 
 const swiperHero = new Swiper('.hero__slider', {
   modules: [Autoplay, Pagination],
@@ -38,24 +50,17 @@ const swiperOffers = new Swiper('.special-offers__slider', {
 })
 
 const swiperUseful = new Swiper('.useful__slider', {
-  modules: [Navigation, Autoplay],
-
+  modules: [Navigation],
   effect: 'fade',
   slidesPerView: 2,
   spaceBetween: 32,
   slidesPerGroup: 2,
-  // autoHeight: true,
-  // autoplay: {
-  //   delay: 2500,
-  //   disableOnInteraction: false
-  // },
   navigation: {
     prevEl: ".useful__navigation-prev",
     nextEl: ".useful__navigation-next",
   },
   autoplayDisableOnInteraction: false,
   direction: 'horizontal',
-  // loop: true,
   a11y: true,
 })
 
@@ -108,5 +113,18 @@ validationContacts
       rule: 'email',
       errorMessage: 'Недопустимый формат',
     },
-  ])
+  ]);
 
+["resize", "load"].forEach(ev => {
+  window.addEventListener(ev, () => {
+    console.log(swiperUseful)
+    if (window.screen.width < 1201) {
+      swiperUseful.slidesPerView = 3
+      swiperUseful.sliderCount = 3
+    } else {
+      swiperUseful.slidesPerView = 2
+      swiperUseful.sliderCount = 2
+    }
+    swiperUseful.update()
+  })
+})
