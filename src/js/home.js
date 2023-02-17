@@ -52,9 +52,15 @@ const swiperOffers = new Swiper('.special-offers__slider', {
 const swiperUseful = new Swiper('.useful__slider', {
   modules: [Navigation],
   effect: 'fade',
-  slidesPerView: 2,
   spaceBetween: 32,
-  slidesPerGroup: 2,
+  slidesPerView: 3,
+  slidesPerGroup: 3,
+  breakpoints: {
+    1200: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+    }
+  },
   navigation: {
     prevEl: ".useful__navigation-prev",
     nextEl: ".useful__navigation-next",
@@ -114,17 +120,3 @@ validationContacts
       errorMessage: 'Недопустимый формат',
     },
   ]);
-
-["resize", "load"].forEach(ev => {
-  window.addEventListener(ev, () => {
-    console.log(swiperUseful)
-    if (window.screen.width < 1201) {
-      swiperUseful.slidesPerView = 3
-      swiperUseful.sliderCount = 3
-    } else {
-      swiperUseful.slidesPerView = 2
-      swiperUseful.sliderCount = 2
-    }
-    swiperUseful.update()
-  })
-})
