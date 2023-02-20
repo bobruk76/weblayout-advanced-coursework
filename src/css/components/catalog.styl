@@ -14,6 +14,8 @@ card-height = 420px
   grid-template-columns repeat(4, 1fr)
   grid-template-rows repeat(3, auto)
   column-gap 32px
+  @media(max-width 1200px)
+    grid-template-columns repeat(3, 1fr)
 
 /*aside*/
 .aside
@@ -85,6 +87,9 @@ card-height = 420px
 
   min-height 360px
 
+  @media(max-width 1200px)
+    display none
+
   &__title
     margin 0
 
@@ -115,9 +120,12 @@ card-height = 420px
   z-index 5
   grid-area catalog
   grid-row-start 2
-  grid-column-start 2
   grid-row-end -1
+  grid-column-start 2
   grid-column-end -1
+  @media(max-width 1200px)
+    grid-column-start 1
+    grid-column-end -1
 
   &__title
     margin-top 0
