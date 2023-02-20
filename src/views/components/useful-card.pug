@@ -1,7 +1,8 @@
 mixin useful-card(item, class_name)
   .useful-card(class= class_name)
     picture.useful-card__picture
-      img.useful-card__img(src= item.img alt="Фото категории")
+      source(srcset=item.img + "-1024.webp" media="(max-width: 1200px)")
+      img.useful-card__img(src= item.img + ".webp" alt="Фото категории")
     .useful-card__bottom
       p.descr.useful-card__descr !{item.descr}
       button.btn-reset.btn.btn-outline.useful-card__btn Читать
