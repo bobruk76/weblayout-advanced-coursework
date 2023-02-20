@@ -29,5 +29,6 @@ footer.footer
           .footer__card
             each item, index in items
               a.link(class="footer__card-link" + (index === 0 ? "-title" : "") href=(item.url ? item.url : "#")) !{(item.name ? item.name : item)}
+
   .container.footer__bottom
     span.footer__bottom-info SDP®  2011-2021
