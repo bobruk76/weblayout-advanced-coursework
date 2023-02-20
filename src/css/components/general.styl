@@ -209,6 +209,8 @@ body
   justify-content flex-start
 
   width 'calc(50% - (%s / 2))' % gap
+  @media(max-width 1200px)
+    width 'calc(44% - (%s / 2))' % gap
 
   &-select
     &__label
