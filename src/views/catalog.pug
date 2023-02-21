@@ -7,9 +7,9 @@ block content
   .container.grid-catalog
     include components/breadcrumbs
     +breadcrumbs(['Главная', 'Каталог', 'Диваны', 'Прямые диваны'])
+    h2.grid-catalog__title Каталог
 
     include components/aside
-
     section.ad-aside
       .ad-aside__container
         h2.title.ad-aside__title Оксфорд 1950
@@ -18,7 +18,6 @@ block content
         +card-link("ad-aside__link")
 
     section.catalog
-      h2.catalog__title Каталог
       .catalog__slider.swiper
         .swiper-wrapper
           each item in product_list

@@ -12,16 +12,31 @@ card-height = 420px
   padding-bottom 132px
   display grid
   grid-template-columns repeat(4, 1fr)
-  grid-template-rows repeat(3, auto)
+  grid-template-rows repeat(4, auto)
   column-gap 32px
   @media(max-width 1200px)
     grid-template-columns repeat(3, 1fr)
+
+  &__title
+    margin-top 0
+    margin-bottom 23px
+
+    grid-row-start 2
+    grid-row-end 2
+    grid-column-start 2
+    grid-column-end -1
+
+    font-weight 400
+    font-size 24px
+    line-height 130%
+
+    color color-mine-shaft
 
 /*aside*/
 .aside
   margin-top 0
   grid-row-start 2
-  grid-row-end -3
+  grid-row-end -2
   grid-column-start 1
   grid-column-end 2
   align-self start
@@ -118,26 +133,17 @@ card-height = 420px
 .catalog
   position relative
   z-index 5
-  grid-area catalog
-  grid-row-start 2
+  grid-row-start 3
   grid-row-end -1
   grid-column-start 2
   grid-column-end -1
+
   @media(max-width 1200px)
     grid-column-start 1
     grid-column-end -1
 
-  &__title
-    margin-top 0
-    margin-bottom 23px
-
-    font-weight 400
-    font-size 24px
-    line-height 130%
-
-    color color-mine-shaft
-
   &__slider
+
     height 'calc((3 * %s) + (2 * %s))' % (card-height gap)
 
     &.swiper-horizontal
