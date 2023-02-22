@@ -13,7 +13,7 @@ card-height = 420px
   display grid
   grid-template-columns repeat(4, 1fr)
   grid-template-rows repeat(4, auto)
-  column-gap 32px
+  column-gap gap
   @media(max-width 1200px)
     grid-template-columns repeat(3, 1fr)
 
@@ -31,6 +31,9 @@ card-height = 420px
     line-height 130%
 
     color color-mine-shaft
+    @media(max-width 1200px)
+      grid-column-start 1
+      grid-column-end -1
 
 /*aside*/
 .aside
@@ -40,9 +43,17 @@ card-height = 420px
   grid-column-start 1
   grid-column-end 2
   align-self start
-
+  @media(max-width 1200px)
+    grid-row-start 3
+    grid-row-end 3
+    grid-column-start 1
+    grid-column-end -1
   &__form
     width initial
+    @media(max-width 1200px)
+      display grid
+      grid-template-columns auto repeat(4, 1fr)
+      column-gap gap
 
     &-title
       margin-bottom 19px
@@ -50,6 +61,13 @@ card-height = 420px
       font-size 18px
       line-height 130%
       color color-mine-shaft
+      &-big
+        @media(max-width 1200px)
+          display none
+      &-small
+        display none
+        @media(max-width 1200px)
+          display initial
 
     &-label
       margin-bottom 11px
@@ -139,6 +157,8 @@ card-height = 420px
   grid-column-end -1
 
   @media(max-width 1200px)
+    grid-row-start 4
+    grid-row-end -1
     grid-column-start 1
     grid-column-end -1
 
@@ -191,4 +211,3 @@ card-height = 420px
     & .card__picture
       margin-left -14px
       margin-right: -14px
-

@@ -3,8 +3,10 @@ include fieldset-checkbox
 include multi-range-slider
 aside.aside
   .form.aside__form
-    strong.aside__form-title Фильтровать по:
+    strong.aside__form-title
+      span.aside__form-title-big Фильтровать по:
+      span.aside__form-title-small Фильтры:
     +fieldset-checkbox("Категории", category_list, "cat-", "checkbox")
     +multiRangeSlider("Цена", "aside__form-multi-range", "220000", "2000", "150000")
-    +fieldset-checkbox("Скидка", discount_list, "color-", "checkbox")
+    +fieldset-checkbox("Скидка", discount_list, "discount-", "checkbox")
     +fieldset-checkbox("Цвет", color_list, "color-", "checkbox")

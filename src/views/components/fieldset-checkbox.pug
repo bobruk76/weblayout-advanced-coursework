@@ -8,3 +8,7 @@ mixin fieldset-checkbox(name, list, idName, type)
           label.form__checkbox-input-label.aside__form-label(for=id)
             input.form__checkbox-input.form__checkbox-input--hide(id=id name=id type=type required)
             span.checkbox-icon !{item}
+    select.form__select(id=idName + "select" name=idName + "select")
+      option(value="") !{name}
+      each item, index in list
+        option !{item}

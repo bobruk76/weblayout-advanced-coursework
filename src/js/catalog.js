@@ -75,6 +75,10 @@ inputRangeRight.addEventListener("input", () => {
   setValue('right')
 });
 
+
+const asideItems = document.querySelectorAll(".aside__form .form__items")
+
+
 window.addEventListener("load", () => {
   setValue('left')
   setValue('right')
