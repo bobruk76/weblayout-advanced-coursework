@@ -1,5 +1,5 @@
 mixin card(tag, item, class_name, special_offers)
-  #{tag}.card(class= class_name)
+  #{tag}.card(class= class_name data-id= item.id)
     a.link.card__link(href="/product?id=" + item.id)
     if special_offers
       .card__discount

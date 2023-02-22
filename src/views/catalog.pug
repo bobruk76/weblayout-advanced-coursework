@@ -4,6 +4,7 @@ block scripts
   script(defer src='js/catalog.js')
 block content
   include components/store/catalog-store
+  - product_list.sort((a,b)=>{return (a.id - b.id)})
   .container.grid-catalog
     include components/breadcrumbs
     +breadcrumbs(['Главная', 'Каталог', 'Диваны', 'Прямые диваны'])
