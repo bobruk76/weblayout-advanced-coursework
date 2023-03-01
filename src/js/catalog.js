@@ -1,5 +1,6 @@
 import Swiper, {Pagination, Navigation, Grid} from 'swiper'
 import InputMask from "inputmask";
+import Choices from "choices.js";
 
 String.prototype.capitalize = function () {
   return this.charAt(0).toUpperCase() + this.slice(1)
@@ -78,7 +79,15 @@ inputRangeRight.addEventListener("input", () => {
 
 const asideSelects = document.querySelectorAll("[id$='-select']")
 asideSelects.forEach(selectItem => {
-  console.log(selectItem)
+  new Choices(selectItem, {
+    itemSelectText: '',
+    placeholder: false,
+    allowHTML: true,
+    searchEnabled: false,
+    shouldSort: false,
+    // labelId: 'headerSelectAria',
+    // choices: [ ],
+  });
 })
 
 
