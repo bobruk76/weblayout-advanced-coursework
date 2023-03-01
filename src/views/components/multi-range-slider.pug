@@ -19,7 +19,8 @@ mixin multiRangeSlider(name, class_name, max_value, current_min_value, current_m
             span.thumb.thumb--right
 
     - var list = [ ...Array(10).keys() ].map( i => (i+1)*(max_value / 10) )
+
     select.form__select(id="price-select" name="price-select")
       option(value="") !{name}
       each item in list
-       option !{item}
+        option !{item}
