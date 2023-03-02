@@ -5,7 +5,14 @@ const swiperLikeProducts = new Swiper('.like-products__slider', {
 
   effect: 'fade',
   spaceBetween: 32,
-  slidesPerView: "auto",
+  slidesPerView: 3,
+  // slidesPerGroup: 3,
+  breakpoints: {
+    1440: {
+      slidesPerView: 4,
+      // slidesPerGroup: 4,
+    },
+  },
 
   navigation: {
     prevEl: ".like-products__navigation-prev",
