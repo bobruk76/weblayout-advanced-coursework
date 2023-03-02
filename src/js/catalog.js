@@ -78,7 +78,9 @@ inputRangeRight.addEventListener("input", () => {
 });
 
 const asideSelects = document.querySelectorAll("[id$='-select']")
+// let selectList = []
 asideSelects.forEach(selectItem => {
+  // selectList.push(
   new Choices(selectItem, {
     itemSelectText: '',
     placeholder: false,
@@ -87,7 +89,8 @@ asideSelects.forEach(selectItem => {
     shouldSort: false,
     // labelId: 'headerSelectAria',
     // choices: [ ],
-  });
+  })
+  //)
 })
 
 

@@ -32,6 +32,7 @@ card-height = 420px
 
     color color-mine-shaft
     @media(max-width 1200px)
+      margin-bottom 15px
       grid-column-start 1
       grid-column-end -1
 
@@ -54,6 +55,26 @@ card-height = 420px
       display grid
       grid-template-columns auto repeat(4, 1fr)
       column-gap gap
+      align-items center
+
+    & .choices
+      display flex
+      background color-alabaster
+      border-radius 10px
+      font-weight: 400;
+      font-size 16px
+      width initial
+      & .choices__item
+        background transparent
+      & .choices__list--dropdown
+        max-height initial
+      & .choices__placeholder
+        color color-mine-shaft
+        opacity initial
+      @media(max-width 1200px)
+        padding-left 13px
+        height 40px
+
 
     &-title
       margin-bottom 19px
@@ -66,8 +87,13 @@ card-height = 420px
           display none
       &-small
         display none
+        font-size 14px
+        color color-mine-shaft
         @media(max-width 1200px)
+          margin-right 11px
           display initial
+      @media(max-width 1200px)
+        margin-bottom 32px
 
     &-label
       margin-bottom 11px
@@ -75,6 +101,8 @@ card-height = 420px
     & .form__fieldset
       margin-bottom 18px
       width 100%
+      @media(max-width 1200px)
+        margin-bottom 31px
 
       &-legend
         font-weight 600
