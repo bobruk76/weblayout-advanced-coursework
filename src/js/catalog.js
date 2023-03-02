@@ -97,7 +97,7 @@ asideSelects.forEach(selectItem => {
 window.addEventListener("load", () => {
   setValue('left')
   setValue('right')
-  headerContainer.classList.add('header__container--small')
+  headerContainer.classList.add('header__container-catalog')
 })
 
 window.addEventListener("resize", () => {

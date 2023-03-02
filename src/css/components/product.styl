@@ -57,10 +57,13 @@
     padding-top 0
 
     display grid
-    grid-template-columns repeat(2, 1fr)
+    //grid-template-columns repeat(2, 1fr)
+    grid-template-columns minmax(514px, 1fr) minmax(auto, 1fr)
     grid-template-rows repeat(4, auto)
     column-gap 32px
     row-gap 13px
+    //@media(max-width 1440px)
+    //  grid-template-columns minmax(514px, 1fr) minmax(auto, 1fr)
 
   &__card
     padding 16px 0 0
@@ -75,6 +78,8 @@
 
     max-width initial
     min-height initial
+    @media(max-width 1440px)
+      width 100%
 
     &:after
       content none
@@ -124,6 +129,9 @@
     grid-column-start 1
     grid-column-end 2
 
+  &__img
+    width -webkit-fill-available
+
   &__items
     padding 10px 25px
     margin-bottom 14px
@@ -138,6 +146,9 @@
     grid-column-gap 38px
 
     background-color color-alabaster
+    overflow hidden
+    @media(max-width 1200px)
+      padding 10px
 
   &__article
     grid-row-start 3
@@ -198,6 +209,8 @@
         width 'calc(50% + (%s / 2))' % gap
         color color-dusty-gray
         white-space nowrap
+        @media(max-width 1440px)
+          width 'calc(33% + (%s / 2))' % gap
 
         &:after
           content '...........................................................................'
@@ -209,11 +222,17 @@
           font-size 5px
           line-height 0
           letter-spacing 0.6em
+          //@media(max-width 1440px)
+          //  content '.............................'
+          //@media(max-width 1200px)
+          //  content '..............'
 
 .like-products
   &__container
     padding-top 80px
     padding-bottom 70px
+    @media(max-width 1200px)
+      padding-top 70px
 
   &__title
     margin-bottom 24px
