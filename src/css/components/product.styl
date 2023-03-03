@@ -36,6 +36,16 @@
         flex-direction column
         align-items center
 
+        & .product__items
+          display flex
+          align-items center
+
+          & .product__item.swiper-slide
+            display flex
+            justify-content center
+            align-items center
+
+
       & .modal-window__picture
         margin 0
         padding 50px 107px
@@ -43,12 +53,6 @@
 
         &-img
           width 100%
-
-      & .modal-window__items
-        margin 0
-        padding 20px 50px
-        width 100%
-        min-height 166px
 
       & .product__item-img
         //width 100%
@@ -64,9 +68,6 @@
     grid-template-rows repeat(4, auto)
     column-gap 32px
     row-gap 13px
-
-  //@media(max-width 1440px)
-  //  grid-template-columns minmax(514px, 1fr) minmax(auto, 1fr)
 
   &__card
     padding 16px 0 0
@@ -246,6 +247,7 @@
     for num in (1..10)
       &.order{num}
         order: num
+
     & .card__picture
       margin-right -16px
       margin-left -16px

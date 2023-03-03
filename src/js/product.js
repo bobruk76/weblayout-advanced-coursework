@@ -5,12 +5,19 @@ const swiperLikeProducts = new Swiper('.like-products__slider', {
 
   effect: 'fade',
   spaceBetween: 32,
-  slidesPerView: 3,
-  // slidesPerGroup: 3,
+  slidesPerView: 4,
   breakpoints: {
+    320: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
     1440: {
       slidesPerView: 4,
-      // slidesPerGroup: 4,
     },
   },
 
@@ -18,6 +25,29 @@ const swiperLikeProducts = new Swiper('.like-products__slider', {
     prevEl: ".like-products__navigation-prev",
     nextEl: ".like-products__navigation-next",
   },
+
+  autoplayDisableOnInteraction: false,
+  direction: 'horizontal',
+
+  a11y: true,
+})
+
+const swiperModalProducts = new Swiper('.modal-window__items', {
+  modules: [Navigation],
+
+  effect: 'fade',
+  spaceBetween: 32,
+  slidesPerView: 3,
+  breakpoints: {
+    1440: {
+      slidesPerView: 4,
+    },
+  },
+
+  // navigation: {
+  //   prevEl: ".like-products__navigation-prev",
+  //   nextEl: ".like-products__navigation-next",
+  // },
 
   autoplayDisableOnInteraction: false,
   direction: 'horizontal',

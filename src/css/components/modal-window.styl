@@ -19,6 +19,14 @@
 
   background-color rgba(51, 51, 51, .3)
 
+  &__items
+    grid-auto-flow column
+    margin 0
+    padding 20px 50px
+    width 100%
+    min-height 166px
+
+
   &__picture
     margin-bottom gap
     margin-right 'calc(%s * 1.5)' % gap
@@ -47,13 +55,17 @@
         top 20px
         right 20px
         color color-dusty-gray
+
         & path
           fill currentColor
+
         &:hover
           color color-medium-purple
+
         &:focus
           background-color color-blue-chalk
           color color-purple-heart
+
         &:active
           color color-purple-heart
 

@@ -44,10 +44,11 @@ block content
         picture.modal-window__picture
           img.modal-window__picture-img(src= item.img alt="Фото товара")
 
-        ul.list-reset.product__items.modal-window__items
-          each image in item.small_imgs
-            li.product__item
-              img.product__item-img(src= image alt="Малькое фото товара")
+        .product__items.modal-window__items
+          .swiper-wrapper
+            each image, index in item.small_imgs
+              .product__item.swiper-slide
+                img.product__item-img(src= image alt="Маленькое фото товара " + index)
 
     .container.product__container
       picture.product__picture
