@@ -45,6 +45,8 @@ block content
           img.modal-window__picture-img(src= item.img alt="Фото товара")
 
         .product__items.modal-window__items
+          include components/swiper-navigation
+          +swiper-navigation("modal-window__items-navigation")
           .swiper-wrapper
             each image, index in item.small_imgs
               .product__item.swiper-slide
@@ -94,7 +96,6 @@ block content
     .container.like-products__container
       h2.title.like-products__title Похожие товары
       .like-products__slider
-        include components/swiper-navigation
         +swiper-navigation("like-products__navigation")
         .swiper-wrapper
           include components/card

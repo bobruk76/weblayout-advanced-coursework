@@ -44,10 +44,10 @@ const swiperModalProducts = new Swiper('.modal-window__items', {
     },
   },
 
-  // navigation: {
-  //   prevEl: ".like-products__navigation-prev",
-  //   nextEl: ".like-products__navigation-next",
-  // },
+  navigation: {
+    prevEl: ".modal-window__items-navigation-prev",
+    nextEl: ".modal-window__items-navigation-next",
+  },
 
   autoplayDisableOnInteraction: false,
   direction: 'horizontal',
