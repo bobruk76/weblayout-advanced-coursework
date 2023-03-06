@@ -2,9 +2,6 @@ extends components/templates/layout
 block scripts
   script(defer src='/js/cooperation.js')
 block content
-  include components/store/catalog-store
-  include components/store/product-store
-  - var item = product_items[0]
   section.breadcrumbs.product-breadcrumbs
     .container.breadcrumbs__container
       include components/breadcrumbs
