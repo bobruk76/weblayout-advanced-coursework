@@ -117,7 +117,7 @@ const categoryChoices = new Choices(categorySelect, {
 });
 
 // burger
-const headerBurger = document.querySelector('.header__nav-burger')
+const headerBurger = document.querySelector('.header__burger')
 const headerMenu = document.querySelector('.header__menu')
 const headerItemCloseBtn = document.querySelector('.header__item-close-btn')
 headerBurger.addEventListener('click', () => {

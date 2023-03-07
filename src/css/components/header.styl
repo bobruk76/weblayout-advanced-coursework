@@ -36,7 +36,7 @@
     @media (max-width 1200px)
       padding-top 18px
 
-      grid-template-columns repeat(2, min-content) repeat(2, auto) repeat(2, min-content)
+      grid-template-columns min-content repeat(3, auto) repeat(2, min-content)
       grid-template-rows 23px 62px 43px 60px
       row-gap 18px
       align-items center
@@ -45,7 +45,7 @@
     @media (max-width 900px)
       padding-top 18px
 
-      grid-template-columns repeat(4, auto)
+      grid-template-columns min-content auto repeat(2, min-content)
       grid-template-rows 23px 62px 43px 60px
       row-gap 32px
       align-items center
@@ -68,11 +68,16 @@
     @media (max-width 1200px)
       padding-top 0
       margin-bottom 10px
-      margin-right "calc(2 * (%s - 3px))" % gap
+      //margin-right "calc(2 * (%s - 3px))" % gap
       grid-row-start 3
       grid-row-end 3
       grid-column-start 1
       grid-column-end 2
+
+      width fit-content
+    @media(max-width 900px)
+      grid-column-start 2
+      grid-column-end 3
 
   &__phone
     padding-left 21px
@@ -85,7 +90,7 @@
       margin-right 0
       margin-left auto
 
-      grid-column-start 3
+      grid-column-start -3
       grid-column-end -1
 
   &__top
@@ -95,6 +100,7 @@
 
       grid-column-start 1
 
+      width fit-content
       & > .form-select__label
         margin 0
         transition color .3s ease-in-out, background-color .3s ease-in-out
@@ -136,6 +142,10 @@
       grid-column-end -3
 
       width 83%
+      max-width 'calc(100vw - %s - (2 * %s))' % (300px gap36)
+    @media (max-width 900px)
+      grid-column-end -1
+      width 100%
 
     &-item
       padding 3px 8px
@@ -155,6 +165,13 @@
         color color-purple-heart
       @media (max-width 1200px)
         padding 0
+
+  &__burger
+    @media(max-width 900px)
+      grid-row-start 3
+      grid-row-end 3
+      grid-column-start 1
+      grid-column-end 2
 
   &__menu
     @extend .menu-right
@@ -323,6 +340,10 @@
       grid-row-start 2
       grid-row-end 2
       grid-column-start -3
+    @media (max-width 900px)
+      grid-row-start 3
+      grid-row-end 3
+      grid-column-start -3
 
   &__card
     @extend .header__bottom--action
@@ -345,6 +366,15 @@
 
     width 49px
     height 34px
+    @media (max-width 1200px)
+      margin-bottom 16px
+      grid-row-start 2
+      grid-row-end 2
+      grid-column-start -2
+      grid-column-end -1
+    @media (max-width 900px)
+      grid-row-start 3
+      grid-row-end 3
 
     &-icon
       position absolute
@@ -365,9 +395,4 @@
       border-radius 50%
 
       color color-bg
-    @media (max-width 1200px)
-      margin-bottom 16px
-      grid-row-start 2
-      grid-row-end 2
-      grid-column-start -2
-      grid-column-end -1
+
