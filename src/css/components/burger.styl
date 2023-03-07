@@ -2,19 +2,18 @@
   position relative
   z-index 35
 
-  width 0
-  height 0
+  width 24px
+  height 24px
 
-  color color-bg
+  color color-medium-purple
   background-color transparent
 
   cursor pointer
 
   deltaX = 100vw
   transform translateX(0 - deltaX)
-  @media (max-width 576px)
-    width 20px
-    height 18px
+
+  @media (max-width 900px)
     animation show-animate .3s ease-in-out
     animation-fill-mode forwards
 
@@ -23,31 +22,19 @@
     animation-fill-mode forwards
 
   &__line
-    &-first
-      position absolute
-      z-index 2
+    position absolute
+    z-index 2
+    left 0
+    right 0
+    height 3px
+    background-color currentColor
+    border-radius 4px
+
+    &--first
       top 0
-      left 0
-      right 0
 
-      height 2px
-      background-color currentColor
+    &--second
+      top 10px
 
-    &-second
-      position absolute
-      z-index 2
-      top 8px
-      left 0
-      right 0
-
-      height 2px
-      background-color currentColor
-
-    &-third
-      position absolute
-      z-index 2
+    &--third
       bottom 0
-      left 0
-      right 9px
-      height 2px
-      background-color currentColor

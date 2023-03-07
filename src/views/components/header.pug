@@ -2,6 +2,10 @@ include store/header-store
 header.header
   .container
     .header__container
+      button.btn-reset.burger.header__nav-burger(aria-label="Открыть основное меню" data-items="header__menu")
+        span.burger__line.burger__line--first(aria-hidden="true")
+        span.burger__line.burger__line--second(aria-hidden="true")
+        span.burger__line.burger__line--third(aria-hidden="true")
 
       .form-select.header__top-form
         label.form-select__label(for="headerSelect")
@@ -25,7 +29,7 @@ header.header
         svg(width="187" height="27")
           use(xlink:href='img/sprite.svg#logo')
 
-      ul.list-reset.header__menu
+      ul.list-reset.header__menu.header__menu--hide
         each item in menu
           li.header__menu-item
             a.link.header__menu-link(href=href = (item.url ? item.url : "#")) !{(item.name ? item.name : item)}

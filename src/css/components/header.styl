@@ -41,13 +41,22 @@
       row-gap 18px
       align-items center
       justify-content start
+
+    @media (max-width 900px)
+      padding-top 18px
+
+      grid-template-columns repeat(4, auto)
+      grid-template-rows 23px 62px 43px 60px
+      row-gap 32px
+      align-items center
+      justify-content start
+
     &-small
       padding-bottom 22px
+
     &-product
-      @media(max-width 1200px)
+      @media (max-width 1200px)
         padding-bottom 26px
-
-
 
   &__logo
     padding-top 5px
@@ -169,17 +178,39 @@
     line-height 22px
     width 94.5%
     @media (max-width 1200px)
-
       margin 0 0 19px 0
-
       grid-row-start 3
       grid-row-end 3
       grid-column-start 2
       grid-column-end -1
       width 100%
 
+    @media (max-width 900px)
+      margin 0
+      padding 14px 0 36px 18px
+      position absolute
+      z-index 100
+      top 0
+      left 0
+      flex-direction column
+      justify-content flex-start
+      width 100vw
+      height 541px
+    &--show
+      @media (max-width 900px)
+        deltaX = 100vw
+        animation show-animate .3s ease-in-out
+        animation-fill-mode forwards
+
+    &--hide
+      transition: transform .3s ease-in-out
+      @media (max-width 900px)
+        deltaX = 100vw
+        transform: translateX(0 - deltaX)
+
     &-item
       padding 10px 5px
+
       &:last-child
         padding-right 0
 
