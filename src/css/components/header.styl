@@ -36,7 +36,7 @@
     @media (max-width 1200px)
       padding-top 18px
 
-      grid-template-columns min-content repeat(3, auto) repeat(2, min-content)
+      grid-template-columns min-content repeat(4, auto) min-content
       grid-template-rows 23px 62px 43px 60px
       row-gap 18px
       align-items center
@@ -90,7 +90,7 @@
       margin-right 0
       margin-left auto
 
-      grid-column-start -3
+      grid-column-start -5
       grid-column-end -1
 
   &__top
@@ -142,10 +142,10 @@
       grid-column-end -3
 
       width 83%
-      max-width 'calc(100vw - %s - (2 * %s))' % (300px gap36)
     @media (max-width 900px)
       grid-column-end -1
       width 100%
+      max-width initial
 
     &-item
       padding 3px 8px
@@ -167,11 +167,15 @@
         padding 0
 
   &__burger
+    display none
+    grid-row-start 1
+    grid-row-end 1
+    grid-column-start 1
+    grid-column-end 2
     @media(max-width 900px)
+      display initial
       grid-row-start 3
       grid-row-end 3
-      grid-column-start 1
-      grid-column-end 2
 
   &__menu
     @extend .menu-right
@@ -195,6 +199,7 @@
     line-height 22px
     width 94.5%
     @media (max-width 1200px)
+      padding-left 59px
       margin 0 0 19px 0
       grid-row-start 3
       grid-row-end 3
