@@ -45,11 +45,11 @@
     @media (max-width 900px)
       padding-top 18px
 
-      grid-template-columns min-content auto repeat(2, min-content)
-      grid-template-rows 23px 62px 43px 60px
+      grid-template-columns min-content repeat(2, auto) min-content
+      grid-template-rows 23px 20px 43px 60px
       row-gap 32px
       align-items center
-      justify-content start
+      justify-content stretch
 
     &-small
       padding-bottom 22px
@@ -75,9 +75,15 @@
       grid-column-end 2
 
       width fit-content
-    @media(max-width 900px)
+    @media (max-width 900px)
+      margin 0
+
       grid-column-start 2
       grid-column-end 3
+      align-self end
+
+      display flex
+      align-items end
 
   &__phone
     padding-left 21px
@@ -92,6 +98,8 @@
 
       grid-column-start -5
       grid-column-end -1
+    @media (max-width 900px)
+      padding 0
 
   &__top
     &-form
@@ -101,6 +109,7 @@
       grid-column-start 1
 
       width fit-content
+
       & > .form-select__label
         margin 0
         transition color .3s ease-in-out, background-color .3s ease-in-out
@@ -143,6 +152,7 @@
 
       width 83%
     @media (max-width 900px)
+      margin 0
       grid-column-end -1
       width 100%
       max-width initial
@@ -172,10 +182,14 @@
     grid-row-end 1
     grid-column-start 1
     grid-column-end 2
-    @media(max-width 900px)
-      display initial
+    @media (max-width 900px)
+      margin-bottom 2px
+
       grid-row-start 3
       grid-row-end 3
+      align-self end
+
+      display initial
 
   &__menu
     @extend .menu-right
@@ -218,6 +232,7 @@
       justify-content flex-start
       width 100vw
       height 541px
+
     &--show
       @media (max-width 900px)
         deltaX = 100vw
@@ -286,6 +301,8 @@
         grid-column-start 1
         grid-column-end 3
         width 'calc(100vw - %s - (2 * %s))' % (300px gap36)
+      @media (max-width 900px)
+        width 'calc(100vw - %s - (4 * %s))' % (188px gap36)
 
   &__category
     margin-right auto
@@ -310,12 +327,18 @@
 
       &:after
         right 30px
+        //@media (max-width 900px)
+        //  right 0
     @media (max-width 1200px)
       grid-row-start 4
       grid-row-end 4
 
       grid-column-start 3
       grid-column-end -1
+
+    @media (max-width 900px)
+      min-width 100%
+
 
     &:hover
       border-color color-medium-purple
@@ -346,9 +369,11 @@
       grid-row-end 2
       grid-column-start -3
     @media (max-width 900px)
+      margin 0
       grid-row-start 3
       grid-row-end 3
       grid-column-start -3
+      align-self end
 
   &__card
     @extend .header__bottom--action
@@ -378,8 +403,10 @@
       grid-column-start -2
       grid-column-end -1
     @media (max-width 900px)
+      margin 0
       grid-row-start 3
       grid-row-end 3
+      align-self end
 
     &-icon
       position absolute
