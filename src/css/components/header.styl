@@ -20,6 +20,8 @@
   & > .container
     padding 0
     overflow-y visible
+    @media(max-width 1200px)
+      overflow visible
 
   &__container
     overflow-y visible
@@ -42,10 +44,11 @@
       align-items center
       justify-content start
 
+
     @media (max-width 900px)
       padding-top 18px
 
-      grid-template-columns min-content repeat(2, auto) min-content
+      grid-template-columns min-content repeat(2, auto) repeat(2, min-content)
       grid-template-rows 23px 20px 43px 60px
       row-gap 32px
       align-items center
@@ -223,15 +226,20 @@
 
     @media (max-width 900px)
       margin 0
-      padding 14px 0 36px 18px
+      padding 14px
+
       position absolute
-      z-index 100
-      top 0
-      left 0
+      z-index 31
+      top 126px
+      left 52px
+
       flex-direction column
-      justify-content flex-start
-      width 100vw
-      height 541px
+      justify-content center
+      align-items flex-end
+      width 180px
+      height fit-content
+      background-color color-mine-shaft
+      color color-bg
 
     &--show
       @media (max-width 900px)
@@ -355,8 +363,9 @@
 
   &__lk
     @extend .header__bottom--action
+    display flex
     padding-top 4px
-    margin-right 24px
+    margin-right 25px
 
     grid-row-start 3
     grid-row-end 3
@@ -369,7 +378,7 @@
       grid-row-end 2
       grid-column-start -3
     @media (max-width 900px)
-      margin 0
+      margin-bottom 0
       grid-row-start 3
       grid-row-end 3
       grid-column-start -3
@@ -410,8 +419,10 @@
 
     &-icon
       position absolute
-      top 3px
-      right 0
+      top 4px
+      right 1px
+      @media(max-width 900px)
+        top 6px
 
     &-value
       padding: 2px 0 0
