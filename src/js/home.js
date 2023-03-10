@@ -1,18 +1,6 @@
 import JustValidate from 'just-validate'
 import InputMask from "inputmask"
 import Swiper, {Autoplay, Pagination, Navigation} from 'swiper'
-//
-// let sliderCount = 2;
-//
-// ["resize", "load"].forEach(ev => {
-//   window.addEventListener(ev, () => {
-//     if (window.screen.width < 1201) {
-//       sliderCount = 3
-//     } else {
-//       sliderCount = 2
-//     }
-//   })
-// })
 
 const swiperHero = new Swiper('.hero__slider', {
   modules: [Autoplay, Pagination],
@@ -34,16 +22,20 @@ const swiperHero = new Swiper('.hero__slider', {
 
 const swiperOffers = new Swiper('.special-offers__slider', {
   modules: [Navigation],
-
   effect: 'fade',
-  slidesPerView: "auto",
-  slidesPerGroup: 3,
-
+  spaceBetween: 32,
+  slidesPerView: 2,
+  slidesPerGroup: 2,
+  breakpoints: {
+    1024: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+    }
+  },
   navigation: {
     prevEl: ".special-offers__navigation-prev",
     nextEl: ".special-offers__navigation-next",
   },
-
   autoplayDisableOnInteraction: false,
   direction: 'horizontal',
   a11y: true,
@@ -56,6 +48,14 @@ const swiperUseful = new Swiper('.useful__slider', {
   slidesPerView: 3,
   slidesPerGroup: 3,
   breakpoints: {
+    768: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+    },
     1200: {
       slidesPerView: 2,
       slidesPerGroup: 2,

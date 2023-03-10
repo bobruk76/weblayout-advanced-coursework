@@ -168,6 +168,10 @@
     @media (max-width 1440px)
       grid-template-columns repeat(3, 1fr)
       grid-column-gap 'calc((100% - (3 * %s)) / 2)' % cadr-width
+    @media (max-width 900px)
+      grid-template-columns repeat(2, 1fr)
+      grid-template-rows repeat(3, 1fr)
+      grid-column-gap 'calc(100% - (2 * %s))' % cadr-width
 
   &__item
     max-width initial
@@ -210,6 +214,12 @@
       background-size 100%
       background-position center
 
+    @media (max-width 768px)
+      background-image url("../img/ad-bg-768.webp")
+      background-repeat no-repeat
+      background-size 100%
+      background-position center
+
     @media (max-width 320px)
       background-image url("../img/ad-bg-320.webp")
       background-repeat no-repeat
@@ -222,6 +232,9 @@
     flex-direction column
     justify-content flex-start
     align-items flex-start
+    &.container
+      @media(max-width 900px)
+        margin-left gap36
 
   &__title
     margin 0
