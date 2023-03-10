@@ -21,6 +21,19 @@
     animation hide-animate .3s ease-in-out
     animation-fill-mode forwards
 
+  &--active
+    & .burger__line.burger__line--first
+      animation rotate-down .3s ease-in-out
+      animation-fill-mode forwards
+
+    & .burger__line.burger__line--third
+      animation rotate-up .3s ease-in-out
+      animation-fill-mode forwards
+
+    & .burger__line.burger__line--second
+      animation hide-animate .3s ease-in-out
+      animation-fill-mode forwards
+
   &__line
     position absolute
     z-index 2
