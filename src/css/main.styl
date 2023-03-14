@@ -303,7 +303,7 @@
     &:nth-child(3)
       @media (max-width 1024px)
         order 2
-        
+
     &:nth-child(4)
       @media (max-width 1024px)
         order 3
@@ -322,8 +322,16 @@
       background-image url("../img/contacts-1024.webp")
       background-repeat no-repeat
       background-position top 149px right
+    @media (max-width 900px)
+      background-image url("../img/contacts-768.webp")
+      background-size 187px 444px
+      background-repeat no-repeat
+      background-position top 84px right
 
   &__form
+    @media(max-width 900px)
+      width 'calc(67% - (%s / 2))' % gap
+
     &-title
       margin-bottom 8px
 
@@ -333,6 +341,7 @@
       font-size 14px
       line-height 19px
       color color-dove-gray
+
 
 
 @import 'components/header.styl'
