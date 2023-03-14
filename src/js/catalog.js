@@ -11,12 +11,45 @@ const swiperCatalog = new Swiper('.catalog__slider', {
 
   slidesPerView: 3,
   slidesPerGroup: 3,
+  spaceBetween: 32,
   grid: {
     rows: 3,
+    cols: 3,
   },
-
-  spaceBetween: 32,
-
+  breakpoints: {
+    768: {
+      grid: {
+        rows: 3,
+        cols: 2,
+      },
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+    },
+    1024: {
+      grid: {
+        rows: 3,
+        cols: 3,
+      },
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+    },
+    1200: {
+      grid: {
+        rows: 3,
+        cols: 2,
+      },
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+    },
+    1440: {
+      grid: {
+        rows: 3,
+        cols: 3,
+      },
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+    },
+  },
   pagination: {
     el: ".catalog__slider-pagination",
     clickable: true,
@@ -27,6 +60,7 @@ const swiperCatalog = new Swiper('.catalog__slider', {
 
   a11y: true,
 })
+
 //header
 const headerContainer = document.querySelector(".header__container")
 
