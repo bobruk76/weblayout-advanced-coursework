@@ -39,6 +39,12 @@ const swiperModalProducts = new Swiper('.modal-window__items', {
   spaceBetween: 32,
   slidesPerView: 3,
   breakpoints: {
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
     1440: {
       slidesPerView: 4,
     },
