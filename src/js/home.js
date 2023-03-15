@@ -23,12 +23,14 @@ const swiperHero = new Swiper('.hero__slider', {
 const swiperOffers = new Swiper('.special-offers__slider', {
   modules: [Navigation],
   effect: 'fade',
+  loop: true,
   spaceBetween: 32,
+
   slidesPerView: 2,
   slidesPerGroup: 2,
   breakpoints: {
     1024: {
-      slidesPerView: 3,
+      slidesPerView: "auto",
       slidesPerGroup: 3,
     }
   },
