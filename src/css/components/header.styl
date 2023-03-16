@@ -20,7 +20,7 @@
   & > .container
     padding 0
     overflow-y visible
-    @media(max-width 1200px)
+    @media (max-width 1200px)
       overflow visible
 
   &__container
@@ -54,6 +54,13 @@
       align-items center
       justify-content stretch
 
+    @media (max-width 600px)
+      padding-top 0
+
+      grid-template-columns repeat(2, auto) min-content
+      grid-template-rows 50px 23px 22px 50px repeat(2, 60px)
+      row-gap 'calc(%s / 2)' % 32px
+
     &-small
       padding-bottom 22px
 
@@ -82,29 +89,31 @@
 
       display flex
       align-items end
+    @media (max-width 600px)
+      grid-row 1 / 2
+      grid-column 1 / -1
 
   &__phone
     padding-left 21px
-    grid-row-start 1
-    grid-row-end 1
+    grid-row 1 / 2
 
-    grid-column-start 2
-    grid-column-end 4
+    grid-column 2 / 4
     @media (max-width 1200px)
       margin-right 0
       margin-left auto
 
-      grid-column-start -5
-      grid-column-end -1
+      grid-column -5 / -1
+
     @media (max-width 900px)
       padding 0
+    @media (max-width 600px)
+      grid-row 1 / 2
+      grid-column 1 / 2
 
   &__top
     &-form
-      grid-row-start 1
-      grid-row-end 1
-
-      grid-column-start 1
+      grid-row 1 / 2
+      grid-column 1 / 2
 
       width fit-content
 
@@ -417,7 +426,7 @@
       position absolute
       top 4px
       right 1px
-      @media(max-width 900px)
+      @media (max-width 900px)
         top 6px
 
     &-value
