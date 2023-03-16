@@ -16,6 +16,8 @@
     background-color color-alabaster
     @media (max-width 1200px)
       top 58px
+    @media (max-width 600px)
+      top 0
 
   & > .container
     padding 0
@@ -81,6 +83,7 @@
       grid-column 1 / 2
 
       width fit-content
+
     @media (max-width 900px)
       margin 0
 
@@ -89,9 +92,12 @@
 
       display flex
       align-items end
+
     @media (max-width 600px)
       grid-row 1 / 2
       grid-column 1 / -1
+      align-self center
+      justify-self center
 
   &__phone
     padding-left 21px
@@ -106,9 +112,11 @@
 
     @media (max-width 900px)
       padding 0
+
     @media (max-width 600px)
-      grid-row 1 / 2
+      grid-row 3 / 4
       grid-column 1 / 2
+      justify-self centerl
 
   &__top
     &-form
@@ -116,6 +124,9 @@
       grid-column 1 / 2
 
       width fit-content
+
+      @media (max-width 600px)
+        grid-row 2 / 3
 
       & > .form-select__label
         margin 0
@@ -161,6 +172,9 @@
       width 100%
       max-width initial
 
+    @media (max-width 600px)
+      display none
+
     &-item
       padding 3px 8px
       transition color .3s ease-in-out, background-color .3s ease-in-out
@@ -194,34 +208,37 @@
 
       display initial
 
+    @media (max-width 600px)
+      margin 0
+
+      grid-row 4 / 5
+
   &__menu
     @extend .menu-right
-    grid-row-start 2
-    grid-row-end 2
-
-    grid-column-start 3
-    grid-column-end -1
-
     padding-top 26px
     padding-bottom 23px
     padding-right 3px
 
+    grid-row 2 / 3
+    grid-column 3 / -1
+
     display flex
     align-items center
     justify-content space-between
+
     font-family 'Open Sans', Verdana, sans-serif
     font-style normal
     font-weight 400
     font-size 16px
     line-height 22px
+
     width 94.5%
     @media (max-width 1200px)
       padding-left 59px
       margin 0 0 19px 0
-      grid-row-start 3
-      grid-row-end 3
-      grid-column-start 2
-      grid-column-end -1
+      grid-row 3 / 4
+      grid-column 2 / -1
+
       width 100%
 
     @media (max-width 900px)
@@ -290,11 +307,8 @@
 
     &-form
       margin 0
-      grid-row-start 3
-      grid-row-end 3
-
-      grid-column-start 1
-      grid-column-end 6
+      grid-row 3 / 4
+      grid-column 1 / 6
 
       font-weight 400
       font-size 16px
@@ -304,22 +318,21 @@
       width 'min(%s, %s)' % (761px 60vw)
       max-height 60px
       @media (max-width 1200px)
-        grid-row-start 4
-        grid-row-end 4
+        grid-row 4 / 5
+        grid-column 1 / 3
 
-        grid-column-start 1
-        grid-column-end 3
         width 'calc(100vw - %s - (2 * %s))' % (300px gap36)
       @media (max-width 900px)
         width 'calc(100vw - %s - (4 * %s))' % (188px gap36)
+      @media (max-width 600px)
+        grid-column 1 / -1
+        grid-row 5 / 6
+        width 100%
 
   &__category
     margin-right auto
-    grid-row-start 3
-    grid-row-end 3
-
-    grid-column-start 6
-    grid-column-end 7
+    grid-row 3 / 4
+    grid-column 6 / 7
 
     display flex
     align-items center
@@ -339,15 +352,17 @@
 
     @media (max-width 1200px)
       margin 0
-      grid-row-start 4
-      grid-row-end 4
-
-      grid-column-start 3
-      grid-column-end -1
+      grid-row 4 / 5
+      grid-column 3 / -1
 
     @media (max-width 900px)
       min-width 189px
 
+    @media (max-width 600px)
+      margin 0
+      grid-row 6 / 7
+      grid-column 1 / -1
+      width 100%
 
     &:hover
       border-color color-medium-purple
@@ -368,21 +383,21 @@
     padding-top 4px
     margin-right 25px
 
-    grid-row-start 3
-    grid-row-end 3
-
-    grid-column-start -3
+    grid-row 3 / 4
+    grid-column -3 / -2
     justify-self end
+
     @media (max-width 1200px)
       margin-bottom 16px
-      grid-row-start 2
-      grid-row-end 2
-      grid-column-start -3
+
+      grid-row 2 / 3
+    //grid-column -3 / -2
+
     @media (max-width 900px)
       margin-bottom 0
-      grid-row-start 3
-      grid-row-end 3
-      grid-column-start -3
+      grid-row 3 / 4
+
+      //grid-column-start -3
       align-self end
 
   &__card
@@ -391,13 +406,12 @@
 
     margin-right 0
     margin-left 0
+
     position relative
 
-    grid-row-start 3
-    grid-row-end 3
+    grid-row 3 / 4
+    grid-column -2 / -1
 
-    grid-column-start -2
-    grid-column-end -1
     justify-self end
 
     display flex
@@ -406,16 +420,16 @@
 
     width 49px
     height 34px
+
     @media (max-width 1200px)
       margin-bottom 16px
-      grid-row-start 2
-      grid-row-end 2
-      grid-column-start -2
-      grid-column-end -1
+      grid-row 2 / 3
+      grid-column -2 / -1
+
     @media (max-width 900px)
       margin 0
-      grid-row-start 3
-      grid-row-end 3
+      grid-row 3 / 4
+
       align-self end
 
     &-icon
