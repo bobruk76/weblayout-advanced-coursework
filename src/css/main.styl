@@ -87,8 +87,12 @@
             @media (max-width (break) px)
               background-image url("../img/slide-"(slide[1]) "-"(break) ".webp")
               background-repeat no-repeat
-              background-size 100%
-              background-position center
+              if break == 320
+                background-size 320px 210px
+                background-position top center
+              else
+                background-size 100%
+                background-position center
 
 /*special-offers*/
 .special-offers
