@@ -213,6 +213,7 @@
       margin 0
 
       grid-row 4 / 5
+      align-self center
 
   &__menu
     @extend .menu-right
@@ -390,16 +391,17 @@
 
     @media (max-width 1200px)
       margin-bottom 16px
-
       grid-row 2 / 3
-    //grid-column -3 / -2
 
     @media (max-width 900px)
       margin-bottom 0
-      grid-row 3 / 4
 
-      //grid-column-start -3
+      grid-row 3 / 4
       align-self end
+
+    @media (max-width 600px)
+      grid-row 4 / 5
+      align-self center
 
   &__card
     @extend .header__bottom--action
@@ -432,6 +434,10 @@
       grid-row 3 / 4
 
       align-self end
+
+    @media (max-width 600px)
+      grid-row 4 / 5
+      align-self center
 
     &-icon
       position absolute
