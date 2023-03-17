@@ -21,7 +21,6 @@
 @import 'components/modal-window.styl'
 @import 'components/burger.styl'
 
-
 /*aside*/
 .aside
   grid-area sidebar
@@ -67,7 +66,7 @@
       line-height 65px
       color color-dusty-gray
       max-width 500px
-      @media(max-width 600px)
+      @media (max-width 600px)
         font-size 20px
         line-height 27px
 
@@ -75,58 +74,21 @@
         color color-bg
         max-width 590px
 
-    &-first
-      &:after
-        background-image url("../img/slide-1-1920.webp")
-        background-repeat no-repeat
-        background-size 100%
-        background-position center
-
-        
-        @media (max-width 1024px)
-          background-image url("../img/slide-1-1024.webp")
-          background-repeat no-repeat
-          background-size 100%
-          background-position center
-        @media (max-width 768px)
-          background-image url("../img/slide-1-768.webp")
+    sliders = "first" 1, "second" 2, "third" 3
+    for slide in sliders
+      &-{slide[0]}
+        &:after
+          background-image url("../img/slide-"(slide[1]) "-1920.webp")
           background-repeat no-repeat
           background-size 100%
           background-position center
 
-    &-second
-      &:after
-        background-image url("../img/slide-2-1920.webp")
-        background-repeat no-repeat
-        background-size contain
-        background-position center
-        @media (max-width 1024px)
-          background-image url("../img/slide-2-1024.webp")
-          background-repeat no-repeat
-          background-size 100%
-          background-position center
-        @media (max-width 768px)
-          background-image url("../img/slide-2-768.webp")
-          background-repeat no-repeat
-          background-size 100%
-          background-position center
-
-    &-third
-      &:after
-        background-image url("../img/slide-3-1920.webp")
-        background-repeat no-repeat
-        background-size contain
-        background-position center
-        @media (max-width 1024px)
-          background-image url("../img/slide-3-1024.webp")
-          background-repeat no-repeat
-          background-size 100%
-          background-position center
-        @media (max-width 768px)
-          background-image url("../img/slide-3-768.webp")
-          background-repeat no-repeat
-          background-size 100%
-          background-position center
+          for break in breaks
+            @media (max-width (break) px)
+              background-image url("../img/slide-"(slide[1]) "-"(break) ".webp")
+              background-repeat no-repeat
+              background-size 100%
+              background-position center
 
 /*special-offers*/
 .special-offers
@@ -323,7 +285,7 @@
       background-position top 84px right
 
   &__form
-    @media(max-width 900px)
+    @media (max-width 900px)
       width 'calc(67% - (%s / 2))' % gap
 
     &-title
@@ -335,7 +297,6 @@
       font-size 14px
       line-height 19px
       color color-dove-gray
-
 
 @import 'components/header.styl'
 @import 'components/catalog.styl'
