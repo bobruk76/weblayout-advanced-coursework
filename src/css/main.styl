@@ -47,32 +47,49 @@
     justify-content flex-end
     height 400px
     overflow hidden
+    @media (max-width 320px)
+      height 302px
 
     &:after
       @extend .img-height100
 
     &-container
       padding-top 0
-      padding-bottom: 80px
+      padding-bottom 80px
+
       display flex
       flex-direction column
       justify-content flex-end
       align-items flex-start
 
+      @media (max-width 320px)
+        padding-top 31px
+        padding-bottom 0
+        justify-content space-between
+        height 100%
+
     &-title
-      margin-bottom: 48px
+      margin-bottom 48px
+
       font-weight 700
       font-size 48px
       line-height 65px
       color color-dusty-gray
       max-width 500px
-      @media (max-width 600px)
+      @media (max-width 425px)
+        padding-left 18px
         font-size 20px
         line-height 27px
+        width 80%
 
       &--white
         color color-bg
         max-width 590px
+
+    &-btn
+      @media (max-width 320px)
+        width 100%
+        box-sizing border-box
 
     sliders = "first" 1, "second" 2, "third" 3
     for slide in sliders
@@ -96,6 +113,13 @@
 
 /*special-offers*/
 .special-offers
+  &__title
+    @media (max-width 425px)
+      font-weight 400
+      font-size 24px
+      line-height 100%
+      max-width 212px
+
   &__item
     &:not(:nth-child(3n))
       margin-right gap
@@ -143,9 +167,8 @@
       margin-right -15px
 
     @media (max-width 1440px)
-      &:not(:nth-child(-n + 6)) {
+      &:not(:nth-child(-n + 6))
         display none
-      }
 
   &__btn
     padding 20px 35px

@@ -7,19 +7,26 @@
   z-index 10
   left calc(50% - 44px)
   bottom 20px
+  @media (max-width 320px)
+    left calc(50% - 21px)
+    bottom 99px
 
 .swiper-pagination-bullet
-
   width 14px
   height 14px
   background-color color-mine-shaft
   opacity .3
+  @media (max-width 320px)
+    width 6px
+    height 6px
 
   &.swiper-pagination-bullet-active
     opacity 1
 
 .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet
   margin 0 7px
+  @media (max-width 320px)
+    margin 0 4px
 
 /*special offers*/
 .swiper-navigation
@@ -31,13 +38,18 @@
   align-items center
   width 77px
   height 32px
+
   &__button
     cursor pointer
+
     & > *
       stroke color-medium-purple
+
     &:not(.swiper-button-disabled)
       @extend .btn-arrow
+
     &.swiper-button-disabled
       cursor initial
+
       & > *
         stroke color-dusty-gray
