@@ -102,6 +102,7 @@
 
           for break in breaks
             @media (max-width (break) px)
+
               background-image url("../img/slide-"(slide[1]) "-"(break) ".webp")
               background-repeat no-repeat
               if break == 320
@@ -113,6 +114,9 @@
 
 /*special-offers*/
 .special-offers
+  &__slider
+    padding-bottom 50px
+
   &__title
     @media (max-width 425px)
       font-weight 400
@@ -123,6 +127,15 @@
   &__item
     &:not(:nth-child(3n))
       margin-right gap
+
+  &__navigation
+    @media (max-width 425px)
+      z-index 10
+      overflow-y hidden
+
+      top auto
+      bottom 0
+      right 'calc(50% - %s)' % gap36
 
 /*high-rating*/
 .high-rating
@@ -187,27 +200,17 @@
 
   &:after
     @extend .img-height100
-    background-image url("../img/ad-bg.webp")
+    background-image url("../img/ad-bg-1920.webp")
     background-repeat no-repeat
     background-size 100%
     background-position center
-    @media (max-width 1024px)
-      background-image url("../img/ad-bg-1024.webp")
-      background-repeat no-repeat
-      background-size 100%
-      background-position center
 
-    @media (max-width 768px)
-      background-image url("../img/ad-bg-768.webp")
-      background-repeat no-repeat
-      background-size 100%
-      background-position center
-
-    @media (max-width 320px)
-      background-image url("../img/ad-bg-320.webp")
-      background-repeat no-repeat
-      background-size 100%
-      background-position center
+    for break in breaks
+      @media (max-width (break) px)
+        background-image url("../img/ad-bg-"(break) ".webp")
+        background-repeat no-repeat
+        background-size 100%
+        background-position center
 
   &__container
     padding 11px 0 0
@@ -279,6 +282,7 @@
       @media (max-width 1024px)
         order 4
         grid-column span 2
+
       @media (max-width 900px)
         order 3
         grid-column span 1
@@ -297,7 +301,7 @@
 .contacts
   &__container
     padding-bottom 68px
-    background-image url("../img/contacts.webp")
+    background-image url("../img/contacts-1920.webp")
     background-repeat no-repeat
     background-position top 94px right
     @media (max-width 1200px)
