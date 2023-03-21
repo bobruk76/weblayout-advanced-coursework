@@ -238,6 +238,9 @@
   width 100%
   min-height 600px
   overflow hidden
+  @media (max-width 425px)
+    display grid
+    min-height 302px
 
   &:after
     @extend .img-height100
@@ -250,8 +253,12 @@
       @media (max-width (break) px)
         background-image url("../img/ad-bg-"(break) ".webp")
         background-repeat no-repeat
-        background-size 100%
-        background-position center
+        if break == 320
+          background-size 320px 210px
+          background-position top center
+        else
+          background-size 100%
+          background-position center
 
   &__container
     padding 11px 0 0
@@ -265,6 +272,12 @@
         padding-top 9px
         margin-left gap36
 
+      @media (max-width 425px)
+        margin 0 13px
+        display grid
+        grid-template-rows 52px 38px auto
+        align-items end
+
   &__title
     margin 0
     font-family "Playfair Display", Verdana, sans-serif
@@ -273,8 +286,12 @@
     font-size 60px
     line-height 120%
     color color-straw
+
     @media (max-width 900px)
       line-height inherit
+
+    @media (max-width 425px)
+      font-size 24px
 
   &__descr
     margin-bottom 49px
@@ -283,9 +300,14 @@
     line-height 120%
     color color-bg
     max-width 508px
+    @media (max-width 425px)
+      margin 0
+      font-size 16px
 
   &__btn
     padding 20px 30px
+    @media (max-width 425px)
+      width 100%
 
 /*useful*/
 .useful
