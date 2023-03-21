@@ -9,6 +9,8 @@
   min-height 511px
   width cadr-width
   min-width cadr-width
+  @media(max-width 425px)
+    justify-content space-between
 
   &--wide
     width 'calc(100% - (2 * %s) - (2 * %s))' % (cadr-width gap)
@@ -37,6 +39,8 @@
       right 0
       bottom 90px
       left 0
+      @media(max-width 425px)
+        bottom 60px
 
   &__rating.link
     margin 0 auto auto 0
@@ -83,6 +87,8 @@
     justify-content center
     align-items end
     height 218px
+    @media (max-width 425px)
+      align-items center
     &-img
       width 100%
       height fit-content
@@ -92,10 +98,13 @@
     display flex
     flex-direction column
 
-
     font-weight 400
     font-size 24px
     line-height 130%
+    @media(max-width 425px)
+      margin-bottom 16px
+      font-size 16px
+      line-height 130%
 
   &__price
     margin-bottom 23px
@@ -103,6 +112,9 @@
     font-size 16px
     line-height 130%
     color color-dove-gray
+    @media(max-width 425px)
+      margin-top 0
+      margin-bottom 16px
 
     &-new
       margin-right: 30px
