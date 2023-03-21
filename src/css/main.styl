@@ -327,6 +327,9 @@
 
 /*category*/
 .category
+  &__title
+    @media(max-width 425px)
+      font-size 24px
   &__items
     display grid
     grid-template-columns repeat(6, 1fr)

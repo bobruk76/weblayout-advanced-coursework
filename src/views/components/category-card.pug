@@ -7,7 +7,7 @@ mixin category-card(tag, item, class_name)
     strong.title.category-card__title !{item.title}
     picture.category-card__picture
       source(srcset=item.img + "-1024.webp" media="(max-width: 1200px)")
+      source(srcset=item.img + "-320.webp" media="(max-width: 425px)")
       img.category-card__img(src= item.img + ".webp" alt="Фото категории")
     include card-link
     +card-link("category-card__link")
-
