@@ -3,6 +3,10 @@
   position relative
   display flex
   flex-direction column
+  @media(max-width 425px)
+    display grid
+    grid-template-columns min-content auto
+    grid-template-rows repeat(3, auto)
 
   &:after
     content ""
@@ -21,15 +25,25 @@
     font-weight 400
     font-size 14px
     line-height 100%
+    @media (max-width 425px)
+      justify-content space-between
+      grid-row 1 / 2
+      grid-column span 2
 
   &__item
     &:not(:last-child)
       margin-right 30px
+      @media (max-width 425px)
+        margin-right 0
 
   &__title
     font-weight 400
     font-size 24px
     line-height 33px
+    @media (max-width 425px)
+      margin-bottom 0
+      grid-row 2 / 3
+      grid-column span 1
 
   &__picture
     display flex
@@ -39,9 +53,24 @@
     height -webkit-fill-available
     @media (max-width 1200px)
       min-height 311px
+    @media (max-width 425px)
+      margin 0 -30px
+
+      grid-row 3 / 4
+      grid-column span 2
+
+      min-height initial
+
 
   &__img
     height -webkit-fill-available
 
   &__link
     margin-bottom 0
+    @media (max-width 425px)
+      grid-row 2 / 3
+      grid-column -2 / -1
+    & .card-link__descr
+      @media (max-width 425px)
+        display none
+
