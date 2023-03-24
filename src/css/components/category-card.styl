@@ -3,10 +3,12 @@
   position relative
   display flex
   flex-direction column
-  @media(max-width 425px)
+  @media (max-width 425px)
     display grid
     grid-template-columns min-content auto
     grid-template-rows repeat(3, auto)
+
+    border-radius 10px
 
   &:after
     content ""
@@ -26,6 +28,7 @@
     font-size 14px
     line-height 100%
     @media (max-width 425px)
+      margin-bottom 2px
       justify-content space-between
       grid-row 1 / 2
       grid-column span 2
@@ -70,6 +73,8 @@
     @media (max-width 425px)
       grid-row 2 / 3
       grid-column -2 / -1
+      align-self end
+
     & .card-link__descr
       @media (max-width 425px)
         display none

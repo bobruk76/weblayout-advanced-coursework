@@ -328,8 +328,9 @@
 /*category*/
 .category
   &__title
-    @media(max-width 425px)
+    @media (max-width 425px)
       font-size 24px
+
   &__items
     display grid
     grid-template-columns repeat(6, 1fr)
@@ -343,6 +344,11 @@
     order 10
     @media (max-width 900px)
       grid-column span 1
+    @media (max-width 425px)
+      & .category-card__title
+        font-weight 400
+        font-size 16px
+        line-height 150%
 
     &:nth-child(1)
       order 1
@@ -351,6 +357,12 @@
         grid-column span 4
       @media (max-width 900px)
         grid-column 1 / 3
+      @media (max-width 425px)
+        padding-bottom 'calc(%s / 2)' % gap
+        grid-row-gap 13px
+        & .category-card__title
+          font-size 24px
+          line-height 33px
 
     &:nth-child(2)
       grid-column span 3
