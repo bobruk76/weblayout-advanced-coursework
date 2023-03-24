@@ -6,7 +6,7 @@
   @media (max-width 425px)
     display grid
     grid-template-columns auto 1fr
-    grid-template-rows repeat(3, auto)
+    grid-template-rows repeat(2, auto) 1fr
     grid-column-gap 5px
 
     border-radius 10px
@@ -14,7 +14,7 @@
     & .title
       font-weight 400
       font-size 16px
-      line-height 150%
+      line-height 105%
 
   &:after
     content ""
@@ -35,9 +35,10 @@
     line-height 100%
     @media (max-width 425px)
       margin-bottom 2px
-      justify-content space-between
       grid-row 1 / 2
       grid-column span 2
+
+      justify-content space-between
 
   &__item
     &:not(:last-child)
@@ -70,7 +71,6 @@
 
       min-height initial
 
-
   &__img
     height -webkit-fill-available
 
@@ -84,4 +84,3 @@
     & .card-link__descr
       @media (max-width 425px)
         display none
-

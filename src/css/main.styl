@@ -167,13 +167,16 @@
     grid-column-gap 'calc((100% - (4 * %s)) / 3)' % cadr-width
 
     width 100%
+
     @media (max-width 1440px)
       grid-template-columns repeat(3, 1fr)
       grid-column-gap 'calc((100% - (3 * %s)) / 2)' % cadr-width
+
     @media (max-width 900px)
       grid-template-columns repeat(2, 1fr)
       grid-template-rows repeat(3, 1fr)
       grid-column-gap 'calc(100% - (2 * %s))' % cadr-width
+
     @media (max-width 425px)
       grid-gap 'calc(%s / 2)' % gap
 
@@ -360,6 +363,34 @@
         & .category-card__title
           font-size 24px
           line-height 33px
+
+    &:not(:nth-child(1))
+      @media (max-width 425px)
+        padding 17px 16px 16px 16px
+
+      & .category-card__items
+        @media (max-width 425px)
+          margin-bottom 4px
+          flex-direction column
+          justify-content initial
+          font-size 10px
+
+      & .category-card__item
+        @media (max-width 425px)
+          margin-bottom 4px
+
+      & .category-card__title.title
+        @media (max-width 425px)
+          margin-bottom 20px
+
+      & .category-card__link
+        @media (max-width 425px)
+          align-self self-end
+          margin-bottom 11px
+
+      & .category-card__picture
+        @media (max-width 425px)
+          margin 0 -16px
 
     &:nth-child(2)
       grid-column span 3
