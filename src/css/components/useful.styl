@@ -10,6 +10,7 @@
     overflow hidden
     @media (max-height 1200px)
       min-height initial
+
     &:after
       content ""
       position absolute
@@ -19,7 +20,6 @@
       bottom 0
       left 0
       background-color color-alabaster
-
 
     &__picture
       margin 0
@@ -34,11 +34,14 @@
       justify-content space-between
 
       min-height 246px
+      @media (max-width 425px)
+        padding-top 26px
+        min-height 250px
 
     &__descr
       font-weight 400
       font-size 24px
       line-height 33px
-      @media(max-width 1200px)
+      @media (max-width 1200px)
         font-size 16px
         line-height 22px

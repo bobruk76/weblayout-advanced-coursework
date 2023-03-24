@@ -46,9 +46,13 @@ const swiperUseful = new Swiper('.useful__slider', {
   modules: [Navigation],
   effect: 'fade',
   spaceBetween: 32,
-  slidesPerView: 3,
-  slidesPerGroup: 3,
+  slidesPerView: 1,
+  slidesPerGroup: 1,
   breakpoints: {
+    320: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+    },
     768: {
       slidesPerView: 2,
       slidesPerGroup: 2,

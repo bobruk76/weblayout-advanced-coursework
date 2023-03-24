@@ -121,7 +121,7 @@
   &__title
     @media (max-width 425px)
       font-weight 400
-      font-size 24px
+      //font-size 24px
       line-height 100%
       max-width 212px
 
@@ -151,7 +151,7 @@
     align-self flex-start
     @media (max-width 425px)
       margin-bottom 24px
-      font-size 24px
+      //font-size 24px
       line-height 100%
 
   &__items
@@ -327,13 +327,12 @@
     padding-top 75px
     @media (max-width 1200px)
       padding-top 70px
+    @media (max-width 425px)
+      padding-top 79px
+      padding-bottom 48px
 
 /*category*/
 .category
-  &__title
-    @media (max-width 425px)
-      font-size 24px
-
   &__items
     display grid
     grid-template-columns repeat(6, 1fr)
@@ -349,6 +348,7 @@
     order 10
     @media (max-width 900px)
       grid-column span 1
+      border-radius 10px
 
     &:nth-child(1)
       order 1
