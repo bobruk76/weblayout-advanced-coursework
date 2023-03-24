@@ -337,6 +337,8 @@
     grid-gap gap
     @media (max-width 900px)
       grid-template-columns repeat(2, 1fr)
+    @media (max-width 425px)
+      grid-column-gap 'calc(%s / 2)' % gap
 
   &__item
     grid-column span 2
@@ -344,11 +346,6 @@
     order 10
     @media (max-width 900px)
       grid-column span 1
-    @media (max-width 425px)
-      & .category-card__title
-        font-weight 400
-        font-size 16px
-        line-height 150%
 
     &:nth-child(1)
       order 1
