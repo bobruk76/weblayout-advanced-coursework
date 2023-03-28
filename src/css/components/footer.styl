@@ -1,6 +1,10 @@
 .footer
   grid-area footer
 
+  &__logo
+    @media (max-width 425px)
+      margin-bottom 20px
+
   &__top
     position relative
 
@@ -28,6 +32,8 @@
       grid-template-columns 1fr
       grid-template-rows repeat(2, auto)
       grid-row-gap 24px
+    @media (max-width 425px)
+      padding-bottom 26px
 
   &__left
     display inline-flex
@@ -38,6 +44,9 @@
       grid-row 1 / 2
       grid-column 1 / 2
       flex-direction row
+    @media (max-width 425px)
+      flex-direction column
+      align-items center
 
   &__social
     &-items
@@ -90,6 +99,7 @@
   &__cards
     display inline-grid
     grid-template-columns repeat(4, auto)
+    grid-auto-flow row
     grid-gap 130px
     @media (max-width 1440px)
       grid-gap 93px
@@ -97,6 +107,10 @@
       grid-row 2 / 3
       grid-column 1 / 2
       grid-gap 54px
+    @media (max-width 425px)
+      grid-template-columns repeat(2, auto)
+      row-gap 28px
+      column-gap 44px
 
   &__card
     display flex
@@ -121,6 +135,9 @@
     padding: 0
     display flex
     justify-content center
+    @media (max-width 425px)
+      align-items center
+      min-height 30px
 
     &-info
       background linear-gradient(color-bg, color-bg)
