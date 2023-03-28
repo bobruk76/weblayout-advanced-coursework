@@ -14,6 +14,8 @@ card-height = 420px
   column-gap gap
   @media (max-width 1200px)
     grid-template-columns repeat(3, 1fr)
+  @media (max-width 425px)
+    padding-top 11px
 
   &__title
     margin-top 0
@@ -35,6 +37,12 @@ card-height = 420px
       grid-column-end -1
     @media (max-width 900px)
       margin-bottom 18px
+    @media (max-width 425px)
+      margin-bottom 9px
+
+  & .breadcrumbs
+    @media (max-width 425px)
+      display none
 
 /*catalog*/
 .catalog
@@ -60,7 +68,7 @@ card-height = 420px
 
     & .swiper-pagination-bullets
       bottom 'calc(-2 * %s)' % gap
-      @media(max-width 900px)
+      @media (max-width 900px)
         left 0
         right 0
         text-align center
