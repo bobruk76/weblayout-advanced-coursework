@@ -41,16 +41,16 @@ block content
       p.descr.modal-window__descr Спасибо, мы вам перезвоним!
 
     +modal-window("product__modal-images", "productModalImages", "container")
-        picture.modal-window__picture
-          img.modal-window__picture-img(src= item.img alt="Фото товара")
+      picture.modal-window__picture
+        img.modal-window__picture-img(src= item.img alt="Фото товара")
 
-        .product__items.modal-window__items
-          include components/swiper-navigation
-          +swiper-navigation("modal-window__items-navigation")
-          .swiper-wrapper
-            each image, index in item.small_imgs
-              .product__item.swiper-slide
-                img.product__item-img(src= image alt="Маленькое фото товара " + index)
+      .product__items.modal-window__items
+        include components/swiper-navigation
+        +swiper-navigation("modal-window__items-navigation")
+        .swiper-wrapper
+          each image, index in item.small_imgs
+            .product__item.swiper-slide
+              img.product__item-img(src= image alt="Маленькое фото товара " + index)
 
     .container.product__container
       picture.product__picture
@@ -60,7 +60,7 @@ block content
         each image in item.small_imgs
           li.product__item
             a.link.product__item-link
-              img.product__item-img(src= image alt="Малькое фото товара")
+              img.product__item-img(src= image alt="Маленькое фото товара")
 
       .product__card.card
         a.link.card__rating.product__card-rating(href="#")
@@ -78,7 +78,9 @@ block content
       ul.list-reset.product__schemes
         each scheme in item.schemes
           a.link.product__schemes-item
-            img.product__scheme-img(src= scheme alt="Схема товара")
+            picture.product__schemes-picture
+              source(srcset=scheme + "-320.webp" media="(max-width: 425px)")
+              img.product__scheme-img(src= scheme + ".webp" alt="Схема товара")
 
       article.product__article
         h3.title.product__article-title !{item.descr_title}
