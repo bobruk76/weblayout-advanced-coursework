@@ -291,13 +291,19 @@
       line-height initial
       transform translatey(-3px)
     @media (max-width 600px)
+      padding-top 20px
       order 2
+      align-self start
+
 
     &-item
       display flex
       width 100%
       @media (max-width 900px)
         margin-bottom 6px
+      @media (max-width 600px)
+        margin-bottom 8px
+        flex-direction column
 
       &-name
         display flex
@@ -308,6 +314,9 @@
           width 'calc(33% + (%s / 2))' % gap
         @media (max-width 900px)
           width 'calc(60% + %s)' % gap
+        @media (max-width 425px)
+          font-size 10px
+          line-height 14px
 
         &:after
           content '...........................................................................'
@@ -319,6 +328,8 @@
           font-size 5px
           line-height 0
           letter-spacing 0.6em
+          @media (max-width 600px)
+            display none
 
 .like-products
   &__container
