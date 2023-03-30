@@ -9,9 +9,9 @@ String.prototype.capitalize = function () {
 const swiperCatalog = new Swiper('.catalog__slider', {
   modules: [Pagination, Navigation, Grid],
 
-  slidesPerView: 3,
-  slidesPerGroup: 3,
-  spaceBetween: 32,
+  slidesPerView: 2,
+  slidesPerGroup: 2,
+  spaceBetween: 16,
   grid: {
     rows: 3,
     cols: 2,
@@ -24,6 +24,7 @@ const swiperCatalog = new Swiper('.catalog__slider', {
       },
       slidesPerView: 2,
       slidesPerGroup: 2,
+      spaceBetween: 16,
     },
     768: {
       grid: {
@@ -32,6 +33,7 @@ const swiperCatalog = new Swiper('.catalog__slider', {
       },
       slidesPerView: 2,
       slidesPerGroup: 2,
+      spaceBetween: 32,
     },
     1024: {
       grid: {
@@ -40,6 +42,7 @@ const swiperCatalog = new Swiper('.catalog__slider', {
       },
       slidesPerView: 3,
       slidesPerGroup: 3,
+      spaceBetween: 32,
     },
     1200: {
       grid: {
@@ -48,6 +51,7 @@ const swiperCatalog = new Swiper('.catalog__slider', {
       },
       slidesPerView: 2,
       slidesPerGroup: 2,
+      spaceBetween: 32,
     },
     1440: {
       grid: {
@@ -56,6 +60,7 @@ const swiperCatalog = new Swiper('.catalog__slider', {
       },
       slidesPerView: 3,
       slidesPerGroup: 3,
+      spaceBetween: 32,
     },
   },
   pagination: {
