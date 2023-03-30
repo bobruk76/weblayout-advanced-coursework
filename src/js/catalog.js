@@ -14,9 +14,17 @@ const swiperCatalog = new Swiper('.catalog__slider', {
   spaceBetween: 32,
   grid: {
     rows: 3,
-    cols: 3,
+    cols: 2,
   },
   breakpoints: {
+    320: {
+      grid: {
+        rows: 3,
+        cols: 2,
+      },
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+    },
     768: {
       grid: {
         rows: 3,

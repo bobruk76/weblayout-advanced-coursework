@@ -12,8 +12,9 @@
 
   &--wide
     width 'calc(100% - (2 * %s) - (2 * %s))' % (cadr-width gap)
+
     & .card__picture
-      @media(max-width 1440px)
+      @media (max-width 1440px)
         margin: 0 -8px 10px -8px
         align-items center
 
@@ -26,9 +27,11 @@
     bottom 0
     left 0
     background-color color-alabaster
+    border-radius 10px
 
   &__link
     position initial
+
     &:after
       content ""
       position absolute
@@ -37,7 +40,7 @@
       right 0
       bottom 90px
       left 0
-      @media(max-width 425px)
+      @media (max-width 425px)
         bottom 60px
 
   &__rating.link
@@ -92,6 +95,7 @@
     @media (max-width 425px)
       margin-bottom 14px
       align-items center
+
     &-img
       width 100%
       height fit-content
@@ -126,5 +130,5 @@
     position absolute
     right 30px
     bottom 30px
-    @media(max-width 1200px)
+    @media (max-width 1200px)
       display none
