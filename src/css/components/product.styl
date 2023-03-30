@@ -7,6 +7,9 @@
   &-breadcrumbs
     margin-bottom 0
 
+    @media (max-width 425px)
+      display none
+
     & .breadcrumbs
       margin-bottom 31px
       @media (max-width 900px)
@@ -71,15 +74,22 @@
     padding-top 0
 
     display grid
-    //grid-template-columns repeat(2, 1fr)
+
     grid-template-columns minmax(514px, 1fr) minmax(30%, 1fr)
     grid-template-rows repeat(4, auto)
     column-gap 32px
     row-gap 13px
+
     @media (max-width 900px)
       grid-template-rows repeat(5, auto)
       grid-template-columns repeat(2, auto)
       row-gap 32px
+
+    @media (max-width 600px)
+      padding-top 6px
+      display flex
+      flex-direction column
+      row-gap 13px
 
   &__card
     padding 16px 0 0
@@ -101,16 +111,25 @@
       grid-column 2 / -1
 
       align-self center
+    @media (max-width 600px)
+      padding-top 4px
 
     &:after
       content none
 
     &-rating.link
       margin-bottom 0
+      @media (max-width 600px)
+        margin-bottom 2px
+        font-size 16px
+        & > svg
+          margin-right 6px
 
     &-title
       display flex
       flex-direction column
+      @media (max-width 600px)
+        margin-bottom 20px
 
       & > span
         font-weight 400
@@ -119,11 +138,16 @@
           margin-bottom 5px
           font-size 24px
           line-height 130%
+          @media (max-width 600px)
+            margin-bottom 7px
+            font-size 16px
 
         &:last-child
           font-size 14px
           line-height 100%
           color color-dusty-gray
+          @media (max-width 600px)
+            width 80%
 
     &-price
       margin 0 0 28px 0
@@ -132,10 +156,15 @@
       font-size 36px
       line-height 100%
       color color-mine-shaft
+      @media (max-width 600px)
+        margin-bottom 20px
+        font-size 24px
 
     &-btn
       padding 16px 29px
       margin-bottom 15px
+      @media (max-width 600px)
+        width 100%
 
       &-outline
         margin-left 30px
@@ -143,6 +172,9 @@
         font-size 17px
         line-height 130%
         color color-medium-purple
+        @media (max-width 600px)
+          margin 0
+          align-self center
 
   &__picture
     grid-row 1 / 2
@@ -178,6 +210,12 @@
 
       justify-content center
       justify-items center
+    @media (max-width 600px)
+      padding 9px 10px 7px
+      grid-template-columns repeat(4, auto)
+      grid-template-rows initial
+      grid-column-gap 38px
+      justify-content initial
 
   &__item
     &-img
@@ -191,6 +229,8 @@
       grid-row 3 / 4
       grid-column 1 / 3
       max-width 515px
+    @media (max-width 600px)
+      padding-top 15px
 
     &-title
       margin-bottom 9px
@@ -226,6 +266,8 @@
 
       justify-content space-between
       max-width 515px
+    @media (max-width 600px)
+      order 1
 
     &-item
       &:not(:last-child)
@@ -246,6 +288,8 @@
       grid-column 1 / 3
       line-height initial
       transform translatey(-3px)
+    @media (max-width 600px)
+      order 2
 
     &-item
       display flex
