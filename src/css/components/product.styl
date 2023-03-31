@@ -23,6 +23,7 @@
         width fit-content
         max-width 624px
         @media (max-width 600px)
+          min-width 100%
           padding-right 16px
           padding-left 10px
 
@@ -49,6 +50,8 @@
         top 67px
         left 'calc(%s / 2)' % gap
         width 'calc(100% - %s)' % gap
+        @media(max-width 600px)
+          top 46px
 
       & > .modal-window__content
         padding 0
@@ -69,6 +72,8 @@
         margin 0
         padding 50px 107px
         width 100%
+        @media (max-width 600pc)
+          padding 32px 16px
 
         &-img
           width 100%
@@ -76,6 +81,9 @@
       & .product__item-img
         max-height initial
         min-height 126px
+        @media (max-width 600px)
+          max-height 86px
+          min-height initial
 
   &__container
     position relative

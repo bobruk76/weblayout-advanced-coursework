@@ -41,8 +41,11 @@ const swiperModalProducts = new Swiper('.modal-window__items', {
 
   effect: 'fade',
   spaceBetween: 32,
-  slidesPerView: 3,
+  slidesPerView: 1,
   breakpoints: {
+    320: {
+      slidesPerView: 1,
+    },
     768: {
       slidesPerView: 2,
     },
