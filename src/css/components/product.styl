@@ -22,6 +22,9 @@
 
         width fit-content
         max-width 624px
+        @media (max-width 600px)
+          padding-right 16px
+          padding-left 10px
 
     &-accept
       & > .modal-window__content
@@ -55,7 +58,6 @@
             display flex
             justify-content center
             align-items center
-
 
       & .modal-window__picture
         margin 0
@@ -399,32 +401,4 @@
       bottom -48px
       left 'calc(50% - %s)' % gap36
 
-.dialog
-  padding 30px
 
-  &::backdrop
-    background-color color-mine-shaft
-    opacity .3
-
-  &-form
-    width 100%
-    color color-mine-shaft
-
-    &__title
-      margin-bottom 8px
-      font-weight 400
-      font-size 32px
-      line-height 100%
-
-    &__descr
-      margin-bottom 30px
-      width 62%
-      font-weight 400
-      font-size 14px
-      line-height 19px
-
-    &__label
-      margin-bottom 30px
-
-      &--last
-        margin-bottom 0
