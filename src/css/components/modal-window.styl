@@ -32,13 +32,23 @@
   &__picture
     margin-bottom gap
     margin-right 'calc(%s * 1.5)' % gap
+    @media (max-width 600px)
+      margin-bottom gap12
+      margin-right 0
+
+    &-svg
+      @media (max-width 600px)
+        width 73px
+        height 50px
 
   &__descr.descr
     font-weight 400
     font-size 32px
     line-height 100%
-    @media(max-width 600px)
+    @media (max-width 600px)
       font-size 16px
+      width 50%
+      text-align center
 
   &__content
     margin auto
@@ -58,6 +68,14 @@
         top 20px
         right 20px
         color color-dusty-gray
+        @media (max-width 600px)
+          top 16px
+          right 16px
+
+        & > svg
+          @media (max-width 600px)
+            width 12px
+            height 12px
 
         & path
           fill currentColor
