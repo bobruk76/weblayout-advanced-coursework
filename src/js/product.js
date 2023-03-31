@@ -5,19 +5,23 @@ const swiperLikeProducts = new Swiper('.like-products__slider', {
 
   effect: 'fade',
   spaceBetween: 32,
-  slidesPerView: 4,
+  slidesPerView: 1,
   breakpoints: {
     320: {
-      slidesPerView: 1,
+      slidesPerView: 2,
+      spaceBetween: 16,
     },
     768: {
       slidesPerView: 2,
+      spaceBetween: 32,
     },
     1024: {
       slidesPerView: 3,
+      spaceBetween: 32,
     },
     1440: {
       slidesPerView: 4,
+      spaceBetween: 32,
     },
   },
 

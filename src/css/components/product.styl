@@ -79,6 +79,7 @@
     grid-template-rows repeat(4, auto)
     column-gap 32px
     row-gap 13px
+    overflow hidden
 
     @media (max-width 900px)
       grid-template-rows repeat(5, auto)
@@ -101,6 +102,7 @@
     align-items flex-start
 
     max-width initial
+    width initial
     min-height initial
     @media (max-width 1440px)
       width 100%
@@ -273,7 +275,9 @@
 
     &-item
       &:not(:last-child)
-        margin-right: 32px
+        margin-right 32px
+        @media (max-width 1024px)
+          margin-right 22px
         @media (max-width 900px)
           margin 0
 
@@ -311,7 +315,7 @@
         color color-dusty-gray
         white-space nowrap
         @media (max-width 1440px)
-          width 'calc(33% + (%s / 2))' % gap
+          width 'calc(43% + (%s / 2))' % gap
         @media (max-width 900px)
           width 'calc(60% + %s)' % gap
         @media (max-width 425px)
@@ -339,6 +343,9 @@
       padding-top 70px
     @media (max-width 900px)
       padding-top 27px
+    @media (max-width 600px)
+      padding-top 59px
+      padding-bottom 117px
 
   &__title
     margin-bottom 24px
@@ -349,15 +356,48 @@
     color color-mine-shaft
 
   &__item
-    min-height 420px
     for num in (1..10)
       &.order{num}
         order: num
 
-    & .card__picture
-      margin-right -16px
-      margin-left -16px
-      height initial
+    &.card
+      min-height 420px
+      @media (max-width 600px)
+        padding 16px 16px 16px
+        min-width initial
+        min-height initial
+        height 278px
+
+      & > .card__picture
+        margin-right -16px
+        margin-left -16px
+        height initial
+        @media (max-width 600px)
+          margin-top auto
+          margin-right initial
+          margin-bottom auto
+          margin-left initial
+
+      & > .card__descr
+        margin-bottom 21px
+        @media (max-width 600px)
+          margin-bottom 17px
+
+      & > .card__rating
+        @media (max-width 600px)
+          margin-bottom 0
+
+      & > .card__btn
+        width 100%
+
+  &__navigation.swiper-navigation
+    z-index 10
+    @media (max-width 600px)
+      top auto
+      right auto
+
+      bottom -48px
+      left 'calc(50% - %s)' % gap36
 
 .dialog
   padding 30px
