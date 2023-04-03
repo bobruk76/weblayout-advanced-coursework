@@ -12,6 +12,7 @@ content-width = 841px
       padding-bottom 40px
     @media (max-width 600px)
       padding-top 11px
+      padding-bottom 15px
       font-size 14px
 
   &__descr
@@ -115,7 +116,7 @@ content-width = 841px
             margin-bottom 13px
 
     &--second
-      margin-top 0
+      margin 0
 
       & > .shipper__list-item
         padding-left 26px
@@ -139,6 +140,8 @@ content-width = 841px
     font-size 24px
     line-height 150%
     color color-mine-shaft
+    @media (max-width 600px)
+      font-size 16px
 
     &::before
       content ''
@@ -151,3 +154,6 @@ content-width = 841px
       background-position center
       @media (max-width 900px)
         width 110px
+      @media (max-width 600px)
+        width 68px
+        margin-right 18px
