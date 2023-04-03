@@ -8,28 +8,46 @@ content-width = 841px
     font-size 16px
     line-height 180%
     color color-dove-gray
-    @media(max-width 900px)
+    @media (max-width 900px)
       padding-bottom 40px
+    @media (max-width 600px)
+      padding-top 11px
+      font-size 14px
 
   &__descr
     margin-bottom gap
     max-width content-width
     font-size 16px
     line-height 180%
+    @media (max-width 600px)
+      margin-bottom 26px
+      font-size 14px
 
   &__title
     max-width content-width
     margin-bottom 'calc(%s + 3px)' % gap
     color color-mine-shaft
+    @media (max-width 600px)
+      margin-bottom 27px
 
     &--second
       margin-bottom 12px
       font-size 24px
       line-height 33px
+      @media (max-width 600px)
+        margin-bottom 5px
+        font-size 16px
+
+      &.title--small
+        @media (max-width 600px)
+          margin-bottom 8px
+          font-size 14px
 
   &__items
     margin-bottom gap
     max-width content-width
+    @media (max-width 600px)
+      margin-bottom 26px
 
     &--first
       max-width 624px
@@ -68,8 +86,10 @@ content-width = 841px
 
   &__list
     padding 0
-    margin-bottom gap
+    margin 0 0 gap 0
     max-width content-width
+    @media (max-width 600px)
+      margin-bottom 25px
 
     &-item
       margin-bottom 'calc(%s / 2)' % gap
@@ -91,6 +111,8 @@ content-width = 841px
         &:before
           margin-bottom 'calc(%s / 2)' % gap
           content 'Возможность ' counter(step-counter) ':'
+          @media (max-width 600px)
+            margin-bottom 13px
 
     &--second
       margin-top 0
@@ -98,6 +120,8 @@ content-width = 841px
       & > .shipper__list-item
         padding-left 26px
         margin-bottom 'calc(%s / 2 - 3px)' % gap
+        @media (max-width 600px)
+          margin-bottom 10px
 
         &:before
           content counter(step-counter) '.'
@@ -125,5 +149,5 @@ content-width = 841px
       background-repeat no-repeat
       background-size contain
       background-position center
-      @media(max-width 900px)
+      @media (max-width 900px)
         width 110px
